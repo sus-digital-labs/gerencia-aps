@@ -14,7 +14,7 @@ RUN pnpm install --frozen-lockfile
 COPY apps/frontend apps/frontend
 RUN pnpm build
 
-FROM nginxinc/nginx-unprivileged:alpine@sha256:901e944d1f4fc2bd077e8f5568b98c1f6f8cdacf6b97a87747c43134a339b9a7
+FROM nginxinc/nginx-unprivileged:alpine@sha256:d9083fe47768377ef55dedafd67d4da7c2f2bc2bece7554954f29359deb0dce9
 
 USER root
 RUN apk upgrade --no-cache libcrypto3 libssl3
