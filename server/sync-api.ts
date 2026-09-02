@@ -3,8 +3,8 @@
  * Autor: Eduardo Muniz | DM Technology
  */
 
-import { getDb } from './db';
-import { syncHistory } from '../drizzle/schema';
+// import { db } from './db';
+// import { sql } from 'drizzle-orm';
 
 export interface SyncPayload {
   unidade_id: string;
@@ -46,17 +46,13 @@ export async function processarSincronizacao(payload: SyncPayload): Promise<{ su
       };
     }
 
-    const db = await getDb();
-    if (db) {
-      await db.insert(syncHistory).values({
-        unidadeId: payload.unidade_id,
-        timestamp: new Date(payload.timestamp),
-        dadosJson: payload.dados,
-      });
-      console.log(`[SYNC] Histórico salvo no banco de dados para unidade ${payload.unidade_id}`);
-    } else {
-      console.warn(`[SYNC] Banco de dados não disponível, pulando persistência para ${payload.unidade_id}`);
-    }
+    // TODO: Salvar dados no banco de dados
+    // Criar tabela sync_history com:
+    // - id
+    // - unidade_id
+    // - timestamp
+    // - dados_json
+    // - created_at
 
     // Por enquanto, apenas log
     for (const indicador of payload.dados.indicadores) {

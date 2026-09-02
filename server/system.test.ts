@@ -20,7 +20,7 @@ function createTestContext(): { ctx: TrpcContext } {
     openId: "test-user",
     email: "test@example.com",
     name: "Test User",
-    loginMethod: "manus",
+    loginMethod: "internal",
     role: "admin",
     createdAt: new Date(),
     updatedAt: new Date(),

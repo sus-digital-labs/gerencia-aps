@@ -1,5 +1,5 @@
 /**
- * Routers tRPC COMPLETOS para substituir Base44 SDK
+ * Routers tRPC COMPLETOS
  * Implementa TODAS as entidades e operações necessárias
  */
 
@@ -49,7 +49,7 @@ export const indicadoresRouter = router({
       return await obterListaNominal(input.ine, input.codigoIndicador, periodo);
     }),
   
-  // Filtrar indicadores (compatível com Base44)
+  // Filtrar indicadores (compatível)
   filter: protectedProcedure
     .input(z.object({
       period_month: z.number().optional(),
@@ -58,7 +58,7 @@ export const indicadoresRouter = router({
       unit_id: z.string().optional(),
     }))
     .query(async ({ input }) => {
-      // Simular resposta Base44 para compatibilidade
+      // Simular resposta para compatibilidade
       const dataInicio = `${input.period_year}-${String(input.period_month).padStart(2, '0')}-01`;
       const dataFim = `${input.period_year}-${String(input.period_month).padStart(2, '0')}-31`;
       

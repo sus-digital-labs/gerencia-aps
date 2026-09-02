@@ -1,9 +1,0 @@
-{
-  "query": "\nALTER TABLE configuracao_territorio \nADD COLUMN IF NOT EXISTS mapProvider VARCHAR(20) DEFAULT 'free',\nADD COLUMN IF NOT EXISTS googleMapsApiKey VARCHAR(255),\nADD COLUMN IF NOT EXISTS mapTileStyle VARCHAR(50) DEFAULT 'carto-dark';\n",
-  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4EpQntwGruGKK3B.547645ca76d5 --database KK7eSYAqdRoQ4EvyTK9kD4 --execute \nALTER TABLE configuracao_territorio \nADD COLUMN IF NOT EXISTS mapProvider VARCHAR(20) DEFAULT 'free',\nADD COLUMN IF NOT EXISTS googleMapsApiKey VARCHAR(255),\nADD COLUMN IF NOT EXISTS mapTileStyle VARCHAR(50) DEFAULT 'carto-dark';\n",
-  "rows": [],
-  "messages": [],
-  "stdout": "",
-  "stderr": "",
-  "execution_time_ms": 527
-}

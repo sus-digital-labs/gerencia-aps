@@ -161,13 +161,13 @@ function calcularAreaKm2(pontos: Array<{ lat: number; lng: number }>): number {
   return Math.abs(area / 2) * 111.32 * 111.32;
 }
 
-/** Resolver geocodificação via Google Maps API (proxy Manus) */
+/** Resolver geocodificação via Google Maps API (proxy internal) */
 async function geocodificarEndereco(endereco: string): Promise<{ lat: number; lng: number } | null> {
   try {
     const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(endereco + ", Barra do Choça, BA, Brasil")}&key=PROXY`;
-    // Usar o proxy interno do Manus para Google Maps
+    // Usar o proxy interno do internal para Google Maps
     const response = await fetch(
-      `https://maps-proxy.manus.computer/maps/api/geocode/json?address=${encodeURIComponent(endereco + ", Barra do Choça, BA, Brasil")}`
+      `https://maps-proxy.internal.computer/maps/api/geocode/json?address=${encodeURIComponent(endereco + ", Barra do Choça, BA, Brasil")}`
     );
     if (!response.ok) return null;
     const data = await response.json();

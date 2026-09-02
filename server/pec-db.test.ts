@@ -2,7 +2,7 @@ import { describe, it, expect, beforeAll } from 'vitest';
 import { pecPool, queryPEC, getReplicaStatus } from './pec-db';
 
 // Testes de conexão PEC são condicionais - só executam quando o banco está acessível
-// No sandbox Manus, o firewall bloqueia conexões externas ao PostgreSQL
+// No sandbox cloud, o firewall bloqueia conexões externas ao PostgreSQL
 // Estes testes funcionam quando o sistema roda no servidor Windows (localhost)
 
 let canConnect = false;
