@@ -1,0 +1,119 @@
+{
+  "schema_version": "cell-capacity-proof-v1.synthetic@1",
+  "records": [
+    {
+      "value": 300,
+      "record_id": "synthetic-m1-record-001",
+      "pii": false,
+      "record_type": "m1_source_count"
+    },
+    {
+      "value": 87,
+      "record_id": "synthetic-m1-record-002",
+      "pii": false,
+      "record_type": "m1_source_count"
+    },
+    {
+      "value": 320,
+      "record_id": "synthetic-m1-record-003",
+      "pii": false,
+      "record_type": "m1_source_count"
+    }
+  ],
+  "municipalities": [
+    {
+      "installation_id": "installation-capacity-001",
+      "runtime_cell_id": "CELL-CAP-001",
+      "source_snapshot_id": "capacity-m1-snapshot-001",
+      "municipality_id": "MUNICIPALITY_CAPACITY_001",
+      "agent_id": "agent-capacity-001",
+      "tenant_id": "TENANT_CAPACITY_001",
+      "ine": "9100000001",
+      "token": "capacity-token-synthetic-001",
+      "storage_cell_alias": "DEFAULT_CELL"
+    },
+    {
+      "installation_id": "installation-capacity-002",
+      "runtime_cell_id": "CELL-CAP-002",
+      "source_snapshot_id": "capacity-m1-snapshot-002",
+      "municipality_id": "MUNICIPALITY_CAPACITY_002",
+      "agent_id": "agent-capacity-002",
+      "tenant_id": "TENANT_CAPACITY_002",
+      "ine": "9100000002",
+      "token": "capacity-token-synthetic-002",
+      "storage_cell_alias": "DEFAULT_CELL"
+    },
+    {
+      "installation_id": "installation-capacity-003",
+      "runtime_cell_id": "CELL-CAP-001",
+      "source_snapshot_id": "capacity-m1-snapshot-003",
+      "municipality_id": "MUNICIPALITY_CAPACITY_003",
+      "agent_id": "agent-capacity-003",
+      "tenant_id": "TENANT_CAPACITY_003",
+      "ine": "9100000003",
+      "token": "capacity-token-synthetic-003",
+      "storage_cell_alias": "DEFAULT_CELL"
+    },
+    {
+      "installation_id": "installation-capacity-004",
+      "runtime_cell_id": "CELL-CAP-002",
+      "source_snapshot_id": "capacity-m1-snapshot-004",
+      "municipality_id": "MUNICIPALITY_CAPACITY_004",
+      "agent_id": "agent-capacity-004",
+      "tenant_id": "TENANT_CAPACITY_004",
+      "ine": "9100000004",
+      "token": "capacity-token-synthetic-004",
+      "storage_cell_alias": "DEFAULT_CELL"
+    },
+    {
+      "installation_id": "installation-capacity-005",
+      "runtime_cell_id": "CELL-CAP-001",
+      "source_snapshot_id": "capacity-m1-snapshot-005",
+      "municipality_id": "MUNICIPALITY_CAPACITY_005",
+      "agent_id": "agent-capacity-005",
+      "tenant_id": "TENANT_CAPACITY_005",
+      "ine": "9100000005",
+      "token": "capacity-token-synthetic-005",
+      "storage_cell_alias": "DEFAULT_CELL"
+    }
+  ],
+  "run_policy": {
+    "maximum_municipality_count": 5,
+    "wave_6_plus_forbidden": true,
+    "real_pec_forbidden": true,
+    "nominal_data_forbidden": true,
+    "allowed_municipality_counts": [
+      1,
+      3,
+      5
+    ]
+  },
+  "source_contract": {
+    "counts": {
+      "distinct_people": 320,
+      "individual_attendances": 300,
+      "collective_participations": 87
+    },
+    "rule_version": "M1@2026.6",
+    "period_start": "2026-04-01",
+    "competence": "2026-04-01",
+    "schema_version": "sus-analytics-m1-source@1",
+    "period_end": "2026-04-30",
+    "payload_contract_reference": "scripts/tests/shared/smoke-ingest.mjs",
+    "source_table": "synthetic_m1_source_package"
+  },
+  "waves": [
+    {
+      "id": "WAVE-1",
+      "municipality_count": 1
+    },
+    {
+      "id": "WAVE-3",
+      "municipality_count": 3
+    },
+    {
+      "id": "WAVE-5",
+      "municipality_count": 5
+    }
+  ]
+}

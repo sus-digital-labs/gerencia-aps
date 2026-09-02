@@ -1,0 +1,10 @@
+=== DIAGNÓSTICO ===
+PHP Version: 8.2.12
+Working Dir: C:\xampp821\htdocs\qualisus
+Carregando database...
+OK - PDO conectado
+Query test: Array
+(
+    [test] => 1
+)
+

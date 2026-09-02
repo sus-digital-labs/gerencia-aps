@@ -1,0 +1,30 @@
+UPSTREAM TARGETED TEST RESULT
+
+Repository: CampusVirtualFiocruz/painel-esus
+Snapshot: d21fe44562fd73c4ae46261a40496079b6e94f15
+Execution date: 2026-08-27
+Command:
+pytest -q --tb=short \
+  src/infra/create_base/polars/create_indicadores_cadastro_repository_test.py \
+  src/infra/create_base/polars/create_indicadores_criancas_repository_test.py \
+  src/infra/create_base/polars/create_indicadores_diabetes_repository_test.py \
+  src/infra/create_base/polars/create_indicadores_idosos_repository_test.py \
+  src/infra/create_base/polars/create_indicadores_saude_bucal_repository_test.py \
+  src/infra/db/repositories/hypertension_diabetes/hypertension_diabetes_repository_test.py \
+  src/infra/db/repositories/elderly/elderly_repository_test.py \
+  src/infra/db/repositories/cadastro/records_repository_test.py \
+  src/infra/db/repositories/oral_health/sqls/oral_health_queries_test.py
+
+Result: 20 failed, 5 passed, 1 warning in 3.19s.
+Status: BLOCKED_BY_ENVIRONMENT.
+
+Primary failure: DuckDB could not find generated inputs under ./dados/output/.
+Missing examples:
+- diabetes.parquet
+- idoso.parquet
+- cadastro_db.parquet
+- saude_bucal.parquet
+
+Interpretation: the test files were collected and some unit tests passed, but no indicator result is validated by this run. The upstream snapshot does not include the Parquet inputs required by the integration-style tests.
+
+No upstream file was modified and no GitHub issue, branch, commit or pull request was created.

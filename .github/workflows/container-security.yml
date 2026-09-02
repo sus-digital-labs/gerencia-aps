@@ -1,0 +1,57 @@
+name: Container security
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build release image
+        run: docker build --pull --tag sus-analytics-web:ci .
+
+      - name: Scan high and critical vulnerabilities
+        run: >-
+          docker run --rm
+          -v /var/run/docker.sock:/var/run/docker.sock
+          aquasec/trivy@sha256:62b1e65e8869bc4b4c6aa4fa2b21595256c7c2f6018a9d9ad61caf87187c1969
+          image --scanners vuln --severity HIGH,CRITICAL
+          --exit-code 1 --no-progress sus-analytics-web:ci
+
+      - name: Validate container health
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker run --rm --detach --name sus-analytics-health sus-analytics-web:ci
+          trap 'docker stop sus-analytics-health >/dev/null 2>&1 || true' EXIT
+          for _ in {1..15}; do
+            if docker exec sus-analytics-health wget -q -O - http://127.0.0.1:8080/healthz | grep -qx ok; then
+              exit 0
+            fi
+            sleep 1
+          done
+          docker logs sus-analytics-health
+          exit 1
+
+      - name: Generate SPDX SBOM
+        run: |
+          mkdir -p security-artifacts
+          docker run --rm \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            -v "$PWD/security-artifacts:/out" \
+            anchore/syft@sha256:95fe0835e5bebc6f8b1f8acef68d47d63d594ef4c0f25c097ff853b23cbac74c \
+            sus-analytics-web:ci -o spdx-json=/out/sbom.spdx.json
+          test -s security-artifacts/sbom.spdx.json
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sus-analytics-web-sbom
+          path: security-artifacts/sbom.spdx.json
+          if-no-files-found: error

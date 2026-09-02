@@ -1,0 +1,302 @@
+{
+  "schema_version": "1.1.0",
+  "mission": "esus-aps-360",
+  "branch": "mission/multicell-e2e-20260815",
+  "evidence_commit": "091ed6ada866fde478a79e4890bdf6d5240bfc03",
+  "classification": "MULTI_CELL_EVIDENCE_CLOSED",
+  "classification_scope": "FASE_A_FORMAL_CLOSEOUT",
+  "non_claims": [
+    "CAPACITY_NOT_YET_PROVEN",
+    "NATIONAL_SCALE_NOT_PROVEN",
+    "PRODUCTION_READINESS_NOT_DECLARED"
+  ],
+  "constraints_confirmed": {
+    "no_push": true,
+    "no_billing_changes": true,
+    "no_geocode_changes": true,
+    "no_real_pec": true,
+    "no_manual_read_model_insertion": true,
+    "no_manual_materialization_result_insertion": true,
+    "capacity_cap_max_municipalities": 5,
+    "capacity_near_threshold": 4
+  },
+  "runtime_topology": {
+    "control_plane": {
+      "container": "mc-runtime-control-pg",
+      "endpoint": "127.0.0.1:55530/control_plane",
+      "final_state": "stopped"
+    },
+    "cells": [
+      {
+        "cell": "CELL-001",
+        "container": "mc-runtime-cell001-pg",
+        "endpoint": "127.0.0.1:55531/data_plane",
+        "municipality": "municipality-A",
+        "postgres_final_state": "running",
+        "redis_container": "mc-runtime-cell001-redis",
+        "redis_final_state_during_fault_matrix": "running"
+      },
+      {
+        "cell": "CELL-002",
+        "container": "mc-runtime-cell002-pg",
+        "endpoint": "127.0.0.1:55532/data_plane",
+        "municipality": "municipality-B",
+        "postgres_final_state": "running",
+        "redis_container": "mc-runtime-cell002-redis",
+        "redis_final_state_during_fault_matrix": "stopped"
+      }
+    ],
+    "pec_source": {
+      "container": "mc-runtime-pec-source-pg",
+      "endpoint": "127.0.0.1:55533/pec_source",
+      "data_class": "synthetic",
+      "final_state_after_cleanup": "stopped"
+    }
+  },
+  "downstream_m1": {
+    "workload": "adaptive_m1_v1",
+    "cells": [
+      {
+        "cell": "CELL-001",
+        "municipality": "municipality-A",
+        "source_manifests_m1": 6,
+        "adaptive_jobs_succeeded": 1,
+        "materialization_results": 1,
+        "read_models": 1,
+        "result_hash_cardinality": 1,
+        "read_model_hash_cardinality": 1,
+        "read_model_force_rls": true,
+        "auth_snapshot_force_rls": true,
+        "cross_municipality_rls": 0
+      },
+      {
+        "cell": "CELL-002",
+        "municipality": "municipality-B",
+        "source_manifests_m1": 6,
+        "adaptive_jobs_succeeded": 1,
+        "materialization_results": 1,
+        "read_models": 1,
+        "result_hash_cardinality": 1,
+        "read_model_hash_cardinality": 1,
+        "read_model_force_rls": true,
+        "auth_snapshot_force_rls": true,
+        "cross_municipality_rls": 0
+      }
+    ],
+    "handoff": {
+      "dispatcher": "dispatch_m1_from_source_package",
+      "source_tables": [
+        "emulti_source_manifests",
+        "emulti_result_components"
+      ],
+      "canonical_input": "CanonicalRuleInputV1",
+      "durability": "transactional ON CONFLICT DO NOTHING",
+      "logical_job_key": "scope/competence/rule_version/source_snapshot",
+      "job_per_chunk": false,
+      "replay_idempotent": true,
+      "reconciler_missing_job": true,
+      "state_separation": [
+        "SOURCE_PACKAGE_READY",
+        "DOWNSTREAM_COMPLETED",
+        "READ_MODEL_AVAILABLE"
+      ]
+    }
+  },
+  "lkg_authentication": {
+    "local_snapshot_first": true,
+    "control_plane_required_for_known_snapshot": false,
+    "unknown_installation_when_control_plane_down": "401 token_not_recognized",
+    "known_installation_when_control_plane_down": "200 accepted_duplicate",
+    "negative_matrix": {
+      "unknown_agent": 401,
+      "wrong_tenant": 401,
+      "wrong_municipality": 401,
+      "wrong_cell": 401,
+      "expired_snapshot": 403,
+      "revoked_snapshot": 403
+    },
+    "cell_isolation_probe": {
+      "accepted_in": "CELL-001",
+      "artifacts_in_CELL-002": 0
+    },
+    "snapshot": {
+      "installation_id": "installation-A",
+      "agent_id": "agent-fcf3422b-af22-4832-b556-789b5f38f125",
+      "tenant_id": "dm-technology",
+      "municipality_id": "municipality-A",
+      "cell_id": "DEFAULT_CELL",
+      "assignment_version": "registry-v1",
+      "revoked_at": null,
+      "validity": "future-valid at final evidence collection"
+    }
+  },
+  "fencing_and_fault_injection": {
+    "test": "live_worker_recovers_pending_and_fences_out_of_order_events",
+    "result": "PASS",
+    "fixtures_cell_local_columns": [
+      "cell_id",
+      "tenant_id",
+      "municipality_id"
+    ],
+    "redis_cell_002_stopped": true,
+    "postgres_cell_002_authoritative": true,
+    "scope_under_redis_failure": {
+      "municipality-B": 1,
+      "municipality-A": 0
+    }
+  },
+  "qa": {
+    "cargo_fmt_check": "PASS",
+    "cargo_check_all_targets": "PASS",
+    "cargo_clippy_d_warnings": "PASS",
+    "cargo_test": {
+      "passed": 102,
+      "failed": 0,
+      "ignored": 15
+    },
+    "typescript_typecheck": "PASS",
+    "secret_scan": {
+      "status": "PASS",
+      "files_scanned": 25,
+      "high_confidence_secret_hits": 0
+    },
+    "lgpd_scan": {
+      "status": "PASS_NO_HIGH_CONFIDENCE_LITERAL",
+      "potential_pattern_hits": 2,
+      "hits_are_controlled_sanitization_fixture": true
+    },
+    "git_diff_check": "PASS",
+    "dependency_audit": {
+      "status": "PASS_WITH_SCOPED_DOCUMENTED_EXCEPTION",
+      "command": "cargo audit --file Apps/ingest/dm-sync-ingest/Cargo.lock --ignore RUSTSEC-2023-0071",
+      "raw_audit_status": "FAIL_ON_RUSTSEC_2023_0071_AND_WARN_SPIN_YANKED",
+      "rsa_advisory": "RUSTSEC-2023-0071",
+      "rsa_solution": "no fixed upgrade available",
+      "active_receiver_graph_contains_rsa": false,
+      "active_receiver_graph_contains_sqlx_mysql": false,
+      "active_receiver_graph_contains_spin": false,
+      "lockfile_changed": false
+    },
+    "fase_a_complete": {
+      "status": "PASS",
+      "evidence": "artifacts/qa-fase-a-2026-08-16.json",
+      "lgpd_warnings": "14 manual-review warnings retained; real PII/secret failures=0"
+    }
+  },
+  "gates": {
+    "TYPED_CURSOR_CONTRACT": "PASS",
+    "SELECTIVE_CURSOR_REBUILD_VALIDATED": "PASS",
+    "M1_SOURCE_PACKAGE_READY_A": "PASS",
+    "M1_SOURCE_PACKAGE_READY_B": "PASS",
+    "DYNAMIC_CROSS_TENANT_RLS_VALIDATED": "PASS",
+    "CAPACITY_POLICY_MAX_5_NEAR_4": "PASS",
+    "ADAPTIVE_WORKLOAD_HANDOFF": "PASS",
+    "M1_REPLAY_IDEMPOTENCY": "PASS",
+    "SOURCE_PACKAGE_RECONCILIATION": "PASS",
+    "LKG_CONTROL_PLANE_DEPENDENCY": "PASS",
+    "LKG_NEGATIVE_MATRIX": "PASS",
+    "MULTI_CELL_RUNTIME_CLOSURE": "PASS",
+    "EXACTLY_ONCE_AND_FENCING": "PASS",
+    "REDIS_B_FAILURE_AUTHORITY": "PASS",
+    "RLS_FORCE_POLICY": "PASS",
+    "CARGO_FMT_CHECK": "PASS",
+    "CARGO_CHECK": "PASS",
+    "CARGO_CLIPPY_D_WARNINGS": "PASS",
+    "CARGO_TEST": "PASS",
+    "TYPESCRIPT_TYPECHECK": "PASS",
+    "SECRET_SCAN": "PASS",
+    "LGPD_SCAN": "PASS",
+    "GIT_DIFF_CHECK": "PASS",
+    "DEPENDENCY_AUDIT_SCOPED": "PASS_WITH_SCOPED_DOCUMENTED_EXCEPTION"
+  },
+  "versioned_probes": [
+    "scripts/11-windows/multicell-runtime-closure.ps1",
+    "Apps/ingest/dm-sync-ingest/src/worker.rs",
+    "Apps/ingest/dm-sync-ingest/src/adaptive_downstream.rs",
+    "Apps/ingest/dm-sync-ingest/src/main.rs",
+    "Apps/ingest/dm-sync-ingest/src/migrations/0007_cell_installation_auth_snapshot_v1.up.sql"
+  ],
+  "formal_closeout": {
+    "phase": "FASE_A_FORMAL_CLOSEOUT",
+    "status": "PASS",
+    "closeout_classification": "MULTI_CELL_EVIDENCE_CLOSED",
+    "actual_mission_head": "091ed6ada866fde478a79e4890bdf6d5240bfc03",
+    "functional_evidence_sha": "8133b95",
+    "documentation_sha": "1188765",
+    "gates": {
+      "M1_MATERIALIZATION_RESULT_VALIDATED_A": "PASS",
+      "M1_MATERIALIZATION_RESULT_VALIDATED_B": "PASS",
+      "M1_READ_MODEL_VALIDATED_A": "PASS",
+      "M1_READ_MODEL_VALIDATED_B": "PASS",
+      "M1_ZERO_DIFF_PARITY_VALIDATED": "PASS",
+      "M1_GOLDEN_MATCH_VALIDATED": "PASS",
+      "BFF_REAL_READ_MODEL_ROUTING_VALIDATED": "PASS",
+      "EXPLICIT_RUNTIME_CELL_MAPPING_VALIDATED": "PASS",
+      "DYNAMIC_RLS_ON_M1_READ_MODEL_VALIDATED": "PASS",
+      "MATERIALIZER_FENCING_VALIDATED": "PASS",
+      "MATERIALIZATION_EXACTLY_ONCE_EFFECT_VALIDATED": "PASS",
+      "CELL_LOCAL_AUTH_CONTINUITY_VALIDATED": "PASS",
+      "LKG_RESTART_VALIDATED": "PASS_PREVIOUS_RUNTIME_EVIDENCE"
+    },
+    "parity": {
+      "normative_result_hash_a": "3f5c244aa3d1405c90f3b2b6710c0fa2e1d41dac9838bc37cb95764ecb63964f",
+      "normative_result_hash_b": "3f5c244aa3d1405c90f3b2b6710c0fa2e1d41dac9838bc37cb95764ecb63964f",
+      "normative_result_hash_equal": true,
+      "semantic_result_hash_different": true,
+      "golden_oracle_hash": "3f5c244aa3d1405c90f3b2b6710c0fa2e1d41dac9838bc37cb95764ecb63964f"
+    },
+    "bff": {
+      "probe": "scripts/11-windows/multicell-bff-routing-probe.ps1",
+      "evidence": "artifacts/multicell-bff-routing-probe.json",
+      "status": "PASS"
+    },
+    "physical_mapping": {
+      "contract": "CellRuntimeIdentity",
+      "runtime_cell_id": "CELL-001/CELL-002 per receiver instance",
+      "storage_cell_alias": "DEFAULT_CELL",
+      "wrong_cell_test": "artifacts/runtime-cell-identity-wrong-cell.json",
+      "status": "PASS"
+    },
+    "evidence_artifacts": [
+      "artifacts/multicell-closeout-reconcile.json",
+      "artifacts/multicell-bff-routing-probe.json",
+      "artifacts/runtime-cell-identity-wrong-cell.json",
+      "artifacts/qa-fase-a-2026-08-16.json"
+    ],
+    "phase_b": {
+      "status": "READY_AFTER_FASE_A_MAIN_INTEGRATION",
+      "authorized_waves": [
+        "WAVE-1",
+        "WAVE-3",
+        "WAVE-5"
+      ],
+      "prohibited_waves": [
+        "WAVE-6+"
+      ],
+      "capacity_not_yet_proven": true,
+      "national_scale_not_proven": true,
+      "production_readiness_not_declared": true,
+      "capacity_maximum_not_discovered": true,
+      "status_reason": "FASE_A_FORMAL_CLOSEOUT=PASS and local main fast-forward completed"
+    },
+    "main_integration": {
+      "branch": "main",
+      "merge": "--ff-only",
+      "main_sha": "1897b68070f3f74e47eba7bedcbd6f3ceca8dde4",
+      "push_performed": false
+    }
+  },
+  "cleanup": {
+    "receiver_stopped": true,
+    "control_plane_stopped": true,
+    "cell_postgres_preserved": true,
+    "m1_and_lkg_evidence_preserved": true,
+    "preexisting_untracked_files_preserved": true,
+    "push_performed": false,
+    "remaining_disposable_resources_to_stop": [],
+    "stopped_disposable_resources": [
+      "mc-runtime-cell001-redis",
+      "mc-runtime-pec-source-pg"
+    ]
+  }
+}

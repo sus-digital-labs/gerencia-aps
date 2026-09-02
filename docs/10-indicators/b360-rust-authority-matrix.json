@@ -1,0 +1,1121 @@
+{
+  "$schema": "b360-rust-authority-matrix-v1",
+  "matrixVersion": "2026-07-26",
+  "scope": "21 operational calculations: B1-B6, C1-C7, M1-M2 and CVAT1-CVAT6",
+  "sourceManifest": "../indicator-field-catalog/sources/official-source-manifest-2026-07-25.json",
+  "statusVocabulary": [
+    "AUSENTE",
+    "PARCIAL",
+    "IMPLEMENTADO_NO_SOURCE",
+    "TESTADO_LOCALMENTE",
+    "BLOQUEADO_POR_FONTE",
+    "BLOQUEADO_POR_REGRA",
+    "BLOQUEADO_POR_INFRA",
+    "BLOQUEADO_POR_DADOS",
+    "BLOQUEADO_POR_GOLDEN",
+    "BLOQUEADO_POR_PARIDADE",
+    "READY_FOR_CONTROLLED_DEPLOYMENT",
+    "READY_FOR_CLINICAL_CUTOVER",
+    "ACTIVE_AND_PROVEN"
+  ],
+  "runtimeSnapshot": {
+    "observedAt": "2026-07-26",
+    "rustOwnedInSource": ["B1", "B2", "B3", "B4", "B5", "B6", "C1", "C2", "C3", "C4", "C5", "C6", "C7", "CVAT1", "CVAT2", "CVAT3", "CVAT4", "CVAT5", "CVAT6", "M1", "M2"],
+    "rustAuthorityFlags": {
+      "B1": false,
+      "B2": false,
+      "B3": false,
+      "B4": false,
+      "B5": false,
+      "B6": false,
+      "C1": false,
+      "C2": false,
+      "C3": false,
+      "C4": false,
+      "C5": false,
+      "C6": false,
+      "C7": false,
+      "CVAT1": false,
+      "CVAT2": false,
+      "CVAT3": false,
+      "CVAT4": false,
+      "CVAT5": false,
+      "CVAT6": false,
+      "M1": true,
+      "M2": true
+    },
+    "globalGateAudit": {
+      "observedAt": "2026-07-26",
+      "database": "sus_analytics_app",
+      "targetScope": {
+        "tenantId": "dm-technology-master",
+        "municipalityId": "2902906"
+      },
+      "implementedInRustSource": 21,
+      "persistedResults": 21,
+      "missingPersistedResults": [],
+      "readyResults": ["B3", "B5", "B6", "M1", "M2"],
+      "blockedBySourceResults": [
+        "B1",
+        "B2",
+        "B4",
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "CVAT1",
+        "CVAT2",
+        "CVAT3",
+        "CVAT4",
+        "CVAT5",
+        "CVAT6"
+      ],
+      "excludedCrossScopeResults": [
+        {
+          "indicatorCode": "C2",
+          "reason": "different tenant and municipality"
+        }
+      ],
+      "persistedGoldenBaselines": 5,
+      "persistedDualRunComparisons": 5,
+      "currentCutoverReady": ["M1", "M2"],
+      "currentCutoverBlocked": ["B3", "B5", "B6"],
+      "withoutCutoverAudit": [
+        "B1",
+        "B2",
+        "B4",
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "CVAT1",
+        "CVAT2",
+        "CVAT3",
+        "CVAT4",
+        "CVAT5",
+        "CVAT6"
+      ],
+      "bffSourceRegistryVersion": "b360-rust-authority-v7",
+      "bffRegisteredIndicators": ["B1", "B2", "B3", "B4", "B5", "B6", "C1", "C2", "C3", "C4", "C5", "C6", "C7", "CVAT1", "CVAT2", "CVAT3", "CVAT4", "CVAT5", "CVAT6", "M1", "M2"],
+      "activeAndProven": ["M1", "M2"],
+      "conclusion": "RUST_SOURCE_21_OF_21_CUTOVER_2_OF_21"
+    },
+    "bffRuntimeDeployment": {
+      "observedAt": "2026-07-26T13:56:00-03:00",
+      "commit": "72ebd6bb5a01d7c3056012f1195deeecd7bbd5cf",
+      "registryVersion": "b360-rust-authority-v7",
+      "bffImage": "sha256:8bf9018258a7e2261b8e8f9b4cf71ac5bf1d2aeb05464bd5181c68e13dd3dfee",
+      "rollbackImage": "sha256:19bfb6b5c7174fb33db23978ea2b45d497ec3eaa30cb3264f7ea02d859229472",
+      "bundleSha256": "8090fd7d2aab0ea47626599b67d42253d08ab0aa9324d498c8580c421222a2a8",
+      "readSource": "analytics",
+      "containerHealth": "healthy",
+      "containerRestartCount": 0,
+      "healthHttpStatus": 200,
+      "readyzHttpStatus": 503,
+      "readyzStatus": "fail",
+      "readyzBlockers": [
+        "SYNC_CATALOG_BLOCKED",
+        "GLOBAL_REFERENCE_MISSING",
+        "TENANT_REPLICA_REQUIRED_MISSING",
+        "SOURCE_DISCOVERY_PERMISSION_ERROR"
+      ],
+      "pecSummary": {
+        "httpStatus": 200,
+        "itemCount": 15,
+        "invalidNumericOrAuthorityItems": 0,
+        "authority": "rust_read_model",
+        "status": "rust_read_model_required"
+      },
+      "pecReadOnlyGrantPlan": {
+        "status": "PLAN_READY",
+        "scopeSha256": "1610eaf8eb080b9fcb1d1d7f56c5ffbdd9062251048c033c3ca96bf5616e5665",
+        "catalogVersion": "2026-07-25.emulti-source-contract-v4",
+        "tableCount": 58,
+        "schemaUsage": true,
+        "selectCount": 0,
+        "missingSelectCount": 58,
+        "planEffect": "PEC_NO_WRITE",
+        "executeEffect": "GRANT_SELECT_EXACT_58",
+        "credentials": "UNCHANGED",
+        "agentService": "UNCHANGED"
+      },
+      "receiverImage": "sha256:9db7ffd4e6a07be6048cdab22e0914c78581b79a29d5d2b65805bb447c0c326a",
+      "normalizerImage": "sha256:9db7ffd4e6a07be6048cdab22e0914c78581b79a29d5d2b65805bb447c0c326a",
+      "receiverHealth": "healthy",
+      "normalizerHealth": "healthy",
+      "agentService": "Stopped"
+    },
+    "sourceContractRelations": {
+      "sus_analytics_ingest.b360_source_records_v1": "READY",
+      "sus_analytics_ingest.b360_source_contract_status_v1": "READY",
+      "sourceContractMigrationSha256": "ec42a191db669c28f9f0011652e9b5a61a90590d40699ca39db9d38d1be23506",
+      "readyIndexes": "12/12"
+    },
+    "dateQualityContract": {
+      "sus_analytics_ingest.b360_date_quality_fields_v1": "READY",
+      "sus_analytics_ingest.b360_date_quality_contract_status_v1": "READY",
+      "migrationSha256": "96c33bbc87a45628af6b5d4d0e54ed6339fe750886e7653179e59c2996a1aeeb",
+      "projectionCount": 13,
+      "sourceCount": 11
+    },
+    "readinessProbe": {
+      "mode": "READ_ONLY_DRY_RUN",
+      "tenant": "dm-technology-master",
+      "municipality": "2902906",
+      "competence": "2026-06-01",
+      "ine": "0000181439",
+      "c1DistinctEvents": 805,
+      "elapsedSecondsAfterC2QueryFix": 248.8,
+      "status": "BLOCKED",
+      "replayTerminal": true,
+      "mutationsAllowed": false,
+      "activationChanged": false,
+      "C1": {
+        "sourceSnapshotHash": "b20114251c72f8a58249aea85b9d0fda878d12a54fba0a4cb5bf65977f6aee07",
+        "sourceFresh": true,
+        "lineageEntries": 8,
+        "blockers": ["BASELINE_MISSING", "SOURCE_TOMBSTONES_INCOMPLETE"]
+      },
+      "C2": {
+        "sourceSnapshotHash": "f2ea97900d9df5104b50b55743ab0dac78a6ccb54376d2f6ac23cde2336266a0",
+        "sourceFresh": true,
+        "lineageEntries": 10,
+        "blockers": [
+          "BASELINE_MISSING",
+          "SOURCE_CADSUS_DEATH_INCOMPLETE",
+          "SOURCE_MIAC_INCOMPLETE",
+          "SOURCE_MIP_INCOMPLETE",
+          "SOURCE_MIV_INCOMPLETE",
+          "SOURCE_PUERICULTURA_MISSING",
+          "SOURCE_RIA_INCOMPLETE",
+          "SOURCE_SNAPSHOT_OPEN",
+          "SOURCE_TEAM_LIFECYCLE_INCOMPLETE",
+          "SOURCE_TOMBSTONES_INCOMPLETE"
+        ]
+      },
+      "persistedRowsBeforeAndAfter": 0,
+      "rulesMigration": "0005_real_golden_bundle"
+    },
+    "c1C2PersistentMaterialization": {
+      "mode": "PREPARE_FAIL_CLOSED",
+      "observedAt": "2026-07-26",
+      "tenant": "dm-technology-master",
+      "municipality": "2902906",
+      "competence": "2026-06-01",
+      "ine": "0000181439",
+      "cnes": "2402718",
+      "operationId": "8655564249e729ecaccf4fb55923dd8a02777db5e1b2d16216966f0c76275255",
+      "status": "BLOCKED",
+      "activationChanged": false,
+      "idempotentReplay": true,
+      "C1": {
+        "sourceSnapshotId": "normalized:c1:2902906:2026-06:d58e6759492e207d",
+        "sourceSnapshotHash": "d58e6759492e207d5fef1e863156087a523d243ddefaf1d001bede8cac15c94e",
+        "manifestRows": 805,
+        "lineageEntries": 8,
+        "resultStatus": "BLOCKED_BY_SOURCE"
+      },
+      "C2": {
+        "sourceSnapshotId": "normalized:c2:2902906:2026-06:76d64344a2892d67",
+        "sourceSnapshotHash": "76d64344a2892d67fa086a6efc89b5333f68558e9c30c30f004b89ddf427287e",
+        "manifestRows": 2556,
+        "lineageEntries": 10,
+        "resultStatus": "BLOCKED_BY_SOURCE",
+        "projectionInvalidCause": "76 children without linked_at; SOURCE_TEAM_LIFECYCLE_INCOMPLETE"
+      }
+    },
+    "emultiSourceProbe": {
+      "mode": "READ_ONLY",
+      "tenant": "dm-technology-master",
+      "municipality": "2902906",
+      "agentCatalogVersion": "2026-07-25.emulti-source-contract-v3",
+      "catalogStatus": "ok",
+      "requiredMissing": 0,
+      "requiredSourcesAvailable": "11/11",
+      "pecCareSharing": {
+        "table": "tb_fat_cuidado_compartilhado",
+        "exists": true,
+        "readable": true,
+        "status": "source_available",
+        "cursor": "co_seq_fat_cuidado_compartilhd",
+        "missingColumns": [],
+        "rowEstimate": 1
+      },
+      "centralSources": {
+        "tb_dim_cbo": {
+          "normalized": true,
+          "syncStatus": "completed",
+          "fullSnapshotComplete": true,
+          "cursorConverged": true
+        },
+        "tb_dim_equipe": {
+          "normalized": true,
+          "syncStatus": "completed",
+          "fullSnapshotComplete": true,
+          "cursorConverged": true
+        },
+        "tb_dim_profissional": {
+          "normalized": true,
+          "syncStatus": "completed",
+          "fullSnapshotComplete": true,
+          "cursorConverged": true
+        },
+        "tb_equipe": {
+          "normalized": true,
+          "syncStatus": "completed",
+          "fullSnapshotComplete": true,
+          "cursorConverged": true
+        },
+        "tb_fat_atendimento_individual": {
+          "normalized": true,
+          "syncStatus": "completed",
+          "fullSnapshotComplete": true,
+          "cursorConverged": true,
+          "fullSyncCompletedAt": "2026-07-25T12:57:26.607368-03:00"
+        },
+        "tb_fat_atendimento_odonto": {
+          "normalized": true,
+          "syncStatus": "completed",
+          "fullSnapshotComplete": true,
+          "cursorConverged": true,
+          "fullSyncCompletedAt": "2026-07-25T12:43:12.395814-03:00"
+        },
+        "tb_fat_atividade_coletiva": {
+          "normalized": true,
+          "syncStatus": "completed",
+          "fullSnapshotComplete": true,
+          "cursorConverged": true,
+          "fullSyncCompletedAt": "2026-07-25T12:37:16.204303-03:00"
+        },
+        "tb_fat_atvdd_coletiva_part": {
+          "normalized": true,
+          "syncStatus": "completed",
+          "fullSnapshotComplete": true,
+          "cursorConverged": true,
+          "fullSyncCompletedAt": "2026-07-25T12:43:44.634761-03:00"
+        },
+        "tb_fat_atvdd_coletiva_propart": {
+          "normalized": true,
+          "syncStatus": "completed",
+          "fullSnapshotComplete": true,
+          "cursorConverged": true,
+          "fullSyncCompletedAt": "2026-07-25T12:42:01.814575-03:00"
+        },
+        "tb_fat_cuidado_compartilhado": {
+          "normalized": true,
+          "syncStatus": "completed",
+          "fullSnapshotComplete": true,
+          "cursorConverged": true,
+          "fullSyncCompletedAt": "2026-07-25T12:25:12.858823-03:00"
+        },
+        "tb_tipo_equipe": {
+          "normalized": true,
+          "syncStatus": "completed",
+          "fullSnapshotComplete": true,
+          "cursorConverged": true
+        }
+      },
+      "runtimeDeployment": {
+        "receiverImage": "sha256:30166444e84946b5d8150a806d8af5054eb18990649683ccbf54b19cfd0ed57b",
+        "normalizerImage": "sha256:30166444e84946b5d8150a806d8af5054eb18990649683ccbf54b19cfd0ed57b",
+        "bffImage": "sha256:19e43d8dfb72b4c15f02fb1e7ca770ed66500f8f4ab9a612c5942073beec280a",
+        "composeProject": "dm-gov-saude-sus-analytics-sync",
+        "receiverHealth": "healthy",
+        "normalizerHealth": "healthy",
+        "healthz": "ok",
+        "readyz": "ok",
+        "pendingChunks": 0,
+        "pendingRows": 0,
+        "agentService": "Stopped"
+      },
+      "status": "ACTIVE_AND_PROVEN_EXACT_SCOPE",
+      "provenScope": {
+        "competence": "2026-04-01",
+        "ine": "0000181552",
+        "cnes": "3656543",
+        "M1": {
+          "sourceSnapshotHash": "0ae5bd6031eb2352a5d3c567e0fc2f1f24e412d9d375ff8e557649963276d372",
+          "numerator": 387,
+          "denominator": 320,
+          "metric": 1.209375,
+          "classification": "SUFFICIENT",
+          "lineageSources": 9,
+          "cutoverDecision": "READY_FOR_REVIEW"
+        },
+        "M2": {
+          "sourceSnapshotHash": "e79912ba5b76d6fa2724580a599a3cf7def2192ebeb925c37768688e8609090e",
+          "numerator": 3,
+          "denominator": 410,
+          "metric": 0.731707,
+          "classification": "REGULAR",
+          "lineageSources": 14,
+          "cutoverDecision": "READY_FOR_REVIEW"
+        }
+      }
+    },
+    "dentalSourceProbe": {
+      "mode": "REAL_SOURCE_AND_PERSISTED_FAIL_CLOSED_CORRECTION",
+      "tenant": "dm-technology-master",
+      "municipality": "2902906",
+      "competence": "2026-04-01",
+      "period": {
+        "start": "2026-01-01",
+        "end": "2026-04-30"
+      },
+      "b2Period": {
+        "start": "2026-04-01",
+        "end": "2026-04-30",
+        "lookbackStart": "2025-04-01",
+        "lookbackEnd": "2026-04-30"
+      },
+      "b1Period": {
+        "start": "2026-04-01",
+        "end": "2026-04-30",
+        "lookbackStart": "2025-04-01",
+        "lookbackEnd": "2026-04-30"
+      },
+      "scope": {
+        "ine": "0001823299",
+        "cnes": "2402734",
+        "teamRef": "21",
+        "unitRef": "7"
+      },
+      "clinicalSources": {
+        "tb_dim_procedimento": {
+          "rows": 1095,
+          "fullSnapshotComplete": true
+        },
+        "tb_fat_atend_odonto_proced": {
+          "rows": 169011,
+          "chunks": "34/34",
+          "fullSnapshotComplete": true,
+          "cursorConverged": true,
+          "fullSyncCompletedAt": "2026-07-25T18:59:52.547Z"
+        },
+        "missingColumns": [],
+        "missingSources": []
+      },
+      "teamAuthority": {
+        "scnesTeamType": 71,
+        "scnesTeamSubtype": "01",
+        "esbWeeklyHours": 40,
+        "ministryHomologated": true,
+        "linkPattern": null,
+        "status": "BLOCKED",
+        "reasonCodes": ["DENTAL_LINKAGE_EVIDENCE_MISSING"],
+        "sourceSha256": "17a6db04f1920da8f12f3f7c5ddd6a6b321c97ed35958ba2e54c0f63209daee4",
+        "recordSha256": "3a38172300e37d12c67d966479849da704ea35dc0dc57c2140a3cd23835b29bb"
+      },
+      "migrations": {
+        "readModels": {
+          "version": "0010_dental_read_models",
+          "sha256": "984ffdb1a136f9b609e0769afef18e411fd258764e1c3c3c2d3e931a5c769bca"
+        },
+        "teamAuthority": {
+          "version": "0011_dental_team_authority",
+          "sha256": "258275e41527df299159eb8fe32ae70841d61e849edc358ce02336dd01487e4a"
+        },
+        "b2ReadModel": {
+          "version": "0012_b2_read_model",
+          "sha256": "e1c037a144e32bea3ce535a89313e4946857c61877883e8cff98e9d1c40755ab",
+          "applied": true
+        },
+        "b1ReadModel": {
+          "version": "0013_b1_read_model",
+          "sha256": "f02aebe71c82859168419ef59a2e8a27f1ce7c97953f3601e4acdfd24b3bf7cc",
+          "applied": true,
+          "rollbackConstraintDifferences": 0
+        },
+        "b4ReadModel": {
+          "version": "0014_b4_read_model",
+          "sha256": "91255f2eccb670a345af5e4652fa43d87e6e2e30b8947f0249c564ee210fff1b",
+          "applied": true,
+          "rollbackConstraintDifferences": 0,
+          "rollbackIndexesRemaining": 0
+        }
+      },
+      "manifestBinding": {
+        "total": 3,
+        "authorityBound": 0
+      },
+      "runtimeDeployment": {
+        "registryVersion": "b360-rust-authority-v6",
+        "bffImage": "sha256:19bfb6b5c7174fb33db23978ea2b45d497ec3eaa30cb3264f7ea02d859229472",
+        "composeProject": "dm-gov-saude-sus-analytics-sync",
+        "health": "healthy",
+        "healthz": "ok",
+        "readyz": "ok",
+        "agentService": "Stopped",
+        "flagsAfterProof": {
+          "B1": false,
+          "B3": false,
+          "B5": false,
+          "B6": false,
+          "M1": true,
+          "M2": true
+        },
+        "flagsTrueProbe": {
+          "registryState": "READINESS_REQUIRED",
+          "aggregateHttpStatus": 412,
+          "errorCode": "B360_RUST_READINESS_REQUIRED"
+        }
+      },
+      "status": "BLOQUEADO_POR_FONTE",
+      "historicalResults": {
+        "B1": {
+          "candidateNumerator": 34,
+          "denominator": null,
+          "metric": null,
+          "resultStatus": "BLOCKED_BY_SOURCE",
+          "qualityStatus": "BLOCKED",
+          "freshnessStatus": "BLOCKED",
+          "lineageSources": 9,
+          "goldenStatus": "ABSENT",
+          "parityStatus": "ABSENT",
+          "currentCutoverDecision": "NOT_ELIGIBLE",
+          "reasonCodes": [
+            "B1_FIRST_CONSULTATION_PROCEDURE_MISSING",
+            "DENTAL_LINKAGE_EVIDENCE_MISSING",
+            "SOURCE_SNAPSHOT_OPEN:tb_fat_cad_individual",
+            "SOURCE_TEAM_ELIGIBILITY_INCOMPLETE"
+          ],
+          "materializationDurationMs": 25112
+        },
+        "B2": {
+          "numerator": 19,
+          "denominator": 34,
+          "metric": 55.882353,
+          "resultStatus": "BLOCKED_BY_SOURCE",
+          "qualityStatus": "BLOCKED",
+          "freshnessStatus": "BLOCKED",
+          "lineageSources": 8,
+          "goldenStatus": "ABSENT",
+          "parityStatus": "ABSENT",
+          "currentCutoverDecision": "NOT_ELIGIBLE",
+          "reasonCodes": [
+            "B2_FIRST_CONSULTATION_PROCEDURE_MISSING",
+            "DENTAL_LINKAGE_EVIDENCE_MISSING",
+            "SOURCE_TEAM_ELIGIBILITY_INCOMPLETE"
+          ],
+          "materializationDurationMs": 25377
+        },
+        "B4": {
+          "candidateNumerator": 0,
+          "denominator": null,
+          "metric": null,
+          "resultStatus": "BLOCKED_BY_SOURCE",
+          "qualityStatus": "BLOCKED",
+          "freshnessStatus": "BLOCKED",
+          "lineageSources": 11,
+          "goldenStatus": "ABSENT",
+          "parityStatus": "ABSENT",
+          "currentCutoverDecision": "NOT_ELIGIBLE",
+          "reasonCodes": [
+            "B4_PARTICIPANT_CNS_MISSING",
+            "B4_SUPERVISED_BRUSHING_PROCEDURE_MISSING",
+            "DENTAL_LINKAGE_EVIDENCE_MISSING",
+            "SOURCE_SNAPSHOT_OPEN:tb_fat_atvdd_coletiva_ext",
+            "SOURCE_SNAPSHOT_OPEN:tb_fat_cad_individual",
+            "SOURCE_SNAPSHOT_OPEN:tb_fat_cidadao_pec",
+            "SOURCE_TEAM_ELIGIBILITY_INCOMPLETE"
+          ],
+          "materializationDurationMs": 791
+        },
+        "B3": {
+          "numerator": 108,
+          "denominator": 986,
+          "metric": 10.953347,
+          "goldenStatus": "MATCH",
+          "parityStatus": "MATCH",
+          "readiness": "0/1",
+          "currentCutoverDecision": "BLOCKED"
+        },
+        "B5": {
+          "numerator": 632,
+          "denominator": 1447,
+          "metric": 43.676572,
+          "goldenStatus": "MATCH",
+          "parityStatus": "MATCH",
+          "readiness": "0/1",
+          "currentCutoverDecision": "BLOCKED"
+        },
+        "B6": {
+          "numerator": 12,
+          "denominator": 346,
+          "metric": 3.468208,
+          "goldenStatus": "MATCH",
+          "parityStatus": "MATCH",
+          "readiness": "0/1",
+          "currentCutoverDecision": "BLOCKED"
+        }
+      }
+    },
+    "persistedEvidence": {
+      "B1": {
+        "calculationRuns": 1,
+        "indicatorResults": 1,
+        "resultId": "93a9406f-06dc-43a5-ba3b-c615141eb79e",
+        "runId": "30683056-631f-4606-8100-d0d4fa72ebd7",
+        "resultHash": "bdec41b8c62e81e344a83ebcd337821e18e253452cc825d7b13bb3c61e07c4dd",
+        "resultStatus": "BLOCKED_BY_SOURCE",
+        "qualityStatus": "BLOCKED",
+        "freshnessStatus": "BLOCKED",
+        "resultLineage": 9,
+        "sourceManifests": 0,
+        "goldenBaselines": 0,
+        "dualRunComparisons": 0,
+        "cutoverAudits": 0,
+        "replayTerminal": true,
+        "activationState": "NOT_REGISTERED_IN_BFF",
+        "reasonCodes": [
+          "B1_FIRST_CONSULTATION_PROCEDURE_MISSING",
+          "DENTAL_LINKAGE_EVIDENCE_MISSING",
+          "SOURCE_SNAPSHOT_OPEN:tb_fat_cad_individual",
+          "SOURCE_TEAM_ELIGIBILITY_INCOMPLETE"
+        ]
+      },
+      "B2": {
+        "calculationRuns": 1,
+        "indicatorResults": 1,
+        "resultId": "59f906df-6c28-4347-aef2-aebd4a6f54f8",
+        "runId": "d4ecd47f-99de-46b2-a98d-0485d907ad57",
+        "resultHash": "fcdeabad766fe65157c25dc0f583918348e8be4d6543b1b5f750bed87541d9c8",
+        "resultStatus": "BLOCKED_BY_SOURCE",
+        "qualityStatus": "BLOCKED",
+        "freshnessStatus": "BLOCKED",
+        "resultLineage": 8,
+        "sourceManifests": 0,
+        "goldenBaselines": 0,
+        "dualRunComparisons": 0,
+        "cutoverAudits": 0,
+        "replayTerminal": true,
+        "activationState": "NOT_REGISTERED_IN_BFF",
+          "reasonCodes": [
+            "B2_FIRST_CONSULTATION_PROCEDURE_MISSING",
+            "DENTAL_LINKAGE_EVIDENCE_MISSING",
+            "SOURCE_TEAM_ELIGIBILITY_INCOMPLETE"
+          ]
+        },
+      "B4": {
+        "calculationRuns": 1,
+        "indicatorResults": 1,
+        "resultId": "8b3a8bcd-b4e1-438e-a8af-08f5f46de174",
+        "runId": "fc065d75-04cd-4331-8b5d-01c00266e5f9",
+        "resultHash": "85ed795b3e55b3ddc5e34f8fb11e7435363bc791bdabf5a263e6a73403a44985",
+        "resultStatus": "BLOCKED_BY_SOURCE",
+        "qualityStatus": "BLOCKED",
+        "freshnessStatus": "BLOCKED",
+        "resultLineage": 11,
+        "sourceManifests": 0,
+        "goldenBaselines": 0,
+        "dualRunComparisons": 0,
+        "cutoverAudits": 0,
+        "replayTerminal": true,
+        "activationState": "NOT_REGISTERED_IN_BFF",
+        "reasonCodes": [
+          "B4_PARTICIPANT_CNS_MISSING",
+          "B4_SUPERVISED_BRUSHING_PROCEDURE_MISSING",
+          "DENTAL_LINKAGE_EVIDENCE_MISSING",
+          "SOURCE_SNAPSHOT_OPEN:tb_fat_atvdd_coletiva_ext",
+          "SOURCE_SNAPSHOT_OPEN:tb_fat_cad_individual",
+          "SOURCE_SNAPSHOT_OPEN:tb_fat_cidadao_pec",
+          "SOURCE_TEAM_ELIGIBILITY_INCOMPLETE"
+        ]
+      },
+      "B3": {
+        "calculationRuns": 1,
+        "indicatorResults": 1,
+        "sourceManifests": 1,
+        "authorityBoundManifests": 0,
+        "goldenBaselines": 1,
+        "dualRunComparisons": 1,
+        "cutoverAudits": 2,
+        "currentDecision": "BLOCKED",
+        "goldenStatus": "MATCH",
+        "parityStatus": "MATCH",
+        "activationState": "CONFIG_DISABLED",
+        "readinessIfFlagsEnabled": "READINESS_REQUIRED",
+        "reasonCodes": ["DENTAL_LINKAGE_EVIDENCE_MISSING", "SOURCE_CONTRACT_BLOCKED", "SOURCE_TEAM_ELIGIBILITY_INCOMPLETE"]
+      },
+      "B5": {
+        "calculationRuns": 1,
+        "indicatorResults": 1,
+        "sourceManifests": 1,
+        "authorityBoundManifests": 0,
+        "goldenBaselines": 1,
+        "dualRunComparisons": 1,
+        "cutoverAudits": 2,
+        "currentDecision": "BLOCKED",
+        "goldenStatus": "MATCH",
+        "parityStatus": "MATCH",
+        "activationState": "CONFIG_DISABLED",
+        "readinessIfFlagsEnabled": "READINESS_REQUIRED",
+        "reasonCodes": ["DENTAL_LINKAGE_EVIDENCE_MISSING", "SOURCE_CONTRACT_BLOCKED", "SOURCE_TEAM_ELIGIBILITY_INCOMPLETE"]
+      },
+      "B6": {
+        "calculationRuns": 1,
+        "indicatorResults": 1,
+        "sourceManifests": 1,
+        "authorityBoundManifests": 0,
+        "goldenBaselines": 1,
+        "dualRunComparisons": 1,
+        "cutoverAudits": 2,
+        "currentDecision": "BLOCKED",
+        "goldenStatus": "MATCH",
+        "parityStatus": "MATCH",
+        "activationState": "CONFIG_DISABLED",
+        "readinessIfFlagsEnabled": "READINESS_REQUIRED",
+        "reasonCodes": ["DENTAL_LINKAGE_EVIDENCE_MISSING", "SOURCE_CONTRACT_BLOCKED", "SOURCE_TEAM_ELIGIBILITY_INCOMPLETE"]
+      },
+      "C1": {
+        "calculationRuns": 1,
+        "indicatorResults": 1,
+        "resultId": "0d34227c-9b20-4499-9b3c-14cb51dd0e37",
+        "runId": "4d481a94-83ff-480b-8fd4-5aab54f77552",
+        "resultHash": "fb942fdefd31f8e139f222f589c3a6f1a58d13d2e91f6796c0974b1ffc991066",
+        "resultStatus": "BLOCKED_BY_SOURCE",
+        "qualityStatus": "BLOCKED",
+        "freshnessStatus": "STALE",
+        "resultLineage": 8,
+        "sourceManifests": 1,
+        "goldenBaselines": 0,
+        "dualRunComparisons": 0,
+        "cutoverAudits": 0,
+        "replayTerminal": true,
+        "activationState": "CONFIG_DISABLED",
+        "reasonCodes": [
+          "SOURCE_SNAPSHOT_OPEN",
+          "SOURCE_STALE",
+          "SOURCE_TOMBSTONES_INCOMPLETE"
+        ]
+      },
+      "C2": {
+        "calculationRuns": 1,
+        "indicatorResults": 1,
+        "resultId": "850e3bab-f411-4538-b2e6-164579353d1f",
+        "runId": "97790aa8-5210-4bb5-a056-adabb3868f6d",
+        "resultHash": "765cf1fceba5ea72e9e5c23ecf589d98d1687579cc9a51bbe1ea428cba0d9283",
+        "sourceManifests": 1,
+        "goldenBaselines": 0,
+        "dualRunComparisons": 0,
+        "cutoverAudits": 0,
+        "resultStatus": "BLOCKED_BY_SOURCE",
+        "qualityStatus": "BLOCKED",
+        "freshnessStatus": "STALE",
+        "resultLineage": 10,
+        "replayTerminal": true,
+        "activationState": "CONFIG_DISABLED",
+        "reasonCodes": [
+          "SOURCE_CADSUS_DEATH_INCOMPLETE",
+          "SOURCE_CONTRACT_MISMATCH",
+          "SOURCE_MIAC_INCOMPLETE",
+          "SOURCE_MIP_INCOMPLETE",
+          "SOURCE_MIV_INCOMPLETE",
+          "SOURCE_PROJECTION_INVALID",
+          "SOURCE_PUERICULTURA_MISSING",
+          "SOURCE_RIA_INCOMPLETE",
+          "SOURCE_SNAPSHOT_OPEN",
+          "SOURCE_STALE",
+          "SOURCE_TEAM_LIFECYCLE_INCOMPLETE",
+          "SOURCE_TOMBSTONES_INCOMPLETE"
+        ]
+      },
+      "C3": {
+        "calculationRuns": 1,
+        "indicatorResults": 1,
+        "resultId": "8233f8d5-e8b4-451a-aad6-8f1b1dc04de3",
+        "runId": "8cea5328-946d-4dfa-a3be-1597887b6f0e",
+        "resultHash": "4a7d66e63feea301748b9c1ce0d4b3c296fe54d3cf343aff42423b62553a5005",
+        "resultStatus": "BLOCKED_BY_SOURCE",
+        "qualityStatus": "BLOCKED",
+        "freshnessStatus": "UNKNOWN",
+        "resultLineage": 21,
+        "sourceManifests": 0,
+        "goldenBaselines": 0,
+        "dualRunComparisons": 0,
+        "cutoverAudits": 0,
+        "replayTerminal": true,
+        "activationState": "NOT_REGISTERED_IN_BFF"
+      },
+      "C4": {
+        "calculationRuns": 1,
+        "indicatorResults": 1,
+        "resultId": "37b1c60b-1c17-4128-8c98-2ed05789992d",
+        "runId": "23d37b73-ae85-4889-a009-84147d2820f4",
+        "resultHash": "c2470411524c9d1e729ca91ec1eedfd66db87535ae97ae2901cbf30390583d4b",
+        "resultStatus": "BLOCKED_BY_SOURCE",
+        "qualityStatus": "BLOCKED",
+        "freshnessStatus": "UNKNOWN",
+        "resultLineage": 20,
+        "sourceManifests": 0,
+        "goldenBaselines": 0,
+        "dualRunComparisons": 0,
+        "cutoverAudits": 0,
+        "replayTerminal": true,
+        "activationState": "NOT_REGISTERED_IN_BFF"
+      },
+      "C6": {
+        "calculationRuns": 1,
+        "indicatorResults": 1,
+        "resultId": "31eee695-770e-43a8-aae4-0d8ab8ecadc3",
+        "runId": "b8d789e1-b8f7-45b7-b8b0-8d5298b32f4c",
+        "resultHash": "3385e5fb4aaf1b5e7225663a38e90038892dcf8c9406176ea4e9d73f17a8e99f",
+        "resultStatus": "BLOCKED_BY_SOURCE",
+        "qualityStatus": "BLOCKED",
+        "freshnessStatus": "UNKNOWN",
+        "resultLineage": 19,
+        "sourceManifests": 0,
+        "goldenBaselines": 0,
+        "dualRunComparisons": 0,
+        "cutoverAudits": 0,
+        "replayTerminal": true,
+        "activationState": "NOT_REGISTERED_IN_BFF"
+      },
+      "C7": {
+        "calculationRuns": 1,
+        "indicatorResults": 1,
+        "resultId": "ff493328-d758-419d-9898-55bdfaea919c",
+        "runId": "d284cab8-938f-46e4-b53a-99d6d22c6ca3",
+        "resultHash": "12438411106820be17557d394e04a7b0f2665829463bd9e20d68d8278ae23c23",
+        "resultStatus": "BLOCKED_BY_SOURCE",
+        "qualityStatus": "BLOCKED",
+        "freshnessStatus": "UNKNOWN",
+        "resultLineage": 14,
+        "sourceManifests": 0,
+        "goldenBaselines": 0,
+        "dualRunComparisons": 0,
+        "cutoverAudits": 0,
+        "replayTerminal": true,
+        "activationState": "NOT_REGISTERED_IN_BFF"
+      },
+      "M1": {
+        "calculationRuns": 1,
+        "indicatorResults": 1,
+        "sourceManifests": 1,
+        "goldenBaselines": 1,
+        "dualRunComparisons": 1,
+        "cutoverAudits": 2,
+        "currentDecision": "READY_FOR_REVIEW",
+        "goldenStatus": "MATCH",
+        "parityStatus": "MATCH",
+        "activationState": "ACTIVE"
+      },
+      "M2": {
+        "calculationRuns": 1,
+        "indicatorResults": 1,
+        "sourceManifests": 1,
+        "goldenBaselines": 1,
+        "dualRunComparisons": 1,
+        "cutoverAudits": 3,
+        "currentDecision": "READY_FOR_REVIEW",
+        "goldenStatus": "MATCH",
+        "parityStatus": "MATCH",
+        "activationState": "ACTIVE"
+      }
+    },
+    "normalizerService": "RUST_ACTIVE_HEALTHY_WITH_COMPOSE_PROVENANCE",
+    "nodeMetricsEndpoint": "ABSENT_RETURNS_FRONTEND_HTML"
+  },
+  "indicators": [
+    {
+      "indicator": "B1",
+      "officialRule": "Nota Metodológica B1, SEI 0054640774",
+      "version": "B1@2026.5 / schema 1",
+      "sources": "8 fontes normalizadas fechadas; tb_fat_cad_individual com snapshot aberto, eSB 40h homologada sem vínculo oficial exato e uma primeira consulta sem SIGTAP 0301010153",
+      "rust": "IMPLEMENTADO_NO_SOURCE: contrato tipado, deduplicação pessoa+dentista em 12 meses, vínculo SCNES/eGestor fail-closed, cálculo set-based, idempotência, read model e linhagem",
+      "typescript": "Fallback legado bloqueado pelo registry v7; BFF e navegador somente consomem o read model Rust persistido",
+      "readModel": "BLOCKED_BY_SOURCE persistido: numerador candidato 34, denominador indisponível, 9 fontes de linhagem; replay idempotente",
+      "golden": "AUSENTE",
+      "dualRun": "AUSENTE",
+      "realRuntime": "Materialização Rust real concluída em 25.112 ms e bloqueada fail-closed pelos quatro motivos de fonte",
+      "panel": "Registry v7 fail-closed; B1 não exibe valor numérico enquanto fonte, golden, paridade e cutover estiverem pendentes",
+      "status": "BLOQUEADO_POR_FONTE"
+    },
+    {
+      "indicator": "B2",
+      "officialRule": "Nota Metodológica B2, SEI 0054640775",
+      "version": "B2@2026.5 / schema 1",
+      "sources": "8/8 fontes normalizadas e completas; eSB 40h homologada sem vínculo oficial exato, e uma primeira consulta histórica sem o SIGTAP oficial 0301010153",
+      "rust": "IMPLEMENTADO_NO_SOURCE: contrato tipado, deduplicação pessoa+dentista em 12 meses, fluxos mensais independentes, cálculo set-based, idempotência, read model e linhagem",
+      "typescript": "Fallback legado bloqueado pelo registry v7; BFF e navegador somente consomem o read model Rust persistido",
+      "readModel": "BLOCKED_BY_SOURCE persistido: 19/34 = 55,882353%, 8 fontes de linhagem; replay idempotente",
+      "golden": "AUSENTE",
+      "dualRun": "AUSENTE",
+      "realRuntime": "Materialização Rust real concluída em 25.377 ms e bloqueada fail-closed pelos três motivos de fonte",
+      "panel": "Registry v7 fail-closed; B2 não exibe valor numérico enquanto fonte, golden, paridade e cutover estiverem pendentes",
+      "status": "BLOQUEADO_POR_FONTE"
+    },
+    {
+      "indicator": "B3",
+      "officialRule": "Nota Metodológica B3, SEI 0054640777",
+      "version": "B3@2026.5 / schema 1",
+      "sources": "Fatos clínicos completos; SCNES/eGestor confirmam eSB 40h homologada, mas não fornecem o vínculo oficial exato eSB→eSF/eAP",
+      "rust": "IMPLEMENTADO_NO_SOURCE: cálculo set-based, snapshot, idempotência e linhagem; migration 0011 e registry v7 bloqueiam ausência de autoridade de equipe",
+      "typescript": "Fallback legado bloqueado pelo registry v7; BFF e navegador somente consomem o read model Rust persistido",
+      "readModel": "Resultado histórico READY 108/986; gate de equipe retorna 0/1 comprovado e evidenceVersion nulo",
+      "golden": "MATCH histórico; bundle anterior não satisfaz o contrato de fonte 0011",
+      "dualRun": "MATCH histórico; não supera DENTAL_LINKAGE_EVIDENCE_MISSING",
+      "realRuntime": "Flags desligadas; prova com flags true retornou HTTP 412 B360_RUST_READINESS_REQUIRED",
+      "panel": "Registry v7 mantém o valor bloqueado; nenhum resultado histórico é liberado sem readiness atual",
+      "status": "BLOQUEADO_POR_FONTE"
+    },
+    {
+      "indicator": "B4",
+      "officialRule": "Nota Metodológica B4, SEI 0054640778",
+      "version": "B4@2026.5 / schema 1",
+      "sources": "11 fontes normalizadas; três snapshots abertos, 116 participantes sem CNS, 13 ações sem SIGTAP 0101020031 e vínculo oficial eSB→eSF/eAP ausente",
+      "rust": "IMPLEMENTADO_NO_SOURCE: contrato tipado mensal, tipo coletivo 6, prática 04, SIGTAP, CBO/CNS, idade no evento, vínculo NT30/2025, cálculo set-based, idempotência, read model e linhagem",
+      "typescript": "Fallback legado bloqueado pelo registry v7; BFF e navegador somente consomem o read model Rust persistido",
+      "readModel": "BLOCKED_BY_SOURCE persistido: numerador candidato 0, denominador indisponível, 11 fontes de linhagem; replay idempotente",
+      "golden": "AUSENTE",
+      "dualRun": "AUSENTE",
+      "realRuntime": "Materialização Rust real concluída em 791 ms após os índices; 14 eventos, 13 práticas, 152 participantes e sete bloqueios fail-closed",
+      "panel": "Registry v7 fail-closed; B4 não exibe valor numérico enquanto fonte, golden, paridade e cutover estiverem pendentes",
+      "status": "BLOQUEADO_POR_FONTE"
+    },
+    {
+      "indicator": "B5",
+      "officialRule": "Nota Metodológica B5, SEI 0054640779",
+      "version": "B5@2026.5 / schema 1",
+      "sources": "Fatos clínicos completos; SCNES/eGestor confirmam eSB 40h homologada, mas não fornecem o vínculo oficial exato eSB→eSF/eAP",
+      "rust": "IMPLEMENTADO_NO_SOURCE: cálculo set-based, snapshot, idempotência e linhagem; migration 0011 e registry v7 bloqueiam ausência de autoridade de equipe",
+      "typescript": "Fallback legado bloqueado pelo registry v7; BFF e navegador somente consomem o read model Rust persistido",
+      "readModel": "Resultado histórico READY 632/1.447; gate de equipe retorna 0/1 comprovado e evidenceVersion nulo",
+      "golden": "MATCH histórico; bundle anterior não satisfaz o contrato de fonte 0011",
+      "dualRun": "MATCH histórico; não supera DENTAL_LINKAGE_EVIDENCE_MISSING",
+      "realRuntime": "Flags desligadas; prova com flags true retornou HTTP 412 B360_RUST_READINESS_REQUIRED",
+      "panel": "Registry v7 mantém o valor bloqueado; nenhum resultado histórico é liberado sem readiness atual",
+      "status": "BLOQUEADO_POR_FONTE"
+    },
+    {
+      "indicator": "B6",
+      "officialRule": "Nota Metodológica B6, SEI 0054640781",
+      "version": "B6@2026.5 / schema 1",
+      "sources": "Fatos clínicos completos; SCNES/eGestor confirmam eSB 40h homologada, mas não fornecem o vínculo oficial exato eSB→eSF/eAP",
+      "rust": "IMPLEMENTADO_NO_SOURCE: cálculo set-based, snapshot, idempotência e linhagem; migration 0011 e registry v7 bloqueiam ausência de autoridade de equipe",
+      "typescript": "Fallback legado bloqueado pelo registry v7; BFF e navegador somente consomem o read model Rust persistido",
+      "readModel": "Resultado histórico READY 12/346; gate de equipe retorna 0/1 comprovado e evidenceVersion nulo",
+      "golden": "MATCH histórico; bundle anterior não satisfaz o contrato de fonte 0011",
+      "dualRun": "MATCH histórico; não supera DENTAL_LINKAGE_EVIDENCE_MISSING",
+      "realRuntime": "Flags desligadas; prova com flags true retornou HTTP 412 B360_RUST_READINESS_REQUIRED",
+      "panel": "Registry v7 mantém o valor bloqueado; nenhum resultado histórico é liberado sem readiness atual",
+      "status": "BLOQUEADO_POR_FONTE"
+    },
+    {
+      "indicator": "C1",
+      "officialRule": "Nota Metodológica C1, SEI 0054814890",
+      "version": "C1@2026.4 / schema 1",
+      "sources": "PDF oficial com SHA-256 verificado; contratos de fonte e qualidade de datas READY no banco real (12/12 índices, 13 projeções/11 fontes)",
+      "rust": "IMPLEMENTADO_NO_SOURCE",
+      "typescript": "Fallback C1@2026.2 bloqueado pelo registry v7; BFF e navegador somente consomem o read model Rust persistido",
+      "readModel": "Um manifesto com 805 atendimentos e um resultado BLOCKED_BY_SOURCE persistidos; numerador, denominador e métrica nulos",
+      "golden": "Framework existe; zero baselines persistidas",
+      "dualRun": "Framework existe; zero comparações persistidas",
+      "realRuntime": "Snapshot e resultado persistidos no escopo canônico; 8 entradas de linhagem; replay idempotente preservou run/result IDs; bloqueado por snapshot aberto, freshness e tombstones",
+      "panel": "Registry v7 fail-closed; C1 permanece visível sem valor numérico enquanto os gates de fonte estiverem bloqueados",
+      "status": "BLOQUEADO_POR_FONTE"
+    },
+    {
+      "indicator": "C2",
+      "officialRule": "Nota Metodológica C2, SEI 0054824593",
+      "version": "C2@2026.4 / schema 1",
+      "sources": "PDF oficial com SHA-256 verificado; contratos de fonte e qualidade de datas READY no banco real (12/12 índices, 13 projeções/11 fontes)",
+      "rust": "IMPLEMENTADO_NO_SOURCE",
+      "typescript": "Fallback C2@B360-2026.3 bloqueado pelo registry v7; BFF e navegador somente consomem o read model Rust persistido",
+      "readModel": "Um manifesto com 2.556 linhas tipadas e um resultado BLOCKED_BY_SOURCE persistidos; numerador, denominador e métrica nulos",
+      "golden": "Framework existe; zero baselines persistidas",
+      "dualRun": "Framework existe; zero comparações persistidas",
+      "realRuntime": "Snapshot e resultado persistidos após recorte set-based; 10 entradas de linhagem; replay idempotente preservou run/result IDs; 76 crianças sem linked_at confirmam a lacuna de lifecycle",
+      "panel": "Registry v7 fail-closed; C2 permanece visível sem valor numérico enquanto os gates de fonte estiverem bloqueados",
+      "status": "BLOQUEADO_POR_FONTE"
+    },
+    {
+      "indicator": "C3",
+      "officialRule": "Nota Metodológica C3, SEI 0054619475",
+      "version": "C3@2026.6 / schema 1",
+      "sources": "PDF oficial com SHA-256 verificado; contrato fail-closed exige 21 fontes tipadas e oito snapshots ainda estão abertos",
+      "rust": "IMPLEMENTADO_NO_SOURCE: coorte gestacional por episódios de DUM, exclusões, CNS/CBO, práticas A-K set-based, agregado e classificação",
+      "typescript": "Fallback legado bloqueado pelo registry v7; BFF e navegador somente consomem o read model Rust persistido",
+      "readModel": "Migration 0015 aplicada; um resultado BLOCKED_BY_SOURCE com 21 linhas de linhagem",
+      "golden": "Contrato implementado; zero baselines clínicas reais",
+      "dualRun": "Contrato implementado; zero comparações reais",
+      "realRuntime": "Run 8cea5328-946d-4dfa-a3be-1597887b6f0e bloqueado por fonte, 273 ms no banco e replay terminal idempotente",
+      "panel": "Registry v7 fail-closed; C3 não exibe valor numérico enquanto fonte, golden, paridade e cutover estiverem pendentes",
+      "status": "BLOQUEADO_POR_FONTE"
+    },
+    {
+      "indicator": "C4",
+      "officialRule": "Nota Metodológica C4, SEI 0055986848",
+      "version": "C4@2026.6 / schema 1",
+      "sources": "PDF oficial com SHA-256 verificado; contrato fail-closed exige 20 fontes tipadas e oito snapshots ainda estão abertos",
+      "rust": "IMPLEMENTADO_NO_SOURCE: coorte de diabetes ativa desde 2013, exclusões cadastrais, CNS/CBO, práticas A-F set-based, exceção eAP, agregado e classificação",
+      "typescript": "Fallback legado bloqueado pelo registry v7; BFF e navegador somente consomem o read model Rust persistido",
+      "readModel": "Migration 0016 aplicada; um resultado BLOCKED_BY_SOURCE com 20 linhas de linhagem",
+      "golden": "Contrato implementado; zero baselines clínicas reais",
+      "dualRun": "Contrato implementado; zero comparações reais",
+      "realRuntime": "Run 23d37b73-ae85-4889-a009-84147d2820f4 bloqueado por fonte, 272 ms no banco e replay terminal idempotente",
+      "panel": "Registry v7 fail-closed; C4 não exibe valor numérico enquanto fonte, golden, paridade e cutover estiverem pendentes",
+      "status": "BLOQUEADO_POR_FONTE"
+    },
+    {
+      "indicator": "C5",
+      "officialRule": "Nota Metodológica C5, SEI 0056042518",
+      "version": "C5@2026.6 / schema 1",
+      "sources": "PDF oficial com SHA-256 verificado; contrato fail-closed exige 19 fontes tipadas, oito snapshots estão abertos e o campo coletivo de pressão não está materializado",
+      "rust": "IMPLEMENTADO_NO_SOURCE: coorte de hipertensão ativa desde 2013, exclusões cadastrais, CNS/CBO, práticas A-D set-based, exceção eAP, agregado e classificação",
+      "typescript": "Fallback legado bloqueado pelo registry v7; BFF e navegador somente consomem o read model Rust persistido",
+      "readModel": "Migration 0017 aplicada; um resultado BLOCKED_BY_SOURCE com 19 linhas de linhagem",
+      "golden": "Contrato implementado; zero baselines clínicas reais",
+      "dualRun": "Contrato implementado; zero comparações reais",
+      "realRuntime": "Run d8ef8faf-5895-4beb-93bc-21eb377099c2 bloqueado por fonte e replay terminal idempotente em 137 ms",
+      "panel": "Registry v7 fail-closed; C5 não exibe valor numérico enquanto fonte, golden, paridade e cutover estiverem pendentes",
+      "status": "BLOQUEADO_POR_FONTE"
+    },
+    {
+      "indicator": "C6",
+      "officialRule": "Nota Metodológica C6, SEI 0056053813",
+      "version": "C6@2026.6 / schema 1",
+      "sources": "PDF oficial com SHA-256 verificado; contrato fail-closed exige 19 fontes tipadas e oito snapshots ainda estão abertos",
+      "rust": "IMPLEMENTADO_NO_SOURCE: coorte etária 60+, exclusões cadastrais, CNS/CBO, práticas A-D set-based, antropometria no mesmo dia, influenza 33/77, exceção eAP, agregado e classificação",
+      "typescript": "Fallback C6@2026.1 bloqueado pelo registry v7; BFF e navegador somente consomem o read model Rust persistido",
+      "readModel": "Migration 0018 aplicada; um resultado BLOCKED_BY_SOURCE com 19 linhas de linhagem",
+      "golden": "Contrato implementado; zero baselines clínicas reais",
+      "dualRun": "Contrato implementado; zero comparações reais",
+      "realRuntime": "Run b8d789e1-b8f7-45b7-b8b0-8d5298b32f4c bloqueado por oito snapshots abertos, 270 ms no banco e replay terminal idempotente em 124 ms",
+      "panel": "Registry v7 fail-closed; C6 não exibe valor numérico enquanto fonte, golden, paridade e cutover estiverem pendentes",
+      "status": "BLOQUEADO_POR_FONTE"
+    },
+    {
+      "indicator": "C7",
+      "officialRule": "Nota Metodológica C7, SEI 0054641718",
+      "version": "C7@2026.6 / schema 1",
+      "sources": "PDF oficial com SHA-256 verificado; contrato fail-closed exige 14 fontes tipadas e seis snapshots ainda estão abertos",
+      "rust": "IMPLEMENTADO_NO_SOURCE: quatro coortes etárias e de sexo/gênero, pesos 20/30/30/20, janelas 12/24/36/60 meses, vacinação HPV por idade na aplicação, códigos oficiais e cálculo set-based",
+      "typescript": "Fallback C7@2026.1 bloqueado pelo registry v7; BFF e navegador somente consomem o read model Rust persistido",
+      "readModel": "Migration 0019 aplicada; um resultado BLOCKED_BY_SOURCE com 14 linhas de linhagem e tabela de componentes A-D",
+      "golden": "Contrato implementado; zero baselines clínicas reais",
+      "dualRun": "Contrato implementado; zero comparações reais",
+      "realRuntime": "Run d284cab8-938f-46e4-b53a-99d6d22c6ca3 bloqueado por seis snapshots abertos, 243 ms no banco e replay terminal idempotente",
+      "panel": "Registry v7 fail-closed; C7 não exibe valor numérico enquanto fonte, golden, paridade e cutover estiverem pendentes",
+      "status": "BLOQUEADO_POR_FONTE"
+    },
+    {
+      "indicator": "M1",
+      "officialRule": "Nota Metodológica M1, SEI 0055952286",
+      "version": "M1@2026.6 / schema 1",
+      "sources": "PDF oficial com SHA-256 verificado; contrato MIAI/MIAC/participantes/equipe fechado; catálogo PEC v3 sem campos ausentes e todas as 8 fontes M1 normalizadas com full snapshot e cursor convergente",
+      "rust": "IMPLEMENTADO_NO_SOURCE: ingestão, contrato de fonte, snapshot por conteúdo, cálculo set-based, idempotência, componentes, linhagem e materialização oficiais em Rust",
+      "typescript": "Fallback legado bloqueado pelo registry v7; BFF e navegador somente consomem o read model Rust persistido",
+      "readModel": "1 resultado READY persistido, 387/320 = 1.209375, SUFFICIENT",
+      "golden": "1 baseline clínico agregado validado; MATCH",
+      "dualRun": "1 comparação independente persistida; MATCH, deltas 0",
+      "realRuntime": "Flags ativas somente após readiness persistida; /healthz e /readyz OK; consulta materializada em 11 ms",
+      "panel": "Dashboard e detalhe autenticados: Rust M1@2026.6, janela 2026-01..2026-04, 387/320, 1.21, Dados validados",
+      "status": "ACTIVE_AND_PROVEN"
+    },
+    {
+      "indicator": "M2",
+      "officialRule": "Nota Metodológica M2, SEI 0055952438",
+      "version": "M2@2026.6 / schema 1",
+      "sources": "PDF oficial com SHA-256 verificado; catálogo PEC v3 sem campos ausentes e todas as 10 fontes M2 normalizadas com full snapshot e cursor convergente, incluindo MIAOI e cuidado compartilhado",
+      "rust": "IMPLEMENTADO_NO_SOURCE: ingestão, contrato de fonte, deduplicação, snapshot por conteúdo, cálculo set-based, idempotência, componentes, linhagem e materialização oficiais em Rust",
+      "typescript": "Fallback legado bloqueado pelo registry v7; BFF e navegador somente consomem o read model Rust persistido",
+      "readModel": "1 resultado READY persistido, 3/410 = 0.731707%, REGULAR",
+      "golden": "1 baseline clínico agregado validado; MATCH",
+      "dualRun": "1 comparação independente persistida; MATCH, deltas 0",
+      "realRuntime": "Flags ativas somente após readiness persistida; /healthz e /readyz OK; consulta materializada em 7 ms",
+      "panel": "Dashboard e detalhe autenticados: Rust M2@2026.6, janela 2026-01..2026-04, 3/410, 0.73%, Dados validados",
+      "status": "ACTIVE_AND_PROVEN"
+    },
+    {
+      "indicator": "CVAT1",
+      "officialRule": "Nota Técnica nº 30/2025, SEI 0049700833",
+      "version": "CVAT1@2025.1 / schema 1",
+      "sources": "7 fontes tipadas; tb_cidadao, tb_fat_cad_individual e tb_fat_cidadao_pec estão com snapshots abertos",
+      "rust": "IMPLEMENTADO_NO_SOURCE: contrato MICI válido, escopo INE/CNES sem misturar namespaces, exclusões territoriais, cálculo set-based, identidade de snapshot, idempotência e linhagem",
+      "typescript": "Fallback legado bloqueado pelo registry v7; BFF somente consome o read model Rust persistido",
+      "readModel": "BLOCKED_BY_SOURCE persistido, valores nulos, 7 fontes de linhagem; migration 0020 e índices 0021",
+      "golden": "AUSENTE",
+      "dualRun": "AUSENTE",
+      "realRuntime": "Materialização real bloqueada em 497 ms; replay idempotente comprovado pelo binário release",
+      "panel": "Não exposto no painel público; o BFF reserva CVAT1 ao Rust e permanece fail-closed sem os gates clínicos",
+      "status": "BLOQUEADO_POR_FONTE"
+    },
+    {
+      "indicator": "CVAT2",
+      "officialRule": "Nota Técnica nº 30/2025, SEI 0049700833",
+      "version": "CVAT2@2025.1 / schema 1",
+      "sources": "9 fontes tipadas; tb_cidadao, tb_fat_cad_individual, tb_fat_cidadao_pec, tb_fat_cad_dom_familia e tb_fat_cad_domiciliar estão abertos; payload MICDT corrente ainda não contém st_recusa_cadastro",
+      "rust": "IMPLEMENTADO_NO_SOURCE: vínculo MICI→responsável familiar→MICDT, validade inclusiva de 24 meses, ambiguidade fail-closed, cálculo set-based, identidade de snapshot, idempotência e linhagem",
+      "typescript": "Fallback legado bloqueado pelo registry v7; BFF somente consome o read model Rust persistido",
+      "readModel": "BLOCKED_BY_SOURCE persistido, valores nulos e 9 fontes de linhagem; migrations 0022/0023",
+      "golden": "AUSENTE",
+      "dualRun": "AUSENTE",
+      "realRuntime": "Materialização real bloqueada em 878 ms; sondagem agregada encontrou 1.626/2.370 em 15,3 s, sem promover o resultado",
+      "panel": "Não exposto no painel público; o BFF reserva CVAT2 ao Rust e permanece fail-closed sem os gates clínicos",
+      "status": "BLOQUEADO_POR_FONTE"
+    },
+    {
+      "indicator": "CVAT3",
+      "officialRule": "Nota Técnica nº 30/2025, SEI 0049700833",
+      "version": "CVAT3@2025.1 / schema 1",
+      "sources": "9 fontes tipadas compartilhadas com a cadeia cadastral; 5 snapshots abertos e st_recusa_cadastro ainda ausente do payload MICDT corrente",
+      "rust": "IMPLEMENTADO_NO_SOURCE: MICI e MICDT avaliados separadamente, última alteração do MICDT, janela inclusiva de 24 meses, ambiguidade fail-closed, cálculo set-based, snapshot, idempotência e linhagem",
+      "typescript": "Fallback legado bloqueado pelo registry v7; BFF somente consome o read model Rust persistido",
+      "readModel": "BLOCKED_BY_SOURCE persistido, valores nulos e 9 fontes de linhagem; migration 0024",
+      "golden": "AUSENTE",
+      "dualRun": "AUSENTE",
+      "realRuntime": "Materialização real bloqueada em 1.737 ms; sondagem separada encontrou MICI 1.690/2.365 e MICDT 1.792/2.360, sem promover o resultado",
+      "panel": "Não exposto no painel público; o BFF reserva CVAT3 ao Rust e permanece fail-closed sem os gates clínicos",
+      "status": "BLOQUEADO_POR_FONTE"
+    },
+    {
+      "indicator": "CVAT4",
+      "officialRule": "Nota Técnica nº 30/2025, SEI 0049700833",
+      "version": "CVAT4@2025.1 / schema 1",
+      "sources": "17 fontes tipadas cobrem MICI, identidade, escopo, CBO/profissional e MIAI/MIAOI/MIAC/MIMCA/MIVDT/MIV/MIP; 7 snapshots permanecem abertos",
+      "rust": "IMPLEMENTADO_NO_SOURCE: MICI válido, janela inclusiva de 12 meses, dois eventos lógicos, ao menos uma prática de cuidado, dimensões Siaps válidas, deduplicação por modelo+evento, cálculo set-based, idempotência e linhagem",
+      "typescript": "Fallback legado bloqueado pelo registry v7; BFF somente consome o read model Rust persistido",
+      "readModel": "BLOCKED_BY_SOURCE persistido, valores nulos e 17 fontes de linhagem; migration 0025",
+      "golden": "AUSENTE",
+      "dualRun": "AUSENTE",
+      "realRuntime": "Materialização real bloqueada em 398 ms; replay idempotente com os mesmos IDs",
+      "panel": "Não exposto no painel público; o BFF reserva CVAT4 ao Rust e permanece fail-closed sem os gates clínicos",
+      "status": "BLOQUEADO_POR_FONTE"
+    },
+    {
+      "indicator": "CVAT5",
+      "officialRule": "Nota Técnica nº 30/2025, SEI 0049700833",
+      "version": "CVAT5@2025.1 / schema 1",
+      "sources": "Dependência tipada das 17 fontes CVAT4 e contrato municipal pseudonimizado para PBF/BPC; nenhum snapshot PBF/BPC READY existe e marcadores de visita não são aceitos como benefício",
+      "rust": "IMPLEMENTADO_NO_SOURCE: pondera somente pessoas acompanhadas nas coortes 1,0/1,2/1,3/2,5, aplica <5 e >=60 na data final, exige cobertura municipal/semântica de ausência explícita, hashes CPF/CNS, qualidade e linhagem",
+      "typescript": "Fallback legado bloqueado pelo registry v7; BFF somente consome o read model Rust persistido",
+      "readModel": "Migration 0026 aplicada: resultado BLOCKED_BY_SOURCE persistido com valores nulos e 17 registros de linhagem; componentes permanecem ausentes enquanto a fonte PBF/BPC não estiver vinculada",
+      "golden": "AUSENTE",
+      "dualRun": "AUSENTE",
+      "realRuntime": "Materialização real bloqueada em 411 ms; replay idempotente preservou run 7ed833f6-bc32-4032-a2a2-bbb8bdb06f00 e result ea6c696e-2176-4def-bffb-3b793611b572; schema real sem PBF/BPC e marcadores de visita rejeitados como prova de benefício",
+      "panel": "Não exposto no painel público; o BFF reserva CVAT5 ao Rust e permanece fail-closed sem os gates clínicos",
+      "status": "BLOQUEADO_POR_FONTE"
+    },
+    {
+      "indicator": "CVAT6",
+      "officialRule": "Nota Técnica nº 30/2025, SEI 0049700833",
+      "version": "CVAT6@2025.1 / schema 1",
+      "sources": "19 fontes PEC tipadas cobrem MICI/MICDT e contatos APS; 9 snapshots estão abertos, st_recusa_cadastro falta no payload atual e não existem snapshots oficiais PBF/BPC, IBGE/SCNES por equipe nem Meu SUS Digital",
+      "rust": "IMPLEMENTADO_NO_SOURCE: desempate oficial em três níveis com empate exato fail-closed, MICI/MICDT atuais, parâmetros por porte/modalidade, fatores 0,75/1,5, acompanhamento ponderado, X+Y, classificações, bônus Meu SUS, hashes, importadores, idempotência e linhagem",
+      "typescript": "Fallback legado bloqueado pelo registry v7; BFF somente consome o read model Rust persistido",
+      "readModel": "Migration 0027 aplicada: resultado BLOCKED_BY_SOURCE persistido com valores nulos e 19 registros de linhagem; componentes ausentes enquanto as fontes oficiais externas não estiverem vinculadas",
+      "golden": "AUSENTE",
+      "dualRun": "AUSENTE",
+      "realRuntime": "Materialização real bloqueada em 549 ms; replay idempotente preservou run 9593f7d9-c1b8-49d1-ac35-742717f20859 e result 8e84de1b-feda-4bbd-a67c-7cf5f975a409; rollback recusou remover evidência durável",
+      "panel": "Não exposto no painel público; o BFF reserva CVAT6 ao Rust e permanece fail-closed sem os gates clínicos",
+      "status": "BLOQUEADO_POR_FONTE"
+    }
+  ]
+}

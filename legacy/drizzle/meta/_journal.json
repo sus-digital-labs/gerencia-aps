@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1768597802459,
+      "tag": "0000_youthful_odin",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1768614203257,
+      "tag": "0001_worried_old_lace",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1771496712135,
+      "tag": "0002_wooden_redwing",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1773253435698,
+      "tag": "0003_known_albert_cleary",
+      "breakpoints": true
+    }
+  ]
+}

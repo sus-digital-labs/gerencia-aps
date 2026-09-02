@@ -1,0 +1,418 @@
+{
+  "generatedAt": "2026-05-05T00:00:00-03:00",
+  "classification": "BRASIL_360_COVERAGE_FAILED",
+  "summary": {
+    "total": 15,
+    "implementedValidated": 0,
+    "backendOnly": 0,
+    "frontendOnly": 0,
+    "partialWithRealData": 2,
+    "mockRuntimeBlocker": 2,
+    "emptyStateHonest": 0,
+    "missing": 0,
+    "blockedBySchema": 0,
+    "blockedByNormative": 0,
+    "needsRbacOrMasking": 11
+  },
+  "indicators": [
+    {
+      "code": "C1",
+      "block": "eSF/eAP",
+      "officialName": "Mais acesso à APS",
+      "teamType": ["eSF", "eAP"],
+      "officialSource": "https://www.gov.br/saude/pt-br/composicao/saps/publicacoes/fichas-tecnicas/equipe-de-atencao-primaria-e-saude-da-familia/nota-metodologica-c1-mais-acesso/view",
+      "implementationFiles": [
+        "Apps/web/server/indicadores-previne-brasil-v2.ts:33",
+        "Apps/web/server/routers.ts:60",
+        "Apps/server/api/dist/index.js:5596",
+        "Apps/web/client/src/pages/Dashboard.tsx:115"
+      ],
+      "pecQueryFound": true,
+      "endpoint": "/api/trpc/previneBrasil.calcularTodos",
+      "sourcePecValidated": false,
+      "frontendRoutes": ["/", "/dashboard", "/painel-municipal", "/matriz-desempenho"],
+      "hasDrilldown": true,
+      "hasAutomatedTest": false,
+      "rbacStatus": "missing",
+      "piiRisk": "low",
+      "runtimeMock": true,
+      "status": "MOCK_RUNTIME_BLOCKER",
+      "evidence": [
+        "Drilldown C1 retorna objeto fixo com resultado_atual=0 em Apps/server/api/dist/index.js:5596",
+        "Endpoint previneBrasil.* exposto como publicProcedure em Apps/web/server/routers.ts:61"
+      ],
+      "gap": "Drilldown C1 mock em runtime e sem RBAC no endpoint oficial de 15 indicadores de Qualidade APS.",
+      "nextAction": "Implementar drilldown C1 real e mudar previneBrasil.drilldown para procedure protegida."
+    },
+    {
+      "code": "C2",
+      "block": "eSF/eAP",
+      "officialName": "Cuidado no Desenvolvimento Infantil",
+      "teamType": ["eSF", "eAP"],
+      "officialSource": "https://www.gov.br/saude/pt-br/composicao/saps/publicacoes/fichas-tecnicas/equipe-de-atencao-primaria-e-saude-da-familia/nota-metodologica-c2-cuidado-no-desenvolvimento-infantil/view",
+      "implementationFiles": [
+        "Apps/web/server/indicadores-previne-brasil-v2.ts:85",
+        "Apps/web/server/routers.ts:82",
+        "Apps/web/server/indicadores-drilldown-esf.ts:13"
+      ],
+      "pecQueryFound": true,
+      "endpoint": "/api/trpc/previneBrasil.calcularTodos",
+      "sourcePecValidated": false,
+      "frontendRoutes": ["/", "/dashboard", "/indicador/:code", "/indicator/:code"],
+      "hasDrilldown": true,
+      "hasAutomatedTest": false,
+      "rbacStatus": "missing",
+      "piiRisk": "high",
+      "runtimeMock": false,
+      "status": "NEEDS_RBAC_OR_MASKING",
+      "evidence": [
+        "Drilldown com nu_cns/no_cidadao/nu_cpf em Apps/web/server/indicadores-drilldown-helpers.ts:63-67",
+        "previneBrasil.drilldown em publicProcedure Apps/web/server/routers.ts:82"
+      ],
+      "gap": "Drilldown nominal sem RBAC/máscara em endpoint público.",
+      "nextAction": "Adicionar permissão dedicada e mascarar PII nas respostas nominais."
+    },
+    {
+      "code": "C3",
+      "block": "eSF/eAP",
+      "officialName": "Cuidado da Gestante e da Puérpera",
+      "teamType": ["eSF", "eAP"],
+      "officialSource": "https://www.gov.br/saude/pt-br/composicao/saps/publicacoes/fichas-tecnicas/equipe-de-atencao-primaria-e-saude-da-familia/nota-metodologica-c3-cuidado-na-gestacao-e-puerperio/view",
+      "implementationFiles": [
+        "Apps/web/server/indicadores-previne-brasil-v2.ts:140",
+        "Apps/web/server/indicadores-drilldown-esf.ts:33"
+      ],
+      "pecQueryFound": true,
+      "endpoint": "/api/trpc/previneBrasil.calcularTodos",
+      "sourcePecValidated": false,
+      "frontendRoutes": ["/", "/dashboard", "/indicador/:code"],
+      "hasDrilldown": true,
+      "hasAutomatedTest": false,
+      "rbacStatus": "missing",
+      "piiRisk": "high",
+      "runtimeMock": false,
+      "status": "NEEDS_RBAC_OR_MASKING",
+      "evidence": [
+        "Busca nominal em drilldownC3: Apps/web/server/indicadores-drilldown-esf.ts:36",
+        "Endpoint público em routers.ts:82"
+      ],
+      "gap": "Exposição nominal sem controle de acesso.",
+      "nextAction": "Restringir drilldown por RBAC e adicionar testes de autorização."
+    },
+    {
+      "code": "C4",
+      "block": "eSF/eAP",
+      "officialName": "Cuidado da pessoa com Diabetes Mellitus",
+      "teamType": ["eSF", "eAP"],
+      "officialSource": "https://www.gov.br/saude/pt-br/composicao/saps/publicacoes/fichas-tecnicas/equipe-de-atencao-primaria-e-saude-da-familia/nota-metodologica-c4-cuidado-da-pessoa-com-diabetes/view",
+      "implementationFiles": [
+        "Apps/web/server/indicadores-previne-brasil-v2.ts:196",
+        "Apps/server/api/dist/index.js:5599"
+      ],
+      "pecQueryFound": true,
+      "endpoint": "/api/trpc/previneBrasil.calcularTodos",
+      "sourcePecValidated": false,
+      "frontendRoutes": ["/", "/dashboard", "/indicador/:code"],
+      "hasDrilldown": true,
+      "hasAutomatedTest": false,
+      "rbacStatus": "missing",
+      "piiRisk": "low",
+      "runtimeMock": true,
+      "status": "MOCK_RUNTIME_BLOCKER",
+      "evidence": [
+        "Drilldown C4 fixo/hardcoded em Apps/server/api/dist/index.js:5599"
+      ],
+      "gap": "Drilldown de diabetes não implementado com dado real.",
+      "nextAction": "Implementar drilldown C4 real com query PEC e proteção RBAC."
+    },
+    {
+      "code": "C5",
+      "block": "eSF/eAP",
+      "officialName": "Cuidado da pessoa com Hipertensão Arterial",
+      "teamType": ["eSF", "eAP"],
+      "officialSource": "https://www.gov.br/saude/pt-br/composicao/saps/publicacoes/fichas-tecnicas/equipe-de-atencao-primaria-e-saude-da-familia/nota-metodologica-c5-cuidado-da-pessoa-com-hipertensao/view",
+      "implementationFiles": [
+        "Apps/web/server/indicadores-previne-brasil-v2.ts:252",
+        "Apps/web/server/indicadores-drilldown-esf.ts:53"
+      ],
+      "pecQueryFound": true,
+      "endpoint": "/api/trpc/previneBrasil.calcularTodos",
+      "sourcePecValidated": false,
+      "frontendRoutes": ["/", "/dashboard", "/indicador/:code"],
+      "hasDrilldown": true,
+      "hasAutomatedTest": false,
+      "rbacStatus": "missing",
+      "piiRisk": "high",
+      "runtimeMock": false,
+      "status": "NEEDS_RBAC_OR_MASKING",
+      "evidence": [
+        "Drilldown nominal com CPF/CNS em Apps/web/server/indicadores-drilldown-esf.ts:56"
+      ],
+      "gap": "Rota pública com dado nominal de hipertensão.",
+      "nextAction": "Aplicar permissionProcedure e política de mascaramento."
+    },
+    {
+      "code": "C6",
+      "block": "eSF/eAP",
+      "officialName": "Cuidado da Pessoa Idosa",
+      "teamType": ["eSF", "eAP"],
+      "officialSource": "https://www.gov.br/saude/pt-br/composicao/saps/publicacoes/fichas-tecnicas/equipe-de-atencao-primaria-e-saude-da-familia/nota-metodologica-c6-cuidado-da-pessoa-idosa/view",
+      "implementationFiles": [
+        "Apps/web/server/indicadores-previne-brasil-v2.ts:308",
+        "Apps/web/server/indicadores-drilldown-esf.ts:73"
+      ],
+      "pecQueryFound": true,
+      "endpoint": "/api/trpc/previneBrasil.calcularTodos",
+      "sourcePecValidated": false,
+      "frontendRoutes": ["/", "/dashboard", "/indicador/:code"],
+      "hasDrilldown": true,
+      "hasAutomatedTest": false,
+      "rbacStatus": "missing",
+      "piiRisk": "high",
+      "runtimeMock": false,
+      "status": "NEEDS_RBAC_OR_MASKING",
+      "evidence": [
+        "Drilldown retorna lista nominal em indicadores-drilldown-esf.ts:76"
+      ],
+      "gap": "Sem proteção de acesso nominal no drilldown.",
+      "nextAction": "Adicionar escopo de permissão e trilha de auditoria nominal."
+    },
+    {
+      "code": "C7",
+      "block": "eSF/eAP",
+      "officialName": "Cuidado da Mulher na Prevenção do Câncer",
+      "teamType": ["eSF", "eAP"],
+      "officialSource": "https://www.gov.br/saude/pt-br/composicao/saps/publicacoes/fichas-tecnicas/equipe-de-atencao-primaria-e-saude-da-familia/nota-metodologica-c7-cuidado-da-mulher-na-prevencao-do-cancer/view",
+      "implementationFiles": [
+        "Apps/web/server/indicadores-previne-brasil-v2.ts:361",
+        "Apps/web/server/indicadores-drilldown-esf.ts:96"
+      ],
+      "pecQueryFound": true,
+      "endpoint": "/api/trpc/previneBrasil.calcularTodos",
+      "sourcePecValidated": false,
+      "frontendRoutes": ["/", "/dashboard", "/indicador/:code"],
+      "hasDrilldown": true,
+      "hasAutomatedTest": false,
+      "rbacStatus": "missing",
+      "piiRisk": "high",
+      "runtimeMock": false,
+      "status": "NEEDS_RBAC_OR_MASKING",
+      "evidence": [
+        "Drilldown nominal em indicadores-drilldown-esf.ts:99",
+        "Endpoint público em routers.ts:82"
+      ],
+      "gap": "Sem RBAC/máscara para dados nominais.",
+      "nextAction": "Aplicar proteção de acesso e anonimização no payload."
+    },
+    {
+      "code": "M1",
+      "block": "eMulti",
+      "officialName": "Média de atendimentos por pessoa assistida pela eMulti na APS",
+      "teamType": ["eMulti"],
+      "officialSource": "https://www.gov.br/saude/pt-br/composicao/saps/publicacoes/fichas-tecnicas/equipes-multiprofissionais-emulti/nota-metodologica-m1-media-de-atendimentos-por-pessoa-pela-emulti-na-aps/view",
+      "implementationFiles": [
+        "Apps/web/server/indicadores-previne-brasil-v2.ts:679",
+        "Apps/web/server/indicadores-drilldown-emulti.ts:16"
+      ],
+      "pecQueryFound": true,
+      "endpoint": "/api/trpc/previneBrasil.calcularTodos",
+      "sourcePecValidated": false,
+      "frontendRoutes": ["/", "/dashboard", "/indicador/:code"],
+      "hasDrilldown": true,
+      "hasAutomatedTest": false,
+      "rbacStatus": "missing",
+      "piiRisk": "high",
+      "runtimeMock": false,
+      "status": "NEEDS_RBAC_OR_MASKING",
+      "evidence": [
+        "Lista nominal no drilldownM1 em indicadores-drilldown-emulti.ts:16"
+      ],
+      "gap": "Matriz histórica de 2026-05-05 ainda auditava o caminho TypeScript legado; identidade normativa reconciliada em 2026-08-17: M1 oficial é média atendimentos/pessoas. RBAC nominal permanece fora desta missão.",
+      "nextAction": "Manter legado bloqueado e usar somente matriz Rust/read model para certificação; tratar RBAC nominal em missão separada."
+    },
+    {
+      "code": "M2",
+      "block": "eMulti",
+      "officialName": "Ações interprofissionais realizadas pela eMulti na APS",
+      "teamType": ["eMulti"],
+      "officialSource": "https://www.gov.br/saude/pt-br/composicao/saps/publicacoes/fichas-tecnicas/equipes-multiprofissionais-emulti/nota-metodologica-m2-acoes-interprofissionais-realizadas-pela-emulti-na-aps/view",
+      "implementationFiles": [
+        "Apps/web/server/indicadores-previne-brasil-v2.ts:720",
+        "Apps/web/server/indicadores-drilldown-emulti.ts:32"
+      ],
+      "pecQueryFound": true,
+      "endpoint": "/api/trpc/previneBrasil.calcularTodos",
+      "sourcePecValidated": false,
+      "frontendRoutes": ["/", "/dashboard", "/indicador/:code"],
+      "hasDrilldown": true,
+      "hasAutomatedTest": false,
+      "rbacStatus": "missing",
+      "piiRisk": "low",
+      "runtimeMock": false,
+      "status": "PARTIAL_WITH_REAL_DATA",
+      "evidence": [
+        "Query em tb_cds_atend_odonto/rl_cds_atend_odonto_tipo_encam em indicadores-previne-brasil-v2.ts:727-733"
+      ],
+      "gap": "Matriz histórica de 2026-05-05 ainda auditava o caminho TypeScript legado; identidade normativa reconciliada em 2026-08-17: M2 oficial é ações compartilhadas/total de ações eMulti, unidade percentual e polaridade neutra.",
+      "nextAction": "Manter legado bloqueado e usar somente matriz Rust/read model para certificação; reavaliar gaps funcionais M2 a partir do contrato oficial, não como média de atendimentos."
+    },
+    {
+      "code": "B1",
+      "block": "eSB",
+      "officialName": "Escovação dentária supervisionada em faixa etária escolar",
+      "teamType": ["eSB"],
+      "officialSource": "https://www.gov.br/saude/pt-br/composicao/saps/publicacoes/fichas-tecnicas/equipe-de-saude-bucal/nota-metodologica-b4-escovacao-supervisionada-em-faixa-etaria-escolar-de-6-a-12-anos/view",
+      "implementationFiles": [
+        "Apps/web/server/indicadores-previne-brasil-v2.ts:421",
+        "Apps/web/server/indicadores-drilldown-esb.ts:16"
+      ],
+      "pecQueryFound": true,
+      "endpoint": "/api/trpc/previneBrasil.calcularTodos",
+      "sourcePecValidated": false,
+      "frontendRoutes": ["/", "/dashboard", "/indicador/:code"],
+      "hasDrilldown": true,
+      "hasAutomatedTest": false,
+      "rbacStatus": "missing",
+      "piiRisk": "high",
+      "runtimeMock": false,
+      "status": "NEEDS_RBAC_OR_MASKING",
+      "evidence": [
+        "Drilldown nominal em indicadores-drilldown-esb.ts:16",
+        "previneBrasil.drilldown público em routers.ts:82"
+      ],
+      "gap": "Mapa B1 oficial não coincide com nomenclatura interna e há nominal sem RBAC.",
+      "nextAction": "Reindexar B1..B6 para nomenclatura oficial e proteger nominal."
+    },
+    {
+      "code": "B2",
+      "block": "eSB",
+      "officialName": "Primeira consulta odontológica programada",
+      "teamType": ["eSB"],
+      "officialSource": "https://www.gov.br/saude/pt-br/composicao/saps/publicacoes/fichas-tecnicas/equipe-de-saude-bucal/nota-metodologica-b1-primeira-consulta-programada/view",
+      "implementationFiles": [
+        "Apps/web/server/indicadores-previne-brasil-v2.ts:463",
+        "Apps/web/server/indicadores-drilldown-esb.ts:36"
+      ],
+      "pecQueryFound": true,
+      "endpoint": "/api/trpc/previneBrasil.calcularTodos",
+      "sourcePecValidated": false,
+      "frontendRoutes": ["/", "/dashboard", "/indicador/:code"],
+      "hasDrilldown": true,
+      "hasAutomatedTest": false,
+      "rbacStatus": "missing",
+      "piiRisk": "high",
+      "runtimeMock": false,
+      "status": "NEEDS_RBAC_OR_MASKING",
+      "evidence": [
+        "Drilldown com nu_cpf/nu_cns em indicadores-drilldown-esb.ts:36"
+      ],
+      "gap": "Dado nominal em endpoint público sem permissão específica.",
+      "nextAction": "Aplicar RBAC em drilldown e revisar fórmula oficial de primeira consulta."
+    },
+    {
+      "code": "B3",
+      "block": "eSB",
+      "officialName": "Tratamento odontológico concluído",
+      "teamType": ["eSB"],
+      "officialSource": "https://www.gov.br/saude/pt-br/composicao/saps/publicacoes/fichas-tecnicas/equipe-de-saude-bucal/nota-metodologica-b2-tratamento-concluido/view",
+      "implementationFiles": [
+        "Apps/web/server/indicadores-previne-brasil-v2.ts:506",
+        "Apps/web/server/indicadores-drilldown-esb.ts:56"
+      ],
+      "pecQueryFound": true,
+      "endpoint": "/api/trpc/previneBrasil.calcularTodos",
+      "sourcePecValidated": false,
+      "frontendRoutes": ["/", "/dashboard", "/indicador/:code"],
+      "hasDrilldown": true,
+      "hasAutomatedTest": false,
+      "rbacStatus": "missing",
+      "piiRisk": "high",
+      "runtimeMock": false,
+      "status": "NEEDS_RBAC_OR_MASKING",
+      "evidence": [
+        "Drilldown nominal em indicadores-drilldown-esb.ts:56"
+      ],
+      "gap": "Semântica oficial B3 não comprovada e nominal sem proteção.",
+      "nextAction": "Reconciliar B3 oficial com implementação e aplicar RBAC."
+    },
+    {
+      "code": "B4",
+      "block": "eSB",
+      "officialName": "Tratamento restaurador atraumático",
+      "teamType": ["eSB"],
+      "officialSource": "https://www.gov.br/saude/pt-br/composicao/saps/publicacoes/fichas-tecnicas/equipe-de-saude-bucal/nota-metodologica-b6-tratamento-restaurador-atraumatico/view",
+      "implementationFiles": [
+        "Apps/web/server/indicadores-previne-brasil-v2.ts:547",
+        "Apps/web/server/indicadores-drilldown-esb.ts:76"
+      ],
+      "pecQueryFound": true,
+      "endpoint": "/api/trpc/previneBrasil.calcularTodos",
+      "sourcePecValidated": false,
+      "frontendRoutes": ["/", "/dashboard", "/indicador/:code"],
+      "hasDrilldown": true,
+      "hasAutomatedTest": false,
+      "rbacStatus": "missing",
+      "piiRisk": "high",
+      "runtimeMock": false,
+      "status": "NEEDS_RBAC_OR_MASKING",
+      "evidence": [
+        "Drilldown com lista nominal em indicadores-drilldown-esb.ts:76"
+      ],
+      "gap": "Indicador oficial ART não está claramente refletido e há exposição nominal.",
+      "nextAction": "Implementar fórmula oficial ART e proteger drilldown."
+    },
+    {
+      "code": "B5",
+      "block": "eSB",
+      "officialName": "Procedimentos odontológicos preventivos",
+      "teamType": ["eSB"],
+      "officialSource": "https://www.gov.br/saude/pt-br/composicao/saps/publicacoes/fichas-tecnicas/equipe-de-saude-bucal/nota-metodologica-b5-procedimentos-odontologicos-preventivos/view",
+      "implementationFiles": [
+        "Apps/web/server/indicadores-previne-brasil-v2.ts:590",
+        "Apps/web/server/indicadores-drilldown-esb.ts:99"
+      ],
+      "pecQueryFound": true,
+      "endpoint": "/api/trpc/previneBrasil.calcularTodos",
+      "sourcePecValidated": false,
+      "frontendRoutes": ["/", "/dashboard", "/indicador/:code"],
+      "hasDrilldown": true,
+      "hasAutomatedTest": false,
+      "rbacStatus": "missing",
+      "piiRisk": "high",
+      "runtimeMock": false,
+      "status": "NEEDS_RBAC_OR_MASKING",
+      "evidence": [
+        "Formula interna baseada em razão restauração/exodontia em indicadores-previne-brasil-v2.ts:601-603",
+        "Drilldown nominal em indicadores-drilldown-esb.ts:99"
+      ],
+      "gap": "Fórmula divergente do texto oficial B5 e nominal público.",
+      "nextAction": "Recalcular B5 com regra oficial e bloquear nominal sem permissão."
+    },
+    {
+      "code": "B6",
+      "block": "eSB",
+      "officialName": "Taxa de exodontias realizadas",
+      "teamType": ["eSB"],
+      "officialSource": "https://www.gov.br/saude/pt-br/composicao/saps/publicacoes/fichas-tecnicas/equipe-de-saude-bucal/nota-metodologica-b3-taxa-de-exodontia/view",
+      "implementationFiles": [
+        "Apps/web/server/indicadores-previne-brasil-v2.ts:632",
+        "Apps/web/server/indicadores-drilldown-esb.ts:115"
+      ],
+      "pecQueryFound": true,
+      "endpoint": "/api/trpc/previneBrasil.calcularTodos",
+      "sourcePecValidated": false,
+      "frontendRoutes": ["/", "/dashboard", "/indicador/:code"],
+      "hasDrilldown": true,
+      "hasAutomatedTest": false,
+      "rbacStatus": "missing",
+      "piiRisk": "low",
+      "runtimeMock": false,
+      "status": "PARTIAL_WITH_REAL_DATA",
+      "evidence": [
+        "Implementação B6 calcula ações coletivas em indicadores-previne-brasil-v2.ts:640-646"
+      ],
+      "gap": "Implementação B6 não representa taxa de exodontias oficial.",
+      "nextAction": "Reindexar/ajustar fórmula B6 para taxa de exodontia conforme nota oficial."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+https://www.gov.br/saude/pt-br/composicao/saps/publicacoes/fichas-tecnicas
+
+acesse o site atravez do usuario e senha entre em todas as paginas analise todos os codigo pequise sobre analise tudo leita todos as paginas e acessoas aprenda sobre o sistema re rafaça um igual identico com as meas funções e botões e links e me entregue na liguagem php css js javascript um banco sql vou disponibiliar usuario e senha e links para pesquisa https://esusfeedback.com.br/demonstracao navegue em todas as paginas e botões faça identico entre em todos os perfil vou disponibilizar site para pesquisa e aprendizado sobre https://sus360.saude.gov.br/ A avaliação do Componente de Qualidade do Cofinanciamento Federal da APS (2025-2026) é baseada em 15 indicadores, focados em melhorar a estruturação do trabalho nas Unidades Básicas de Saúde (UBS) e aumentar o acompanhamento longitudinal dos usuários, substituindo o antigo Previne Brasil. 
+YouTube
+YouTube
+ +1
+Os 15 indicadores são divididos em 3 segmentos (Saúde da Família/eAP, Saúde Bucal, eMulti), com destaque para as três áreas de foco principais: 
+C1 - Mais Acesso (APS)
+Este bloco avalia o equilíbrio entre a demanda espontânea e o cuidado programado. 
+YouTube
+YouTube
+Objetivo: Mensurar a capacidade da equipe de organizar a agenda para reduzir filas de espera e garantir que o atendimento não seja apenas de urgências. 
+MARCELOLS
+MARCELOLS
+ +1
+Cálculo: Proporção de consultas agendadas (pré-natais, puericultura, crônicos) dividida pelo total de atendimentos (agendados + espontâneos/urgências). 
+YouTube
+YouTube
+Meta: Equilíbrio, idealmente entre 50% a 70% de demanda programada, demonstrando organização da agenda e acompanhamento contínuo. 
+YouTube
+YouTube
+C2 - Desenvolvimento Infantil
+Focado na saúde de crianças de 0 a 2 anos, pontuando boas práticas na Atenção Primária. 
+Instagram
+Instagram
+Boas Práticas (C2):
+1ª Consulta: Realização da primeira consulta presencial por médico ou enfermeiro até o 30º dia de vida.
+Consultas de Puericultura: Pelo menos 9 consultas presenciais/remotas até os 2 anos.
+Acompanhamento de Crescimento: Pelo menos 9 registros de peso e altura até os 2 anos.
+Visitas Domiciliares: Pelo menos 2 visitas domiciliares por Agente Comunitário de Saúde (ACS/TACS), com a primeira até os 30 dias e a segunda até os 6 meses.
+Vacinação: Calendário de vacinas essencial da criança. 
+Pontuação: Cada item de boas prática soma 20 pontos, totalizando 100 pontos por criança. 
+YouTube
+YouTube
+ +1
+C3 - Acompanhamento Contínuo
+Este indicador refere-se à longitudinalidade, avaliando a coordenação do cuidado nas principais linhas de vida. 
+Atenção Primária do RS
+Atenção Primária do RS
+ +1
+Cuidado da Gestante e Puérpera: Acompanhamento pré-natal completo.
+Doenças Crônicas: Acompanhamento de Hipertensão Arterial e Diabetes Mellitus.
+Saúde da Mulher: Rastreamento de câncer de colo de útero e mama.
+Saúde da Pessoa Idosa. 
+Funcionamento da Avaliação 2026
+Avaliação Quadrimestral: A nota final é calculada a cada quatro meses com base na média dos resultados mensais.
+Monitoramento Mensal: Divulgação dos resultados até o 20º dia útil do mês pelo SISAB.
+Fontes de Dados: e-SUS APS (prontuário eletrônico), RNDS e CNES.
+Conceitos: Ótimo, Bom, Suficiente ou Regular, com conversão em pontos para o financiamento federal. 
+YouTube
+YouTube
+ +4
+Nota: As orientações técnicas detalhadas (fichas técnicas) são essenciais para o preenchimento correto no e-SUS e devem ser acompanhadas pelas equipes (Caderno de Ações do Componente de Qualidade https://admin.atencaoprimaria.rs.gov.br/upload/arquivos/202505/27164415-apresentacao-indicadores-da-aps-componente-qualidade.pdf https://sisaps.saude.gov.br/sistemas/siaps/docs/manual/notas-metodologicas/ faça a copia de forma mais bonita mais profissional com cores efeitos estilos modernos com degrader mais apresentavel mais dinamico responsivel intuitivo melhorado em php css js javacript bootstrap estude sobre entre no site https://esusfeedback.com.br/demonstracao navegue em todas as paginas e teste o sistema no code view precisar de dados complementares busque ou peça dados 

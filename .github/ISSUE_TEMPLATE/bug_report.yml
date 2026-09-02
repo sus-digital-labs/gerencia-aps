@@ -1,0 +1,26 @@
+name: Relato de defeito
+description: Registre um problema reproduzível sem dados sensíveis.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Não inclua credenciais, dados pessoais ou dados de saúde.
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Como reproduzir com dados sintéticos
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Versão ou commit
+    validations:
+      required: true

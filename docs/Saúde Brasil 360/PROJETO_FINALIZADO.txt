@@ -1,0 +1,34 @@
+REGISTRO HISTÓRICO — PACOTE DE TABELAS e-SUS APS
+Revisão do registro: 26/08/2026
+
+CLASSIFICAÇÃO
+Este arquivo registra uma entrega histórica de maio de 2026. O conteúdo não representa, sozinho, a arquitetura, o runtime, o banco, a compatibilidade de versões ou a homologação atual do SUS Analytics Web.
+
+ENTREGA HISTÓRICA
+O pacote documentou um inventário local de tabelas, categorias e exemplos de sincronização. Os números de 77 tabelas, 10 categorias, linhas de PHP e execução de 07/05/2026 são evidência temporal e não devem ser tratados como estado atual sem nova inspeção do schema.
+
+STATUS ATUAL
+O processo vigente foi reescrito em PROCESSO_TABELAS_ESUS.md e GUIA_RAPIDO_TABELAS.md. O fluxo atual exige fonte oficial, versão do sistema, modelo de informação, inspeção do schema, validação de chaves, cardinalidade, qualidade, idempotência e registro de rejeições.
+
+ESCOPO ATUAL
+O produto trata 21 métricas: B1-B6, C1-C7, M1-M2 e CVAT1-CVAT6. P1-P6, CR1-CR4 e R1-R6 aparecem no catálogo oficial, mas estão fora do escopo operacional atual.
+
+BLOQUEIO C1
+A regra do C1 requer a proporção de demanda programada sobre o total de atendimentos elegíveis. O schema auditado de tb_fat_atendimento_individual não comprova a variável que diferencia demanda programada e espontânea. O indicador permanece blocked_by_source com código C1_BLOCKED_BY_DATA_CONTRACT. Não usar heurística.
+
+COMPATIBILIDADE
+Dados enviados por versões incompatíveis ou liberadas há mais de 12 meses devem ser rejeitados ou ficar pendentes conforme a Nota Técnica nº 12/2025 e a Nota Informativa nº 13/2025. O manual de compatibilidade do módulo contém a tabela operacional atualizada.
+
+IDENTIDADE E PRIVACIDADE
+FCI e FCDT devem ser reconciliadas por regras explícitas e chaves técnicas protegidas. Não expor CPF, CNS completo, nome, telefone, endereço, SQL bruto ou stack trace em agregados, logs ou exemplos públicos.
+
+REFERÊNCIAS VIGENTES
+- docs/13-saude-brasil-360/README.md
+- docs/13-saude-brasil-360/official-catalog-2026-08-26.md
+- docs/13-saude-brasil-360/c1-data-contract-issue-2026-08-26.md
+- docs/13-saude-brasil-360/siaps-operational-compatibility-2026-08-26.md
+- docs/13-saude-brasil-360/siaps-calendar-2026.md
+- docs/Saúde Brasil 360/INDICE_COMPLETO.md
+
+DECISÃO
+O pacote histórico permanece para rastreabilidade. Implementações novas devem seguir a documentação canônica e o registro mestre de fontes, não os comandos PHP ou caminhos locais descritos no material de 2026-05.

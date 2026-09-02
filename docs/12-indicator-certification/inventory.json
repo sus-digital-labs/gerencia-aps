@@ -1,0 +1,61 @@
+{
+  "$schema": "b360-indicator-certification-inventory-v1",
+  "generatedAt": "2026-08-17",
+  "scope": "M1_M2_NORMATIVE_IDENTITY_RECONCILIATION",
+  "baseline": {
+    "branch": "chore/m1-m2-certification-reconciliation",
+    "baseSha": "2140df10902eaf181049950b989c0d005a04e873",
+    "push": "NO"
+  },
+  "authority": {
+    "officialSourceManifest": "docs/11-indicator-field-catalog/sources/official-source-manifest-2026-07-25.json",
+    "rustAuthorityMatrix": "docs/10-indicators/b360-rust-authority-matrix.json",
+    "semanticRegistry": ".ai/CONTEXT/indicator-registry.json"
+  },
+  "reconciliationStatus": "M1_M2_NORMATIVE_IDENTITY_RECONCILED",
+  "indicators": [
+    {
+      "code": "M1",
+      "officialName": "Media de atendimentos por pessoa assistida pela eMulti na APS",
+      "ruleVersion": "M1@2026.6",
+      "sourceDocumentId": "SEI-0055952286",
+      "sourceDocumentSha256": "a54d272643037916225a249360a22363e587c0f19a4d79489d3961154c981d49",
+      "unitStatus": "CORRECT_M1",
+      "unit": "media",
+      "formulaSemantic": "individual_attendances_plus_collective_participations / distinct_identified_people",
+      "sourceContractStatus": "READY_FOR_AUDITED_SCOPE",
+      "goldenStatus": "M1_GOLDEN_CORRECT",
+      "runtimeStatus": "ACTIVE_AND_PROVEN_FOR_AUDITED_SCOPE",
+      "normativeStatus": "NORMATIVE_IDENTITY_RECONCILED",
+      "certificationStatus": "NOT_FORMALLY_CERTIFIED_IN_THIS_MISSION",
+      "evidence": {
+        "ruleMetadata": "Apps/rules/b360-rules/rules/m1/2026.6.json",
+        "pureEngineFixture": "Apps/rules/sus-aps-rule-engine/fixtures/m1-active-proven-input-v1.json",
+        "runtimeReadModel": "387/320 = 1.209375",
+        "rustAuthorityStatus": "ACTIVE_AND_PROVEN"
+      }
+    },
+    {
+      "code": "M2",
+      "officialName": "Acoes interprofissionais realizadas pela eMulti na APS",
+      "ruleVersion": "M2@2026.6",
+      "sourceDocumentId": "SEI-0055952438",
+      "sourceDocumentSha256": "38bfc95af308f3c06604fbba3a61193939eb6fbb3a9abdd8f6c0aaa28934fbd3",
+      "unitStatus": "CORRECT_M2",
+      "unit": "percentual",
+      "polarity": "neutra",
+      "formulaSemantic": "shared_actions / total_actions * 100",
+      "sourceContractStatus": "READY_FOR_AUDITED_SCOPE",
+      "goldenStatus": "M2_GOLDEN_CORRECT",
+      "runtimeStatus": "ACTIVE_AND_PROVEN_FOR_AUDITED_SCOPE",
+      "normativeStatus": "NORMATIVE_IDENTITY_RECONCILED",
+      "certificationStatus": "NOT_FORMALLY_CERTIFIED_IN_THIS_MISSION",
+      "evidence": {
+        "ruleMetadata": "Apps/rules/b360-rules/rules/m2/2026.6.json",
+        "parityFixture": "Apps/rules/b360-rules/tests/fixtures/m2-active-proven-input-v1.json",
+        "runtimeReadModel": "3/410 = 0.731707%",
+        "rustAuthorityStatus": "ACTIVE_AND_PROVEN"
+      }
+    }
+  ]
+}

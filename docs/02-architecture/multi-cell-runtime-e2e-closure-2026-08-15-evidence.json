@@ -1,0 +1,43 @@
+{
+  "run_id": "local-cursor-contract-2026-08-15",
+  "source_commit": "ddd645e43cea552263d8638a6b9c41d359767954",
+  "branch": "mission/multicell-e2e-20260815",
+  "binary_sha256": "e0799e8c17b32a7b55686d66982c710eeafd9d87cf92dae29626ee508c3e810f",
+  "dataset_sha256": "NOT_APPLICABLE",
+  "classification": "HOMOLOGATION_MULTI_CELL_PARTIAL_BLOCKED",
+  "gates": {
+    "typed_cursor_contract": "PASS",
+    "typed_cursor_legacy_incompatible": "PASS",
+    "rust_fmt": "PASS",
+    "rust_check": "PASS",
+    "rust_clippy": "PASS",
+    "rust_tests": "PASS:101/0/2",
+    "typescript_typecheck": "PASS",
+    "edge_state_restart_probe": "PASS",
+    "lkg_restart_real": "NOT_RUN",
+    "m1_source_package_a": "NOT_RUN",
+    "m1_source_package_b": "NOT_RUN",
+    "m1_materialization_a": "NOT_RUN",
+    "m1_materialization_b": "NOT_RUN",
+    "read_model_a": "NOT_RUN",
+    "read_model_b": "NOT_RUN",
+    "zero_diff_parity": "NOT_RUN",
+    "bff_real_routing": "NOT_RUN",
+    "dynamic_cross_tenant_rls": "NOT_RUN",
+    "post_materialization_fault_matrix": "NOT_RUN"
+  },
+  "evidence": {
+    "commands": [
+      "cargo fmt --check",
+      "cargo check",
+      "cargo clippy --all-targets --all-features -- -D warnings",
+      "cargo test",
+      "pnpm exec tsc -p Apps/server/api/tsconfig.json --noEmit",
+      "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/tests/windows/test-edge-state-restart.ps1"
+    ],
+    "result": "No source gates, materialization results or read models were manually inserted",
+    "untracked_preserved": true,
+    "push": "NOT_PERFORMED"
+  },
+  "binary_path": "Apps\\agent\\target\\debug\\pec-agent-sync.exe"
+}

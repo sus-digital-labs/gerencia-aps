@@ -1,0 +1,8 @@
+{
+  "query": "INSERT INTO microareas (nome, codigo, acsId, geojsonPoligono, cor, totalFamilias, totalCidadaos, status, geradaAutomaticamente) VALUES ('Teste', 'MA001', 1, '{}', '#FF0000', 100, 300, 'ativa', 1);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4EpQntwGruGKK3B.547645ca76d5 --database KK7eSYAqdRoQ4EvyTK9kD4 --execute INSERT INTO microareas (nome, codigo, acsId, geojsonPoligono, cor, totalFamilias, totalCidadaos, status, geradaAutomaticamente) VALUES ('Teste', 'MA001', 1, '{}', '#FF0000', 100, 300, 'ativa', 1);",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1452 (23000) at line 1: Cannot add or update a child row: a foreign key constraint fails (`kk7esyaqdroq4evytk9kd4`.`microareas`, CONSTRAINT `microareas_acsId_fk` FOREIGN KEY (`acsId`) REFERENCES `acs_perfil_microarea` (`id`))"
+  ]
+}

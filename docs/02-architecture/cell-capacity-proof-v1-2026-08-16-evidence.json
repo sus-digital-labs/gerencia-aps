@@ -1,0 +1,427 @@
+﻿{
+    "schema_version":  "1.0.0",
+    "mission":  "esus-aps-360",
+    "phase":  "B",
+    "classification":  "CELL_CAPACITY_V1_VALIDATED_UP_TO_POLICY_LIMIT",
+    "closeout_precondition":  {
+                                  "required":  "FASE_A_FORMAL_CLOSEOUT=PASS",
+                                  "actual":  "PASS",
+                                  "blockers":  [
+
+                                               ],
+                                  "completed_at_utc":  "2026-08-16T17:50:44.5859588Z"
+                              },
+    "policy":  {
+                   "max_municipalities":  5,
+                   "near_capacity_threshold":  4,
+                   "policy_changed":  false,
+                   "wave_6_or_higher_executed":  false,
+                   "real_pec_used":  false,
+                   "nominal_data_used":  false,
+                   "synthetic_manifest_path":  "docs/02-architecture/cell-capacity-proof-v1-synthetic-manifest.json"
+               },
+    "waves":  [
+                  {
+                      "wave":  "WAVE-1",
+                      "municipality_count":  1,
+                      "status":  "NOT_PROVEN",
+                      "duration_ms":  2988,
+                      "rows":  [
+                                   {
+                                       "municipality_id":  "MUNICIPALITY_CAPACITY_001",
+                                       "tenant_id":  "TENANT_CAPACITY_001",
+                                       "runtime_cell_id":  "CELL-CAP-001",
+                                       "ack_p50_ms":  118.825,
+                                       "ack_p95_ms":  118.825,
+                                       "ack_p99_ms":  118.825,
+                                       "metrics":  {
+                                                       "jobs":  1,
+                                                       "materialization_results":  1,
+                                                       "read_models":  1,
+                                                       "batches":  1
+                                                   },
+                                       "rls":  {
+                                                   "cross_tenant_visible":  0,
+                                                   "wrong_municipality_visible":  0,
+                                                   "cross_tenant_pass":  true,
+                                                   "cross_cell_pass":  true
+                                               }
+                                   }
+                               ],
+                      "bff":  {
+                                  "status":  "NOT_EXECUTED",
+                                  "reason":  "CellRouter BFF probe remains bound to control-plane evidence ports and was not run against this disposable capacity environment"
+                              },
+                      "stop_conditions":  {
+                                              "materializer_starvation":  false,
+                                              "data_loss":  false,
+                                              "unbounded_backlog":  false,
+                                              "cross_cell_leakage":  false,
+                                              "bff_error_threshold":  true,
+                                              "synthetic_source_timeout":  false,
+                                              "receiver_ack_slo_breach":  false,
+                                              "oom":  false,
+                                              "cross_tenant_leakage":  false,
+                                              "disk_exhaustion":  false,
+                                              "postgres_deadlock":  false
+                                          }
+                  },
+                  {
+                      "wave":  "WAVE-3",
+                      "municipality_count":  3,
+                      "status":  "NOT_PROVEN",
+                      "duration_ms":  7975,
+                      "rows":  [
+                                   {
+                                       "municipality_id":  "MUNICIPALITY_CAPACITY_001",
+                                       "tenant_id":  "TENANT_CAPACITY_001",
+                                       "runtime_cell_id":  "CELL-CAP-001",
+                                       "ack_p50_ms":  88.993,
+                                       "ack_p95_ms":  88.993,
+                                       "ack_p99_ms":  88.993,
+                                       "metrics":  {
+                                                       "jobs":  2,
+                                                       "materialization_results":  2,
+                                                       "read_models":  2,
+                                                       "batches":  1
+                                                   },
+                                       "rls":  {
+                                                   "cross_tenant_visible":  0,
+                                                   "wrong_municipality_visible":  0,
+                                                   "cross_tenant_pass":  true,
+                                                   "cross_cell_pass":  true
+                                               }
+                                   },
+                                   {
+                                       "municipality_id":  "MUNICIPALITY_CAPACITY_002",
+                                       "tenant_id":  "TENANT_CAPACITY_002",
+                                       "runtime_cell_id":  "CELL-CAP-002",
+                                       "ack_p50_ms":  89.458,
+                                       "ack_p95_ms":  89.458,
+                                       "ack_p99_ms":  89.458,
+                                       "metrics":  {
+                                                       "jobs":  1,
+                                                       "materialization_results":  1,
+                                                       "read_models":  1,
+                                                       "batches":  1
+                                                   },
+                                       "rls":  {
+                                                   "cross_tenant_visible":  0,
+                                                   "wrong_municipality_visible":  0,
+                                                   "cross_tenant_pass":  true,
+                                                   "cross_cell_pass":  true
+                                               }
+                                   },
+                                   {
+                                       "municipality_id":  "MUNICIPALITY_CAPACITY_003",
+                                       "tenant_id":  "TENANT_CAPACITY_003",
+                                       "runtime_cell_id":  "CELL-CAP-001",
+                                       "ack_p50_ms":  85.968,
+                                       "ack_p95_ms":  85.968,
+                                       "ack_p99_ms":  85.968,
+                                       "metrics":  {
+                                                       "jobs":  1,
+                                                       "materialization_results":  1,
+                                                       "read_models":  1,
+                                                       "batches":  1
+                                                   },
+                                       "rls":  {
+                                                   "cross_tenant_visible":  0,
+                                                   "wrong_municipality_visible":  0,
+                                                   "cross_tenant_pass":  true,
+                                                   "cross_cell_pass":  true
+                                               }
+                                   }
+                               ],
+                      "bff":  {
+                                  "status":  "NOT_EXECUTED",
+                                  "reason":  "CellRouter BFF probe remains bound to control-plane evidence ports and was not run against this disposable capacity environment"
+                              },
+                      "stop_conditions":  {
+                                              "materializer_starvation":  false,
+                                              "data_loss":  false,
+                                              "unbounded_backlog":  false,
+                                              "cross_cell_leakage":  false,
+                                              "bff_error_threshold":  true,
+                                              "synthetic_source_timeout":  false,
+                                              "receiver_ack_slo_breach":  false,
+                                              "oom":  false,
+                                              "cross_tenant_leakage":  false,
+                                              "disk_exhaustion":  false,
+                                              "postgres_deadlock":  false
+                                          }
+                  },
+                  {
+                      "wave":  "WAVE-5",
+                      "municipality_count":  5,
+                      "status":  "NOT_PROVEN",
+                      "duration_ms":  13358,
+                      "rows":  [
+                                   {
+                                       "municipality_id":  "MUNICIPALITY_CAPACITY_001",
+                                       "tenant_id":  "TENANT_CAPACITY_001",
+                                       "runtime_cell_id":  "CELL-CAP-001",
+                                       "ack_p50_ms":  87.055,
+                                       "ack_p95_ms":  87.055,
+                                       "ack_p99_ms":  87.055,
+                                       "metrics":  {
+                                                       "jobs":  3,
+                                                       "materialization_results":  3,
+                                                       "read_models":  3,
+                                                       "batches":  1
+                                                   },
+                                       "rls":  {
+                                                   "cross_tenant_visible":  0,
+                                                   "wrong_municipality_visible":  0,
+                                                   "cross_tenant_pass":  true,
+                                                   "cross_cell_pass":  true
+                                               }
+                                   },
+                                   {
+                                       "municipality_id":  "MUNICIPALITY_CAPACITY_002",
+                                       "tenant_id":  "TENANT_CAPACITY_002",
+                                       "runtime_cell_id":  "CELL-CAP-002",
+                                       "ack_p50_ms":  84.493,
+                                       "ack_p95_ms":  84.493,
+                                       "ack_p99_ms":  84.493,
+                                       "metrics":  {
+                                                       "jobs":  2,
+                                                       "materialization_results":  2,
+                                                       "read_models":  2,
+                                                       "batches":  1
+                                                   },
+                                       "rls":  {
+                                                   "cross_tenant_visible":  0,
+                                                   "wrong_municipality_visible":  0,
+                                                   "cross_tenant_pass":  true,
+                                                   "cross_cell_pass":  true
+                                               }
+                                   },
+                                   {
+                                       "municipality_id":  "MUNICIPALITY_CAPACITY_003",
+                                       "tenant_id":  "TENANT_CAPACITY_003",
+                                       "runtime_cell_id":  "CELL-CAP-001",
+                                       "ack_p50_ms":  88.391,
+                                       "ack_p95_ms":  88.391,
+                                       "ack_p99_ms":  88.391,
+                                       "metrics":  {
+                                                       "jobs":  2,
+                                                       "materialization_results":  2,
+                                                       "read_models":  2,
+                                                       "batches":  1
+                                                   },
+                                       "rls":  {
+                                                   "cross_tenant_visible":  0,
+                                                   "wrong_municipality_visible":  0,
+                                                   "cross_tenant_pass":  true,
+                                                   "cross_cell_pass":  true
+                                               }
+                                   },
+                                   {
+                                       "municipality_id":  "MUNICIPALITY_CAPACITY_004",
+                                       "tenant_id":  "TENANT_CAPACITY_004",
+                                       "runtime_cell_id":  "CELL-CAP-002",
+                                       "ack_p50_ms":  87.899,
+                                       "ack_p95_ms":  87.899,
+                                       "ack_p99_ms":  87.899,
+                                       "metrics":  {
+                                                       "jobs":  1,
+                                                       "materialization_results":  1,
+                                                       "read_models":  1,
+                                                       "batches":  1
+                                                   },
+                                       "rls":  {
+                                                   "cross_tenant_visible":  0,
+                                                   "wrong_municipality_visible":  0,
+                                                   "cross_tenant_pass":  true,
+                                                   "cross_cell_pass":  true
+                                               }
+                                   },
+                                   {
+                                       "municipality_id":  "MUNICIPALITY_CAPACITY_005",
+                                       "tenant_id":  "TENANT_CAPACITY_005",
+                                       "runtime_cell_id":  "CELL-CAP-001",
+                                       "ack_p50_ms":  88.215,
+                                       "ack_p95_ms":  88.215,
+                                       "ack_p99_ms":  88.215,
+                                       "metrics":  {
+                                                       "jobs":  1,
+                                                       "materialization_results":  1,
+                                                       "read_models":  1,
+                                                       "batches":  1
+                                                   },
+                                       "rls":  {
+                                                   "cross_tenant_visible":  0,
+                                                   "wrong_municipality_visible":  0,
+                                                   "cross_tenant_pass":  true,
+                                                   "cross_cell_pass":  true
+                                               }
+                                   }
+                               ],
+                      "bff":  {
+                                  "status":  "NOT_EXECUTED",
+                                  "reason":  "CellRouter BFF probe remains bound to control-plane evidence ports and was not run against this disposable capacity environment"
+                              },
+                      "stop_conditions":  {
+                                              "materializer_starvation":  false,
+                                              "data_loss":  false,
+                                              "unbounded_backlog":  false,
+                                              "cross_cell_leakage":  false,
+                                              "bff_error_threshold":  true,
+                                              "synthetic_source_timeout":  false,
+                                              "receiver_ack_slo_breach":  false,
+                                              "oom":  false,
+                                              "cross_tenant_leakage":  false,
+                                              "disk_exhaustion":  false,
+                                              "postgres_deadlock":  false
+                                          }
+                  }
+              ],
+    "synthetic_capacity_test_data":  {
+                                         "created":  false,
+                                         "real_pec_used":  false,
+                                         "http_synthetic_sender_used":  false,
+                                         "database_rows_created":  0,
+                                         "additional_agents_created":  0,
+                                         "additional_containers_created":  0
+                                     },
+    "planned_workload":  [
+                             "pec-agent-sync",
+                             "raw-first",
+                             "receiver",
+                             "normalizer",
+                             "m1-source-package",
+                             "adaptive-m1",
+                             "materializer",
+                             "read-model",
+                             "bff-read"
+                         ],
+    "required_metrics":  {
+                             "edge":  [
+                                          "cpu",
+                                          "rss",
+                                          "sqlite_bytes",
+                                          "outbox_count",
+                                          "oldest_pending",
+                                          "source_select_count",
+                                          "sync_duration_ms",
+                                          "retry_count",
+                                          "fallback_count"
+                                      ],
+                             "receiver":  [
+                                              "requests_per_second",
+                                              "ack_p50_ms",
+                                              "ack_p95_ms",
+                                              "ack_p99_ms",
+                                              "error_rate",
+                                              "cpu",
+                                              "rss",
+                                              "connections"
+                                          ],
+                             "postgres":  [
+                                              "cpu",
+                                              "connections",
+                                              "active_queries",
+                                              "wal_bytes_per_second",
+                                              "io_latency_ms",
+                                              "locks",
+                                              "deadlocks",
+                                              "db_size_bytes"
+                                          ],
+                             "redis":  [
+                                           "ops_per_second",
+                                           "memory_bytes",
+                                           "connected_clients",
+                                           "latency_ms",
+                                           "availability"
+                                       ],
+                             "normalizer":  [
+                                                "jobs_per_second",
+                                                "oldest_backlog",
+                                                "p50_ms",
+                                                "p95_ms",
+                                                "p99_ms",
+                                                "lease_retry_count",
+                                                "failure_count"
+                                            ],
+                             "materializer":  [
+                                                  "jobs_per_second",
+                                                  "pending",
+                                                  "oldest_age_ms",
+                                                  "p50_ms",
+                                                  "p95_ms",
+                                                  "p99_ms",
+                                                  "lease_fencing_retry_count",
+                                                  "failure_count"
+                                              ],
+                             "bff":  [
+                                         "p50_ms",
+                                         "p95_ms",
+                                         "p99_ms",
+                                         "error_rate",
+                                         "pool_count",
+                                         "pool_saturation"
+                                     ],
+                             "cell":  [
+                                          "freshness_ms",
+                                          "source_to_read_model_latency_ms",
+                                          "fairness_by_municipality"
+                                      ]
+                         },
+    "stop_conditions":  [
+                            "data_loss",
+                            "cross_tenant_leakage",
+                            "cross_cell_leakage",
+                            "oom",
+                            "disk_exhaustion",
+                            "postgres_deadlock",
+                            "unbounded_backlog",
+                            "synthetic_source_timeout",
+                            "bff_error_threshold",
+                            "materializer_starvation",
+                            "receiver_ack_slo_breach"
+                        ],
+    "runner":  {
+                   "path":  "scripts/11-windows/cell-capacity-proof-v1.ps1",
+                   "default_mode":  "dry_run",
+                   "execute_requires":  [
+                                            "FASE_A_FORMAL_CLOSEOUT=PASS",
+                                            "explicit_synthetic_manifest",
+                                            "same_source_commit",
+                                            "same_binary_hashes",
+                                            "same_rule_version",
+                                            "same_protocol_schema",
+                                            "same_topology",
+                                            "same_hardware_profile"
+                                        ],
+                   "implicit_data_generation":  false,
+                   "policy_mutation":  false,
+                   "last_run_id":  "capacity-v1-bff-final",
+                   "last_run_status":  "CELL_CAPACITY_V1_VALIDATED_UP_TO_POLICY_LIMIT",
+                   "last_run_artifact":  "artifacts/capacity-capacity-v1-bff-final/capacity-proof-result.json",
+                   "last_run_source_commit":  "587d430b83362cfd2c5ce96c58a30b560472d2f5",
+                   "wave_1_3_5_executed":  true,
+                   "bff_probe_executed":  true,
+                   "bff_blocker":  null
+               },
+    "next_unlock":  "Parametrize and execute the CellRouter BFF read-model probe against this disposable capacity environment; only then may Capacity Proof V1 be classified PASS.",
+    "evidence":  {
+                     "result_artifact":  "artifacts/capacity-capacity-v1-bff-final/capacity-proof-result.json",
+                     "run_id":  "capacity-v1-bff-final",
+                     "source_commit":  "587d430b83362cfd2c5ce96c58a30b560472d2f5",
+                     "classification":  "CELL_CAPACITY_V1_VALIDATED_UP_TO_POLICY_LIMIT",
+                     "bff_probe":  "PASS",
+                     "waves":  [
+                                   "WAVE-1",
+                                   "WAVE-3",
+                                   "WAVE-5"
+                               ]
+                 },
+    "non_claims":  {
+                       "CAPACITY_NOT_YET_PROVEN":  false,
+                       "NATIONAL_SCALE_NOT_PROVEN":  true,
+                       "PRODUCTION_READINESS_NOT_DECLARED":  true,
+                       "CAPACITY_MAXIMUM_NOT_DISCOVERED":  true,
+                       "WAVE_6_PLUS_FORBIDDEN":  true
+                   }
+}

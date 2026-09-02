@@ -1,0 +1,148 @@
+{
+  "run_id": "multicell-runtime-e2e-20260815-continuation",
+  "source_commit": "1ebaeb8a2fe70aa50e067c77cab923502ecd4470",
+  "branch": "mission/multicell-e2e-20260815",
+  "classification": "HOMOLOGATION_MULTI_CELL_PARTIAL_BLOCKED",
+  "push_performed": false,
+  "runtime_cleanup": {
+    "containers_running": 0,
+    "runtime_ports_listening": false,
+    "temporary_rls_roles_removed": true,
+    "temporary_agent_states_removed": true,
+    "temporary_launchers_removed": true
+  },
+  "commits_created": [
+    {
+      "sha": "13eaf40",
+      "message": "fix(ingest): route agent auth through control plane pool",
+      "scope": "receiver authentication pool and internal/external municipality binding"
+    },
+    {
+      "sha": "1ebaeb8",
+      "message": "fix(m1): resolve authority with external municipality code",
+      "scope": "optional authority_municipality_id in MaterializationRequest"
+    }
+  ],
+  "binary_sha256": {
+    "pec-agent-sync.exe": "92CEFA085C8CA1943042D92EE6901020C2056317A6B326DA91EA2C61DCE91B11",
+    "dm-sync-ingest.exe": "34C2439B94F81744C4A9DA648D5F6D0E3DDA45DD8BA3D4F5E7E0CC4DDC395B",
+    "b360-materialize.exe": "18FB5E51CFA9449F5668706C374D609FC8C084AD094AD79BCE3E72936581C4"
+  },
+  "synthetic_data": {
+    "marker": "SYNTHETIC_HOMOLOGATION_DATA",
+    "competence": "2026-07-01",
+    "ine": "1000000001",
+    "team_type_code": "72",
+    "municipality_external_ids": ["1234501", "1234502"],
+    "clinical_or_nominal_data_used": false,
+    "real_pec_used": false,
+    "manual_read_model_or_gate_inserts": false
+  },
+  "baseline_gates": {
+    "typed_cursor_contract": "PASS",
+    "typed_cursor_legacy_incompatible": "PASS",
+    "rust_fmt": "PASS",
+    "rust_check": "PASS",
+    "rust_clippy": "PASS_INHERITED",
+    "rust_tests_inherited": "PASS",
+    "rust_tests_b360_rules": "PASS:228",
+    "rust_tests_dm_sync_ingest": "PASS:102,IGNORED:14",
+    "typescript_typecheck": "PASS_INHERITED",
+    "edge_state_restart_probe": "PASS_INHERITED"
+  },
+  "e2e_gates": {
+    "LKG_RESTART_VALIDATED": {
+      "status": "FAIL",
+      "evidence": "Control Plane stopped; real agent restart returned HTTP 503 authentication service unavailable"
+    },
+    "SELECTIVE_CURSOR_REBUILD_VALIDATED": {
+      "status": "PASS",
+      "evidence": "tb_cid10 selected co_seq_cid10; legacy-text-cursor rebuilt to 00000000000000000002; unrelated checkpoints preserved"
+    },
+    "M1_SOURCE_PACKAGE_READY_A": {
+      "status": "PASS",
+      "evidence": "diagnose-M1-A-ready-final.json; ready=true; source contract and SCNES/e-Gestor authority valid"
+    },
+    "M1_SOURCE_PACKAGE_READY_B": {
+      "status": "PASS",
+      "evidence": "diagnose-M1-B-ready-final.json; ready=true; source contract and SCNES/e-Gestor authority valid"
+    },
+    "M1_MATERIALIZATION_COMPLETED_A": {
+      "status": "PASS",
+      "evidence": "materialize-M1-A-final.stdout.json; READY/OK/COVERED_WITH_EVIDENCE/CURRENT; replayed=false"
+    },
+    "M1_MATERIALIZATION_COMPLETED_B": {
+      "status": "PASS_WITH_REPLAY",
+      "evidence": "materialize-M1-B-final.stdout.json; READY/OK/COVERED_WITH_EVIDENCE/CURRENT; replayed=true"
+    },
+    "M1_READ_MODEL_VALIDATED_A": {
+      "status": "BLOCKED",
+      "evidence": "adaptive_m1_read_models count=0 under DEFAULT_CELL and municipality-A; jobs remained pending"
+    },
+    "M1_READ_MODEL_VALIDATED_B": {
+      "status": "BLOCKED",
+      "evidence": "No current downstream read model evidence under B scope"
+    },
+    "M1_ZERO_DIFF_PARITY_VALIDATED": {
+      "status": "NOT_RUN",
+      "reason": "Requires validated read models A and B"
+    },
+    "M1_GOLDEN_MATCH_VALIDATED": {
+      "status": "NOT_RUN",
+      "reason": "Requires validated read models and approved golden evidence"
+    },
+    "BFF_REAL_READ_MODEL_ROUTING_VALIDATED": {
+      "status": "NOT_RUN",
+      "reason": "Requires validated real read models"
+    },
+    "DYNAMIC_CROSS_TENANT_RLS_VALIDATED": {
+      "status": "PASS",
+      "evidence": "Non-superuser, non-BYPASSRLS roles returned 6 rows for correct scope and 0 for wrong tenant/municipality in both cells"
+    },
+    "NORMALIZER_RECLAIM_VALIDATED": {
+      "status": "BLOCKED",
+      "evidence": "1,624 normalized_chunk_summary_v1 jobs pending; adaptive materializer claims adaptive_m1_v1"
+    },
+    "MATERIALIZER_FENCING_VALIDATED": {
+      "status": "NOT_RUN",
+      "reason": "No downstream materializer claim/read-model effect was observed"
+    },
+    "MATERIALIZATION_EXACTLY_ONCE_EFFECT_VALIDATED": {
+      "status": "BLOCKED",
+      "evidence": "CLI replay observed, but materialization_results/read model effect remained empty under valid RLS scope"
+    },
+    "POST_MATERIALIZATION_FAULT_MATRIX": {
+      "status": "NOT_RUN",
+      "reason": "Requires downstream read model"
+    },
+    "CELL_FAILURE_DOMAIN_ISOLATED_RUNTIME": {
+      "status": "NOT_RUN",
+      "reason": "Requires post-materialization fault execution"
+    }
+  },
+  "blockers": [
+    {
+      "id": "LKG_CONTROL_PLANE_DEPENDENCY",
+      "severity": "BLOCKING",
+      "root_cause": "No validated LKG assignment use during Control Plane outage; restart reached receiver authentication dependency and returned HTTP 503"
+    },
+    {
+      "id": "ADAPTIVE_WORKLOAD_HANDOFF",
+      "severity": "BLOCKING",
+      "root_cause": "Pending normalized_chunk_summary_v1 jobs were not converted into adaptive_m1_v1 jobs consumed by the materializer"
+    },
+    {
+      "id": "DOWNSTREAM_READ_MODEL_ABSENT",
+      "severity": "BLOCKING",
+      "root_cause": "No materialization_results or adaptive_m1_read_models effect observable under the valid scoped query"
+    }
+  ],
+  "evidence_files": [
+    "integration/diagnose-M1-A-ready-final.json",
+    "integration/diagnose-M1-B-ready-final.json",
+    "integration/materialize-M1-A-final.stdout.json",
+    "integration/materialize-M1-B-final.stdout.json",
+    "integration/lkg-agent-a-control-down.log",
+    "integration/cursor-rebuild-tb-cid10-rebuilt-agent.log"
+  ]
+}

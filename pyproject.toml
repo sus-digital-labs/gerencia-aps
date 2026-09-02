@@ -1,0 +1,15 @@
+[project]
+name = "sus-analytics-web"
+version = "0.1.0"
+description = "Plataforma pública profissional para engenharia, análise e processamento distribuído de dados de Saúde Pública/SUS"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv.workspace]
+members = [
+    "apps/core/*",
+    "apps/gateway",
+    "apps/oauth",
+    "apps/agentes/*",
+    "libs/*"
+]

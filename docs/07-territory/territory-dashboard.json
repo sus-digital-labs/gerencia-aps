@@ -1,0 +1,38 @@
+{
+  "title": "Territory Runtime Hardening",
+  "schemaVersion": 39,
+  "tags": ["territory", "e-sus-aps", "privacy", "retention"],
+  "templating": {"list": []},
+  "panels": [
+    {"type":"stat","title":"Snapshot age","targets":[{"expr":"territory_snapshot_age_seconds"}]},
+    {"type":"timeseries","title":"Viewport p50/p95/p99","targets":[
+      {"expr":"histogram_quantile(0.50, sum by (le) (rate(territory_viewport_duration_seconds_bucket[5m])))","legendFormat":"p50"},
+      {"expr":"histogram_quantile(0.95, sum by (le) (rate(territory_viewport_duration_seconds_bucket[5m])))","legendFormat":"p95"},
+      {"expr":"histogram_quantile(0.99, sum by (le) (rate(territory_viewport_duration_seconds_bucket[5m])))","legendFormat":"p99"}
+    ]},
+    {"type":"timeseries","title":"Requests and payload","targets":[
+      {"expr":"rate(territory_viewport_requests_total[5m])","legendFormat":"requests"},
+      {"expr":"rate(territory_viewport_payload_bytes_total[5m])","legendFormat":"payload_bytes"}
+    ]},
+    {"type":"timeseries","title":"Import/remap/rollback durations","targets":[
+      {"expr":"histogram_quantile(0.95, sum by (le) (rate(territory_snapshot_import_duration_seconds_bucket[5m])))","legendFormat":"import_p95"},
+      {"expr":"histogram_quantile(0.95, sum by (le) (rate(territory_remap_simulation_duration_seconds_bucket[5m])))","legendFormat":"simulation_p95"},
+      {"expr":"histogram_quantile(0.95, sum by (le) (rate(territory_remap_publication_duration_seconds_bucket[5m])))","legendFormat":"publication_p95"},
+      {"expr":"histogram_quantile(0.95, sum by (le) (rate(territory_remap_rollback_duration_seconds_bucket[5m])))","legendFormat":"rollback_p95"}
+    ]},
+    {"type":"timeseries","title":"Retention and crypto-shredding","targets":[
+      {"expr":"increase(territory_retention_jobs_total[24h])","legendFormat":"retention_jobs"},
+      {"expr":"increase(territory_crypto_shredded_total[24h])","legendFormat":"crypto_shredded"},
+      {"expr":"histogram_quantile(0.95, sum by (le) (rate(territory_retention_claim_duration_seconds_bucket[5m])))","legendFormat":"claim_p95"}
+    ]},
+    {"type":"timeseries","title":"Security and guardrails","targets":[
+      {"expr":"increase(territory_access_denied_total[15m])","legendFormat":"access_denied"},
+      {"expr":"increase(territory_cross_tenant_attempt_blocked_total[15m])","legendFormat":"cross_tenant_attempt_blocked"},
+      {"expr":"increase(territory_cross_tenant_policy_failure_total[5m])","legendFormat":"cross_tenant_policy_failure"},
+      {"expr":"increase(territory_external_calls_total[5m])","legendFormat":"external_calls"}
+    ]},
+    {"type":"timeseries","title":"Fingerprint backfill","targets":[
+      {"expr":"histogram_quantile(0.95, sum by (le) (rate(territory_fingerprint_backfill_duration_seconds_bucket[5m])))","legendFormat":"backfill_p95"}
+    ]}
+  ]
+}

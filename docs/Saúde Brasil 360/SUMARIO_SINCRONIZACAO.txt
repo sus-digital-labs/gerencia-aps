@@ -1,0 +1,49 @@
+SUMÁRIO DE SINCRONIZAÇÃO E VALIDAÇÃO — SAÚDE BRASIL 360
+Revisão: 26/08/2026
+
+CLASSIFICAÇÃO
+Este arquivo é um resumo operacional. A fonte normativa é o Ministério da Saúde; o contrato interno e a matriz local são derivados. O histórico de scripts PHP, QualiSUS, XAMPP, Apache e MariaDB não define o fluxo atual do produto.
+
+ESCOPO
+O produto acompanha 21 métricas: B1-B6, C1-C7, M1-M2 e CVAT1-CVAT6. O catálogo oficial do Siaps também lista P1-P6, CR1-CR4 e R1-R6, que permanecem fora do escopo atual.
+
+SEQUÊNCIA OPERACIONAL
+1. Consultar a nota metodológica e a fonte do indicador.
+2. Registrar sistema de origem, versão e modelo de informação.
+3. Confirmar tabelas, colunas, chaves e code sets na competência.
+4. Validar cardinalidade, nulos, duplicidades e escopo territorial.
+5. Rejeitar ou deixar pendente lote incompatível, sem transformar falha em zero.
+6. Persistir chave idempotente, resultado da validação, motivo de descarte e linhagem.
+7. Atualizar matriz, contrato, status do indicador e changelog.
+
+BLOQUEIO C1
+C1 exige atendimentos de demanda programada divididos pelo total de atendimentos elegíveis. O schema auditado de tb_fat_atendimento_individual não comprova a variável que distingue demanda programada de espontânea. A dimensão tb_dim_tipo_atendimento só pode ser usada depois de validar chave, code set e cardinalidade.
+
+Status atual: C1_BLOCKED_BY_DATA_CONTRACT.
+Código: C1_BLOCKED_BY_DATA_CONTRACT.
+Conduta: não calcular por tipo genérico de consulta, procedimento, texto livre ou proxy de acesso. Consultar docs/13-saude-brasil-360/c1-data-contract-issue-2026-08-26.md.
+
+COMPATIBILIDADE
+A Nota Técnica nº 12/2025 determina validação conforme versão do modelo de informação e invalidação de dados enviados por versões liberadas há mais de 12 meses. A Nota Informativa nº 13/2025 registra risco operacional de CDS Offline e versões antigas. A página de versões registra o e-SUS APS 5.5.24 em 03/08/2026.
+
+IDENTIDADE
+FCI e FCDT devem ser reconciliadas por regras explícitas e chaves técnicas protegidas. Para B3, B5 e B6, o vínculo oficial entre eSB e eSF/eAP deve ser comprovado antes de promover elegibilidade. CPF e CNS não devem ser combinados por aproximação silenciosa. Inconsistências de responsável ou vínculo domiciliar ficam pendentes e são contabilizadas separadamente.
+
+DOCUMENTOS DE REFERÊNCIA
+- docs/13-saude-brasil-360/README.md
+- docs/13-saude-brasil-360/official-catalog-2026-08-26.md
+- docs/13-saude-brasil-360/siaps-operational-compatibility-2026-08-26.md
+- docs/13-saude-brasil-360/siaps-calendar-2026.md
+- docs/13-saude-brasil-360/c1-data-contract-issue-2026-08-26.md
+- docs/Saúde Brasil 360/ANALISE_TABELAS_ESUS.md
+- docs/Saúde Brasil 360/GUIA_RAPIDO_TABELAS.md
+- docs/Saúde Brasil 360/PROCESSO_TABELAS_ESUS.md
+
+FONTES OFICIAIS
+https://sisaps.saude.gov.br/sistemas/siaps/docs/manual/notas-metodologicas/
+https://sisaps.saude.gov.br/sistemas/siaps/docs/manual/calendario-siaps/
+https://sisaps.saude.gov.br/sistemas/esusaps/docs/Versoes/versao_5_5
+https://sisaps.saude.gov.br/sistemas/esusaps/docs/materiais-de-apoio/normativas-portarias/
+
+STATUS
+Resumo atualizado em 26/08/2026. Os números históricos de 77 tabelas, os comandos PHP e o status de 07/05/2026 foram preservados somente como evidência histórica nos arquivos correspondentes.

@@ -1,0 +1,68 @@
+groups:
+  - name: territory-runtime-hardening
+    rules:
+      - alert: TerritoryExternalCallsInDryRun
+        expr: increase(territory_external_calls_total[5m]) > 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "External call detected in dry_run"
+          action: "Block promotion and inspect provider guardrail"
+
+      - alert: TerritoryCrossTenantPolicyFailure
+        expr: increase(territory_cross_tenant_policy_failure_total[5m]) > 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Cross-tenant policy failure detected"
+          action: "Block promotion and investigate isolation"
+
+      - alert: TerritoryCrossTenantMetricsMissing
+        expr: absent(territory_cross_tenant_policy_failure_total) or absent(territory_cross_tenant_attempt_blocked_total)
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Cross-tenant metrics are missing"
+          action: "Investigate exporter/runtime before treating zero as healthy"
+
+      - record: territory:cross_tenant_attempt_blocked_rate5m
+        expr: rate(territory_cross_tenant_attempt_blocked_total[5m])
+
+      - record: territory:cross_tenant_attempt_blocked_baseline6h
+        expr: avg_over_time(territory:cross_tenant_attempt_blocked_rate5m[6h])
+
+      - alert: TerritoryCrossTenantAttemptBlockedAnomaly
+        expr: territory:cross_tenant_attempt_blocked_rate5m > 3 * clamp_min(territory:cross_tenant_attempt_blocked_baseline6h, 0.001)
+        for: 10m
+        labels:
+          severity: warning
+          calibration: required
+        annotations:
+          summary: "Anomalous cross-tenant blocked-attempt rate"
+          action: "Review access pattern without disabling isolation"
+          note: "3x, 6h and 0.001 are initial detection parameters, not SLO or approved threshold"
+
+      - alert: TerritoryRetentionWorkerStalled
+        expr: increase(territory_retention_jobs_total[24h]) == 0
+        for: 30m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Retention worker did not claim a run"
+          action: "Inspect scheduler, leases and legal holds"
+
+      - alert: TerritoryBackfillStalled
+        expr: increase(territory_fingerprint_backfill_duration_seconds_count[24h]) == 0
+        for: 30m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Fingerprint backfill has no observation"
+          action: "Inspect worker readiness and source read-only access"
+
+      # Disabled until an operational freshness threshold is approved.
+      # Status: SNAPSHOT_FRESHNESS_THRESHOLD_NOT_APPROVED.
+      # Configure territory_snapshot_age_seconds through the approved environment mechanism before enabling.

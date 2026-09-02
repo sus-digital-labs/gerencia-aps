@@ -1,0 +1,1543 @@
+memorize aprenda são orientações de prioridade para o bom desenvolvimento do sistema e de filtragem e de entendimento do que será exibido e acompanhado e buscado as informações então são regras que serão seguidas 
+
+
+
+1 - regras todos os profissionais e usuários são vinculados a uma equipe .
+
+2 - os profissionais os acs agentes comunitários de saúde e usuários e outros profissionais como enfermeiro, técnicos de enfermagem, médicos e outros profissionais são vinculados a uma equipe de saúde 
+
+3 - todo acs agente comunitário de saúde e vinculado a uma equipe de saúde e a uma microárea micro área 
+
+4 - todo usuário e vinculado a uma equipe de saúde e a uma microárea micro área 
+
+5 - todo indicador tem critérios e regras a serem seguidos 
+
+6 - todo cidadão que tiver um critério será exibido o nome dele com os vínculos dele e as regras que ele deve seguir para atingir a pontuação 
+
+7 - exemplo de fluxo o usuário esta na condição de gestante ela e vinculada a uma equipe que e vinculada a uma microárea micro área que a condição de gestante tem que atender aos critérios e regras como por exemplo os Evento
+· Consulta por profissional médica(o) ou enfermeira(o).
+· Registro de aferição de pressão arterial.
+· Registro de realização de testes rápidos ou exames avaliados.
+· Registro de peso e altura para avaliação antropométrica.
+· Visita domiciliar de ACS/TACS.
+· Registro de vacinação de dTPa.
+· Registro de consulta odontológica.
+
+cada um marcador deste valeu ponto e tem que ser registrado cada um deles cada um tem seus prazos e tem que seguir as orientações como por exemplo: 
+Boas práticas de
+acompanhamento/
+cuidado
+(A) Ter a 1ª consulta presencial ou remota realizada por médica(o) ou enfermeira(o), até a 12ª
+semana de gestação.
+(B) Ter pelo menos 07 (sete) consultas presenciais ou remotas realizadas por médica(o) ou
+enfermeira(o) durante o período da gestação.
+(C) Ter pelo menos 07 (sete) registro de aferição de pressão arterial realizados durante o
+período da gestação.
+(D) Ter pelo menos 07 (sete) registros simultâneos de peso e altura durante o período da
+gestação.
+(E) Ter pelo menos 03 (três) visitas domiciliares realizadas por ACS/TACS, após a primeira
+consulta do pré-natal.
+(F) Ter vacina acelular contra difteria, tétano, coqueluche (dTpa) registrada a partir da 20ª
+semana de cada gestação.
+(G) Ter registro dos testes rápidos ou dos exames avaliados para sífilis, HIV e hepatites B e C
+realizados no 1º trimestre de cada gestação.
+(H) Ter registro dos testes rápidos ou dos exames avaliados para sífilis e HIV realizados no 3º
+trimestre de cada gestação.
+(I) Ter pelo menos 01 (um) registro de consulta presencial ou remota realizada por médica(o) ou
+enfermeira(o) durante o puerpério.
+(J) Ter pelo menos 01 (uma) visita domiciliar realizada por ACS/TACS durante o puerpério.
+(K) Ter pelo menos 01 (uma) atividade em saúde bucal realizada por cirurgiã(ão) dentista ou
+técnica(o) de saúde bucal durante o período da gestação.
+
+
+os prazos são Datas relevantes
+· Data da Última Menstruação (DUM).
+· Data Provável do Parto (DPP).
+· Idade Gestacional.
+· Primeira consulta do pré-natal.
+Atenção! O encerramento de cada gestação no sistema irá considerar o total de 294 dias de
+gestação, o que corresponde a 42 semanas. E, para cada puerpério, será considerado no sistema
+o total de 42 dias após o término da gestação.
+
+
+e o calculo da da seguinte forma Fórmula de Cálculo
+Numerador:
+Somatório das boas práticas pontuadas para a pessoa gestante e puérpera, durante cada
+gestação.
+Denominador:
+Nº total de gestantes e puérperas vinculadas à equipe no período.
+24 Método de cálculo I. Regras gerais:
+a) Identificação da pessoa assistida:
+· Nome, data de nascimento, Cartão Nacional de Saúde (CNS) ou Cadastro de Pessoa Física
+(CPF) válido por pessoa, em conformidade com o Cadastro Nacional de Saúde (CadSUS).
+b) Validação das equipes:
+· Serão consideradas equipes de Saúde da Família (eSF), e equipes de Atenção Primária (eAP),
+tipo 70 e 76, respectivamente, atendendo as condições previstas na Portaria GM/MS nº
+3.493/2024.
+· As boas práticas (E) e (J) não serão condicionantes de pontuação para eAP, tipo 76, atendendo
+as condições previstas na PRC GM/MS nº 02/2017.
+c) Grupos de CBO utilizados para todas as consultas de atendimento individual, presencial ou
+remoto:
+· 2235 - Enfermeiros
+· 2231 / 2251 / 2252 / 2253 - Médicos
+d) Grupos de CBO utilizados para todos os procedimentos listados, com exceção do
+03.01.01.025-0 (teleconsulta na APS):
+· 2235 - Enfermeiros
+N Título Descrição
+· 2231 / 2251 / 2252 / 2253 - Médicos
+· 2232 - Cirurgiões-dentistas
+· 2234 - Farmacêuticos
+· 2236 - Fisioterapeutas
+· 2238 - Fonoaudiólogos
+· 2237 - Nutricionistas
+· 2241 - Profissionais de Educação Física
+· 3222 - Técnico de enfermagem e auxiliar de enfermagem
+· 2239 - Terapeutas ocupacionais, ortopedistas e psicomotricistas.
+· 5151-05 - Agente Comunitário de Saúde
+· 3222-55 - Técnico em Agente Comunitário de Saúde
+e) Modelos de Informação da Estratégia eSUS APS:
+Serão considerados os seguintes modelos de informação:
+· Modelo de Informação de Atendimento Individual (MIAI): considera o Atendimento Individual
+(presencial, domiciliar e remoto) com identificação do tipo de demanda, desde que registrado
+por profissionais de saúde dos CBO supracitados, com CNS profissional identificado.
+· Modelo de Informação de Procedimentos (MIP): considera os procedimentos realizados
+conforme a tabela do Sistema de Gerenciamento da Tabela de Procedimentos, Medicamentos e
+OPM do SUS (SIGTAP), desde que registrado por profissionais de saúde dos CBO supracitados,
+com CNS profissional identificado.
+· Modelo de informação de Visita Domiciliar e Territorial (MIVDT): considera o registro de
+visitas domiciliares, com preenchimento do ‘‘motivo da visita’’, desde que registrado por
+ACS/TACS, com CNS profissional identificado.
+· Modelo de informação de Vacinação (MIV): considera o registro da aplicação dos imunizantes,
+com identificação do imunobiológico e dados da estratégia, dose, lote e fabricante, desde que
+registrado por profissionais de saúde dos CBO supracitados, com CNS profissional identificado.
+· Modelo de Informação de Atividade Coletiva (MIAC): considera a atividade coletiva realizada
+(quantitativo de pessoas participantes de pelo menos uma atividade coletiva - código 04, 05, 06
+e 07, de forma específica ou compartilhada), desde que por profissionais de saúde dos CBO
+supracitados, com CNS profissional.
+· Registro de Imunobiológico Administrado (RIA): considera as informações sobre a aplicação de
+imunobiológicos, como vacinas, e faz parte da Rede Nacional de Dados em Saúde (RNDS) que
+tem como objetivo padronizar o registro e compartilhamento dessas informações, tanto em
+campanhas de vacinação quanto na rotina de imunização.
+· Modelo de Informação de Atendimento Odontológico Individual (MIAOI): considera o registro
+de Atendimento Odontológico Individual, desde que realizado por profissional de saúde bucal,
+com CNS profissional identificado.
+f) CID-10 e/ou CIAP-2 ativos considerados para critérios de elegibilidade:
+CID-10 e CIAP-2 para considerar uma gestação:
+· CIAP-2: W78; W79; W81; W84; W85; e/ou
+· CID-10: O11, O12.0, O12.1, O12.2, O13, O14.0, O14.1, O14.9, O15.0, O15.1, O15.9, O16,
+O20.0, O20.8, O20.9, O21.0, O21.1, O21.2, O21.8, O21.9, O22.0, O22.1, O22.2, O22.3, O22.4,
+O22.5, O22.8, O22.9, O23.0, O23.1, O23.2, O23.3, O23.4, O23.5, O23.9, O29.9, O30.0, O30.1,
+O30.2, O30.8, O30.9, O31.1, O31.2, O31.8, O32.0, O32.1, O32.2, O32.3, O32.4, O32.5, O32.6,
+O32.8, O32.9, O33.0, O33.1, O33.2, O33.3, O33.4, O33.5, O33.6, O33.7, O33.8, O75.2, O75.3,
+O99.0, O99.1, O99.2, O99.3, O99.4, O24.0, O24.1, O24.2, O24.3, O24.4, O24.9, O25, O26.0,
+O26.1, O26.3, O26.4, O26.5, O26.8, O26.9, O28.0, O28.1, O28.2, O28.3, O28.4, O28.5, O28.8,
+O28.9, O29.0, O29.1, O29.2, O29.3, O29.4, O29.5, O29.6, O29.8, O33.9, O34.0, O34.1, O34.2,
+O34.3, O34.4, O34.5, O34.6, O34.7, O34.8, O34.9, O35.0, O35.1, O35.2, O35.3, O35.4, O35.5,
+O35.6, O35.7, O35.8, O35.9, O36.0, O36.1, O36.2, O36.3, O36.5, O36.6, O36.7, O36.8, O36.9,
+O40, O41.0, O41.1, O41.8, O41.9, O43.0, O43.1, O43.8, O43.9, O44.0, O44.1, O46.0, O46.8,
+O46.9, O47.0, O47.1, O47.9, O48, O99.5, O99.6, O99.7, Z64.0, O10, O12, O14, O15, O20, O21,
+O22, O23, O24, O26, O28, O29, O30, O31, O32, O33, O34, O35, O36, O41, O43, O44, O46, O47,
+O98, Z34, Z35, Z36, Z32.1, Z33, Z34.0, Z34.8, Z34.9, Z35.0, Z35.1, Z35.2, Z35.3, Z35.4, Z35.7,
+Z35.8, Z35.9
+· Os códigos rápidos ABP de pré-natal devem ser considerados.
+CID-10 e/ou CIAP-2 para puerpério:
+· CIAP-2: 48; 49; P29; W18; W19; W70; W90; W91; W92; W93; W94; W95; W96; e/ou
+· CID-10: F53, F53.0, F53.1, F53.8, F53.9, O10, O10.0, O10.1, O10.2, O10.3, O10.4, O10.9, O85,
+O86, O87, O90, O91, O92, O94, O98, O99, M83.0, O15.2, O26.6, O72.2, O72.3, Z39.1,
+Z39.2, O86.0, O86.1, O86.2, O86.3, O86.4, O86.8, O87.0, O87.1, O87.2, O87.3, O87.8, O87.9,
+O90.0, O90.1, O90.2, O90.3, O90.4, O90.5, O90.8, O90.9, O91.0, O91.1, O91.2, O92.0, O92.1,
+O92.2, O92.3, O92.4, O92.5, O92.6, O92.7, O99.8 e Z39.
+· Os códigos rápidos ABP de puerpério devem ser considerados para os numeradores.
+g) CID-10 e/ou CIAP-2 ativos considerados para critérios de exclusão:
+· CIAP-2: W82; W83; e/ou
+· CID-10: O02; O021; O03; O04; O05; O06; Z303.
+N Título Descrição
+h) Código do procedimento (o procedimento só é válido respeitando-se as habilitações de
+CBO previstos na tabela SIGTAP):
+· 01.01.04.002-4 - Avaliação antropométrica
+· 01.01.04.008-3 - Medição de peso
+· 01.01.04.007-5 - Medição de altura
+· 03.01.10.003-9 - Aferição da pressão arterial
+· 03.01.01.003-0 - Consulta de profissionais de nível superior na atenção primária (exceto
+médico)
+· 03.01.01.006-4 - Consulta médica em atenção primária
+· 03.01.01.011-0 - Consulta pré-natal
+· 03.01.01.012-9 - Consulta puerperal
+· 03.01.01.013-7 - Consulta/atendimento domiciliar
+· 03.01.01.025-0 - Teleconsulta na atenção primária
+· 02.14.01.004-0 - Teste rápido para detecção de HIV na gestante ou pai/parceiro
+· 02.14.01.027-9 - teste rápido para detecção de anticorpos anti-HIV em gestante
+· 02.14.01.005-8 - Teste rápido para detecção de infecção pelo HIV
+· 02.14.01.007-4 - Teste rápido para sífilis
+· 02.14.01.008-2 - Teste rápido para sífilis na gestante ou pai/parceiro
+· 02.14.01.025-2 - Teste rápido treponêmico (sífilis) em gestante
+· 02.14.01.009-0 - Teste rápido para detecção de hepatite C
+· 02.14.01.030-9 - Teste rápido para detecção de anticorpos contra o vírus da hepatite C em
+gestante.
+· 02.14.01.010-4 - Teste rápido para detecção de infecção pelo HBV
+· 02.14.01.023-6- teste rápido para detecção do antígeno de superfície do vírus da hepatite B -
+HBV (HBSAG) em gestante.
+· 02.13.01.078-0 - Detecção rápida da carga viral do HIV
+· 02.13.01.050-0 - Quantificação da carga viral do HIV (RNA)
+· 02.02.03.109-8 - Teste treponêmico para detecção de sífilis
+· 02.02.03.111-0 - Teste não treponêmico para detecção de sífilis
+· 02.02.03.117-9 - Teste não treponêmico para detecção de sífilis em gestante
+· 02.02.03.078-4 - Pesquisa de anticorpos IgG e IgM contra o antígeno central do vírus da
+hepatite B (anti-HBC total)
+· 02.02.03.097-0 - Pesquisa de antígeno de superfície do vírus da hepatite B (HBsAG)
+· 02.13.01.020-8 - Identificação do vírus da hepatite B por PCR (quantitativo)
+· 02.02.03.005-9 - Detecção de RNA do vírus da hepatite C (qualitativo)
+· 02.02.03.067-9 - Pesquisa de anticorpos contra o vírus da hepatite C (anti-HCV)
+i) Esquema de dose:
+· 1 dose a cada gestação, a partir da vigésima semana de gestação (Código de vacina a ser
+considerado: 57 - Vacina dTpa adulto).
+
+
+no final se obtém a somatória da nota Indicadores
+30 Parâmetro
+Ótimo: > 75 e ≤ 100
+Bom: > 50 e ≤ 75
+Suficiente: > 25 e ≤ 50
+Regular: ≤ 25
+
+
+8 - cada usuario tem suas regras a seguir para cada indicador tem seus eventos suas notas sua formula de calculo regras criterios 
+
+9 - o sistema ira exibir o usuário com filtros separados pela unidade, pelo profissional, e pelo quadro de indicador que ele pertence 
+
+10 - o usuário pode fazer parte de mais de um indicador ele poderá fazer parte de mais de um modulo
+
+11 - cada modulo mostra o seu indicador especifico sem mostra o indicador dos outros módulos já o usuário vai aparecer nos módulos que ele faz partes por exemplo ele poderá aparecer no indicador modulo de hipertenso se for hipertenso e no modulo de diabético indicador diabético se for diabético cada
+
+12 - cada modulo com suas regras eventos formulas critérios cada modulo exibe o usuário que faz parte deste critérios
+
+dentro da pasta C:\xampp821\htdocs\qualisus\Saúde Brasil 360 contem pdf que contem todas as informações sobre os critérios eventos datas cbo procedimentos cálculos e outras informações necessárias dentro do banco qualisus do xampp contem as tabelas para que busque os dados e seja exibidos por usuário ou geral a depender do que o código php estará pedindo 
+
+
+
+
+agora que tem todas as informações dos indicadores e tabelas que representam estes indicadores fala uma leitura do código de todo o sistema dados de todas as paginas php de todos os scripts js e Java script entenda o código de cada pagina dessas entenda o que a paginas e o código do php esta pedindo e preencha com os dados das tabelas que foram sincronizadas e tabelas que já existiam no banco qualisus que esta no xampp fornecendo assim dados reais as tabelas que não existir e o sistema esta solicitando dados busque essas tabelas adicione no qualisus que esta no xampp ou crie a tabela caso ela não faça parte da lista de tabelas do esus caso ela faça parte das tabelas do esus adicione a lista de tabelas a serem sincronizadas para poder assim corrigir os campos dos códigos php e exibir exatamente o que o código php esta pedindo leia todo o código php entenda o que esta sendo solicitado e busque as informações que o código solicita e vincule aos códigos as informações que o código esta pedindo todas as informações que o código php esta sendo solicitada deve vir do banco qualisus as tabelas que não estiver no qualisus devem aparecer após a sincronização então entenda que quem alimenta o banco qualisus com informações e o banco esus do postgress através da sincronização que faz copias das tabelas do esus postegress para o banco qualisus do xampp sem modificar o banco esus do postgress o código php do sistema as informações e alimentada com as informações que vem do banco qualisus do xampp as informações que faltarem no qualisus do xampp tenta fazer a sincronização para buscar as informações no esus postgress e copiar a tabela faltante para o qualisus xampp desta forma fica sempre atualizada as tabelas e o código php contem todas as informações necessárias para exibir todas as informações que o código esta solicitando vasculhe todos os códigos php do sistema e busque todas as informações nas tabelas verifique erros e teste as paginas aprenda sobre o sistema e os códigos php para poder facilitar quando dor incluir as informações que o código esta precisando inclua todas as informações que o código busca exibir que o código esta pedindo leia o código e veja as informações e compare com o que o Saúde Brasil 360
+Componente de Qualidade — Caderno de Cálculo dos Indicadores APS coloque as notas de cada ação e marque de verde para as finalizadas atingidas e vermelho para não feitas ou finalizadas entenda o código e os indicadores para e coloque a nota analise o código todo entenda o que será feito e o que o código php solicita para atingir estas metas para que estas metas seram atingidas leia a forma de calculo entenda e aplique com as informações obtidas caso precise de informação a mais para entender o que o código pede acesse sites fora sites da internet e pesquise para poder colocar no sistema  ## B1 - B1 - Primeira Consulta Programada por equipe de Saúde Bucal (eSB)
+INDICADOR B1 - Primeira Consulta Programada por equipe de Saúde Bucal (eSB)
+
+SEGMENTO: Saude Bucal | PESO: 3 | NOTA MAXIMA POR SEGMENTO: 10,0 pontos
+
+OBJETIVO: Avaliar se a equipe de Saude Bucal tem conseguido organizar seu processo de trabalho, garantindo acesso a sua populacao, por meio da primeira consulta odontologica programatica.
+
+EVENTOS:
+1) Primeira consulta odontologica programatica
+
+FORMULA COMPLETA:
+- Numerador: N total de pessoas com primeira consulta odontologica programatica realizadas pela eSB
+- Denominador: N total de pessoas vinculadas a eSF/eAP da eSB de referencia
+- Formula: (N total de pessoas com 1a consulta odontologica programatica / N total de pessoas vinculadas a eSF/eAP) x 100
+- Unidade: Percentual (%)
+- Polaridade: Maior-melhor
+
+TABELA DE CLASSIFICACAO DO INDICADOR (conceito -> faixa -> score):
+- Otimo: > 5% -> Score: 1,0
+- Bom: > 3% e <= 5% -> Score: 0,75
+- Suficiente: > 1% e <= 3% -> Score: 0,50
+- Regular: <= 1% -> Score: 0,25
+
+CBOs HABILITADOS: 2232-08 (Cirurgiao-Dentista Clinico Geral), 2232-93 (Cirurgiao-Dentista da ESF), 2232-72 (Cirurgiao-Dentista de Saude Coletiva)
+
+CODIGOS SIGTAP:
+- Numerador: 03.01.01.015-3 - Primeira consulta odontologica programatica
+- Denominador: (nenhum)
+
+FONTES DE DADOS: SIAPS, SCNES
+
+TIPO DE EQUIPE: eSB 40h vinculada a uma eSF ou a duas eAP de 20h
+
+MODELO DE INFORMACAO: MIAOI - Modelo de Informacao de Atendimento Odontologico Individual
+
+CID-10/CIAP-2: Nao se aplica
+
+REGRAS ESPECIAIS:
+- O usuario podera ser contabilizado apenas 1x para o mesmo dentista ao longo de 12 meses, contados a partir da data da 1a consulta programatica ou da conclusao do tratamento.
+- Podera ocorrer flutuacao de vinculacao da eSB entre equipes - sera considerada a ultima vinculacao valida no periodo.
+- Interrupcao: Numerador - nao se aplica; Denominador - mudancas de equipe (criterios de desempate Portaria Saps/MS no 161/2024) e obito no CADSUS.
+- Identificacao: Nome, data de nascimento, CNS ou CPF valido, em conformidade com CadSUS.
+
+LIMITACOES:
+- Necessidade de registro qualificado em campo especifico - resultados podem ser limitados por dificuldades de registro.
+- Envio tardio da informacao.
+
+PERIODICIDADE: Mensal (atualizacao); Mensal (monitoramento); Quadrimestral (avaliacao)
+
+GRANULARIDADE: INE (Identificador Nacional de Equipe) | ANO REFERENCIA: 2024
+
+CLASSIFICACAO: Indicador de resultado | Indicador de efetividade
+
+OBSERVACOES: Dia de extracao dos dados: SIAPS - 20o dia util de cada mes; SCNES - A ultima competencia valida.
+
+CADERNO DE CALCULO - COMO CALCULAR A NOTA FINAL:
+1. Calcule o resultado do indicador usando a formula acima
+2. Classifique o resultado na tabela de classificacao (Otimo=1,0 / Bom=0,75 / Suficiente=0,50 / Regular=0,25)
+3. Multiplique o score pelo peso: peso x score = contribuicao do indicador
+4. Some as contribuicoes de todos os indicadores do segmento
+5. Divida pela soma dos pesos do segmento e multiplique por 10
+6. Nota Final do Segmento = S(peso_i x score_i) / S(peso_i) x 10
+7. Classificacao final: Otimo >8,5 | Bom 7,0-8,5 | Suficiente 5,0-6,9 | Regular <5,0
+
+VALORES FINANCEIROS POR TIPO DE EQUIPE:
+- eSB_I_Comum: Otimo=R$ 2.449,00 | Bom=R$ 1.836,75 | Suficiente=R$ 1.224,50 | Regular=R$ 612,25
+- eSB_II_Comum: Otimo=R$ 3.267,00 | Bom=R$ 2.450,25 | Suficiente=R$ 1.633,50 | Regular=R$ 816,75
+
+## B2 - B2 - Tratamento Concluido por equipe de Saude Bucal (eSB)
+INDICADOR B2 - Tratamento Concluido por equipe de Saude Bucal (eSB)
+
+SEGMENTO: Saude Bucal | PESO: 3 | NOTA MAXIMA POR SEGMENTO: 10,0 pontos
+
+OBJETIVO: Avaliar se a equipe de Saude Bucal mantem uma relacao adequada entre acesso (numero de primeiras consultas) e resolutividade (numero de tratamentos odontologicos concluidos).
+
+EVENTOS:
+1) Primeira consulta odontologica programatica
+2) Tratamento concluido
+
+FORMULA COMPLETA:
+- Numerador: N total de pessoas com tratamento odontologico concluido pela eSB
+- Denominador: N total de pessoas com primeira consulta odontologica programatica realizadas pela eSB
+- Formula: (N total de pessoas com tratamento concluido / N total de pessoas com 1a consulta programatica) x 100
+- Unidade: Percentual (%)
+- Polaridade: Maior-melhor
+
+TABELA DE CLASSIFICACAO DO INDICADOR (conceito -> faixa -> score):
+- Otimo: > 75% e <= 100% -> Score: 1,0
+- Bom: > 50% e <= 75% -> Score: 0,75
+- Suficiente: > 25% e <= 50% -> Score: 0,50
+- Regular: <= 25% -> Score: 0,25
+
+CBOs HABILITADOS: 2232-08 (Cirurgiao-Dentista Clinico Geral), 2232-93 (Cirurgiao-Dentista da ESF), 2232-72 (Cirurgiao-Dentista de Saude Coletiva)
+
+CODIGOS SIGTAP:
+- Numerador: (nenhum)
+- Denominador: 03.01.01.015-3 - Primeira consulta odontologica programatica
+
+FONTES DE DADOS: SIAPS, SCNES
+
+TIPO DE EQUIPE: eSB 40h vinculada a uma eSF ou a duas eAP de 20h
+
+MODELO DE INFORMACAO: MIAOI
+
+CID-10/CIAP-2: Nao se aplica
+
+REGRAS ESPECIAIS:
+- O n de tratamentos concluidos deve ser registrado no campo 'Conduta', na opcao 'Tratamento concluido'.
+- O usuario podera ser contabilizado apenas 1x para o mesmo dentista ao longo de 12 meses.
+- Procedimentos realizados em usuarios atendidos pela eSB, independentemente de estarem vinculados a eSF/eAP.
+
+LIMITACOES:
+- Necessidade de registro qualificado.
+- Envio tardio da informacao.
+
+PERIODICIDADE: Mensal (atualizacao); Mensal (monitoramento); Quadrimestral (avaliacao)
+
+GRANULARIDADE: INE | ANO REFERENCIA: 2024
+
+CLASSIFICACAO: Indicador de resultado | Indicador de excelencia
+
+OBSERVACOES: Dia de extracao: SIAPS - 20o dia util; SCNES - ultima competencia valida.
+
+CADERNO DE CALCULO - COMO CALCULAR A NOTA FINAL:
+1. Calcule o resultado do indicador usando a formula acima
+2. Classifique o resultado na tabela de classificacao (Otimo=1,0 / Bom=0,75 / Suficiente=0,50 / Regular=0,25)
+3. Multiplique o score pelo peso: peso x score = contribuicao do indicador
+4. Some as contribuicoes de todos os indicadores do segmento
+5. Divida pela soma dos pesos do segmento e multiplique por 10
+6. Nota Final do Segmento = S(peso_i x score_i) / S(peso_i) x 10
+7. Classificacao final: Otimo >8,5 | Bom 7,0-8,5 | Suficiente 5,0-6,9 | Regular <5,0
+
+VALORES FINANCEIROS POR TIPO DE EQUIPE:
+- eSB_I_Comum: Otimo=R$ 2.449,00 | Bom=R$ 1.836,75 | Suficiente=R$ 1.224,50 | Regular=R$ 612,25
+- eSB_II_Comum: Otimo=R$ 3.267,00 | Bom=R$ 2.450,25 | Suficiente=R$ 1.633,50 | Regular=R$ 816,75
+
+## B3 - B3 - Taxa de exodontia por equipe de Saude Bucal (eSB)
+INDICADOR B3 - Taxa de exodontia por equipe de Saude Bucal (eSB)
+
+SEGMENTO: Saude Bucal | PESO: 1 | NOTA MAXIMA POR SEGMENTO: 10,0 pontos
+
+OBJETIVO: Avaliar se a eSB atua no inicio da historia natural da doenca carie e periodontal, ofertando mais procedimentos preventivos em detrimento de mutiladores (exodontias).
+
+EVENTOS:
+1) Exodontia
+2) Procedimentos preventivos
+3) Procedimentos curativos
+
+FORMULA COMPLETA:
+- Numerador: N total de exodontias realizadas pelo cirurgiao-dentista da eSB
+- Denominador: N total de procedimentos individuais preventivos, curativos e exodontias realizadas pelo CD da eSB
+- Formula: (N total de exodontias / N total de procedimentos individuais preventivos + curativos + exodontias) x 100
+- Unidade: Percentual (%)
+- Polaridade: Faixa otima (>=8% e <10%) - AVISO: Este indicador possui FAIXA OTIMA! Nao se trata de polaridade maior-melhor ou menor-melhor. Valores fora da faixa otima recebem pontuacao inferior, tanto para valores muito baixos quanto para valores muito altos.
+
+TABELA DE CLASSIFICACAO DO INDICADOR (conceito -> faixa -> score):
+- Otimo: >= 8% e < 10% -> Score: 1,0
+- Bom: >= 10% e < 12% -> Score: 0,75
+- Suficiente: >= 12% e < 14% -> Score: 0,50
+- Regular: < 8% ou >= 14% -> Score: 0,25
+
+CBOs HABILITADOS: 2232-08 (Cirurgiao-Dentista Clinico Geral), 2232-93 (Cirurgiao-Dentista da ESF), 2232-72 (Cirurgiao-Dentista de Saude Coletiva)
+
+CODIGOS SIGTAP:
+- Numerador: 04.14.02.013-8 - Exodontia de dente permanente; 04.14.02.014-6 - Exodontia multipla com alveoloplastia por sextante
+- Denominador: 01.01.02.005-8 a 01.01.02.009-0 (preventivos); 03.07.01.001-5 a 03.07.03.008-3 (curativos); 04.14.02.013-8 e 04.14.02.014-6 (exodontias)
+
+FONTES DE DADOS: SIAPS, SCNES
+
+TIPO DE EQUIPE: eSB 40h vinculada a uma eSF ou a duas eAP de 20h
+
+MODELO DE INFORMACAO: MIAOI
+
+CID-10/CIAP-2: Nao se aplica
+
+REGRAS ESPECIAIS:
+- Procedimentos realizados em usuarios atendidos pela eSB, independentemente de vinculo.
+- Determinantes sociais e situacao socioeconomica influenciam o resultado.
+
+LIMITACOES:
+- Necessidade de registro qualificado.
+- Envio tardio da informacao.
+
+PERIODICIDADE: Mensal (atualizacao); Mensal (monitoramento); Quadrimestral (avaliacao)
+
+GRANULARIDADE: INE | ANO REFERENCIA: 2024
+
+CLASSIFICACAO: Indicador de resultado | Indicador de excelencia
+
+OBSERVACOES: Dia de extracao: SIAPS - 20o dia util; SCNES - ultima competencia valida.
+
+CADERNO DE CALCULO - COMO CALCULAR A NOTA FINAL:
+1. Calcule o resultado do indicador usando a formula acima
+2. Classifique o resultado na tabela de classificacao (Otimo=1,0 / Bom=0,75 / Suficiente=0,50 / Regular=0,25)
+3. Multiplique o score pelo peso: peso x score = contribuicao do indicador
+4. Some as contribuicoes de todos os indicadores do segmento
+5. Divida pela soma dos pesos do segmento e multiplique por 10
+6. Nota Final do Segmento = S(peso_i x score_i) / S(peso_i) x 10
+7. Classificacao final: Otimo >8,5 | Bom 7,0-8,5 | Suficiente 5,0-6,9 | Regular <5,0
+
+VALORES FINANCEIROS POR TIPO DE EQUIPE:
+- eSB_I_Comum: Otimo=R$ 2.449,00 | Bom=R$ 1.836,75 | Suficiente=R$ 1.224,50 | Regular=R$ 612,25
+- eSB_II_Comum: Otimo=R$ 3.267,00 | Bom=R$ 2.450,25 | Suficiente=R$ 1.633,50 | Regular=R$ 816,75
+
+## B4 - B4 - Escovacao Supervisionada por eSB em faixa etaria escolar (6 a 12 anos)
+INDICADOR B4 - Escovacao Supervisionada por eSB em faixa etaria escolar (6 a 12 anos)
+
+SEGMENTO: Saude Bucal | PESO: 2 | NOTA MAXIMA POR SEGMENTO: 10,0 pontos
+
+OBJETIVO: Mensurar a proporcao de criancas de 6 a 12 anos vinculadas a eSF/eAP, beneficiarias das acoes coletivas de escovacao dental supervisionada.
+
+EVENTOS:
+1) Acao coletiva de escovacao dental supervisionada
+
+FORMULA COMPLETA:
+- Numerador: N total de criancas de 6 a 12 anos participantes da acao coletiva de escovacao dental supervisionada pela eSB
+- Denominador: N total de criancas de 6 a 12 anos vinculadas a eSF/eAP de referencia da eSB
+- Formula: (N criancas 6-12 anos na escovacao supervisionada / N criancas 6-12 anos vinculadas a eSF/eAP) x 100
+- Unidade: Percentual (%)
+- Polaridade: Maior-melhor
+
+TABELA DE CLASSIFICACAO DO INDICADOR (conceito -> faixa -> score):
+- Otimo: > 1% -> Score: 1,0
+- Bom: > 0,5% e <= 1% -> Score: 0,75
+- Suficiente: > 0,25% e <= 0,5% -> Score: 0,50
+- Regular: <= 0,25% -> Score: 0,25
+
+CBOs HABILITADOS: 2232-08 (CD Clinico Geral), 2232-93 (CD da ESF), 2232-72 (CD Saude Coletiva), 3224-05 (Tecnico em Saude Bucal), 3224-25 (Tecnico SB da ESF), 3224-15 (Auxiliar em SB), 3224-30 (Auxiliar SB da ESF)
+
+CODIGOS SIGTAP:
+- Numerador: 01.01.02.003-1 - Acao coletiva de escovacao dental supervisionada
+- Denominador: (nenhum)
+
+FONTES DE DADOS: SIAPS, SCNES
+
+TIPO DE EQUIPE: eSB 40h vinculada a uma eSF ou a duas eAP de 20h
+
+MODELO DE INFORMACAO: Atividade Coletiva (Codigo 4 - Escovacao Dental Supervisionada)
+
+CID-10/CIAP-2: Nao se aplica
+
+REGRAS ESPECIAIS:
+- Faixa etaria escolar: 6 a 12 anos.
+- Escovacao pode considerar ou nao evidenciacao de placa bacteriana.
+- Deve ser realizada sob orientacao e supervisao de profissional de saude.
+
+LIMITACOES:
+- Necessidade de registro qualificado.
+- Envio tardio da informacao.
+
+PERIODICIDADE: Mensal (atualizacao); Mensal (monitoramento); Quadrimestral (avaliacao)
+
+GRANULARIDADE: INE | ANO REFERENCIA: 2024
+
+CLASSIFICACAO: Indicador de processo | Indicador de excelencia
+
+OBSERVACOES: Dia de extracao: SIAPS - 20o dia util; SCNES - ultima competencia valida.
+
+CADERNO DE CALCULO - COMO CALCULAR A NOTA FINAL:
+1. Calcule o resultado do indicador usando a formula acima
+2. Classifique o resultado na tabela de classificacao (Otimo=1,0 / Bom=0,75 / Suficiente=0,50 / Regular=0,25)
+3. Multiplique o score pelo peso: peso x score = contribuicao do indicador
+4. Some as contribuicoes de todos os indicadores do segmento
+5. Divida pela soma dos pesos do segmento e multiplique por 10
+6. Nota Final do Segmento = S(peso_i x score_i) / S(peso_i) x 10
+7. Classificacao final: Otimo >8,5 | Bom 7,0-8,5 | Suficiente 5,0-6,9 | Regular <5,0
+
+VALORES FINANCEIROS POR TIPO DE EQUIPE:
+- eSB_I_Comum: Otimo=R$ 2.449,00 | Bom=R$ 1.836,75 | Suficiente=R$ 1.224,50 | Regular=R$ 612,25
+- eSB_II_Comum: Otimo=R$ 3.267,00 | Bom=R$ 2.450,25 | Suficiente=R$ 1.633,50 | Regular=R$ 816,75
+
+## B5 - B5 - Procedimentos odontologicos individuais preventivos por eSB
+INDICADOR B5 - Procedimentos odontologicos individuais preventivos por eSB
+
+SEGMENTO: Saude Bucal | PESO: 2 | NOTA MAXIMA POR SEGMENTO: 10,0 pontos
+
+OBJETIVO: Mensurar o total de procedimentos odontologicos individuais preventivos em relacao ao total de procedimentos odontologicos individuais realizados pela eSB.
+
+EVENTOS:
+1) Procedimentos preventivos
+
+FORMULA COMPLETA:
+- Numerador: N total de procedimentos odontologicos preventivos individuais
+- Denominador: N total de procedimentos odontologicos individuais realizados
+- Formula: (N procedimentos preventivos individuais / N total procedimentos individuais) x 100
+- Unidade: Percentual (%)
+- Polaridade: Faixa otima (>=80% e <=85%) - AVISO: Este indicador possui FAIXA OTIMA! Nao se trata de polaridade maior-melhor ou menor-melhor. Valores fora da faixa otima recebem pontuacao inferior, tanto para valores muito baixos quanto para valores muito altos.
+
+TABELA DE CLASSIFICACAO DO INDICADOR (conceito -> faixa -> score):
+- Otimo: >= 80% e <= 85% -> Score: 1,0
+- Bom: >= 60% e < 80% -> Score: 0,75
+- Suficiente: >= 40% e < 60% -> Score: 0,50
+- Regular: < 40% ou > 85% -> Score: 0,25
+
+CBOs HABILITADOS: 2232-08 (CD Clinico Geral), 2232-93 (CD da ESF), 2232-72 (CD Saude Coletiva), 3224-05 (Tecnico em SB), 3224-25 (Tecnico SB da ESF)
+
+CODIGOS SIGTAP:
+- Numerador: 01.01.02.005-8 - Aplicacao de cariostatico; 01.01.02.006-6 - Aplicacao de selante; 01.01.02.007-4 - Aplicacao topica de fluor; 01.01.02.008-2 - Evidenciacao de placa; 01.01.02.009-0 - Selamento provisorio; 01.01.02.010-4 - Orientacao de higiene bucal
+- Denominador: Total de procedimentos individuais do CD e TSB (3224-05, 3224-25)
+
+FONTES DE DADOS: SIAPS, SCNES
+
+TIPO DE EQUIPE: eSB 40h
+
+MODELO DE INFORMACAO: MIAOI
+
+CID-10/CIAP-2: Nao se aplica
+
+REGRAS ESPECIAIS:
+- Procedimentos realizados independentemente de vinculo a eSF/eAP.
+
+LIMITACOES:
+- Necessidade de registro qualificado.
+- Envio tardio da informacao.
+
+PERIODICIDADE: Mensal (atualizacao); Mensal (monitoramento); Quadrimestral (avaliacao)
+
+GRANULARIDADE: INE | ANO REFERENCIA: 2024
+
+CLASSIFICACAO: Indicador de processo | Indicador de excelencia
+
+OBSERVACOES: Dia de extracao: SIAPS - 20o dia util.
+
+CADERNO DE CALCULO - COMO CALCULAR A NOTA FINAL:
+1. Calcule o resultado do indicador usando a formula acima
+2. Classifique o resultado na tabela de classificacao (Otimo=1,0 / Bom=0,75 / Suficiente=0,50 / Regular=0,25)
+3. Multiplique o score pelo peso: peso x score = contribuicao do indicador
+4. Some as contribuicoes de todos os indicadores do segmento
+5. Divida pela soma dos pesos do segmento e multiplique por 10
+6. Nota Final do Segmento = S(peso_i x score_i) / S(peso_i) x 10
+7. Classificacao final: Otimo >8,5 | Bom 7,0-8,5 | Suficiente 5,0-6,9 | Regular <5,0
+
+VALORES FINANCEIROS POR TIPO DE EQUIPE:
+- eSB_I_Comum: Otimo=R$ 2.449,00 | Bom=R$ 1.836,75 | Suficiente=R$ 1.224,50 | Regular=R$ 612,25
+- eSB_II_Comum: Otimo=R$ 3.267,00 | Bom=R$ 2.450,25 | Suficiente=R$ 1.633,50 | Regular=R$ 816,75
+
+## B6 - B6 - Tratamento Restaurador Atraumatico (ART) por eSB
+INDICADOR B6 - Tratamento Restaurador Atraumatico (ART) por eSB
+
+SEGMENTO: Saude Bucal | PESO: 2 | NOTA MAXIMA POR SEGMENTO: 10,0 pontos
+
+OBJETIVO: Mensurar a proporcao entre procedimentos TRA/ART e o total de procedimentos restauradores realizados pela eSB.
+
+EVENTOS:
+1) Tratamento restaurador atraumatico (ART)
+2) Procedimentos preventivos
+
+FORMULA COMPLETA:
+- Numerador: N total de procedimentos TRA/ART realizados pela eSB
+- Denominador: N total de procedimentos restauradores realizados pela eSB
+- Formula: (N procedimentos TRA/ART / N total procedimentos restauradores) x 100
+- Unidade: Percentual (%)
+- Polaridade: Maior-melhor
+
+TABELA DE CLASSIFICACAO DO INDICADOR (conceito -> faixa -> score):
+- Otimo: > 8% -> Score: 1,0
+- Bom: > 6% e <= 8% -> Score: 0,75
+- Suficiente: > 3% e <= 6% -> Score: 0,50
+- Regular: <= 3% -> Score: 0,25
+
+CBOs HABILITADOS: 2232-08 (CD Clinico Geral), 2232-93 (CD da ESF), 2232-72 (CD Saude Coletiva)
+
+CODIGOS SIGTAP:
+- Numerador: 03.07.01.007-4 - TRA/ART
+- Denominador: 03.07.01.003-1, 03.07.01.008-2, 03.07.01.009-0, 03.07.01.010-4, 03.07.01.011-2, 03.07.01.012-0, 03.07.01.013-9, 03.07.01.007-4
+
+FONTES DE DADOS: SIAPS, SCNES
+
+TIPO DE EQUIPE: eSB 40h
+
+MODELO DE INFORMACAO: MIAOI
+
+CID-10/CIAP-2: Nao se aplica
+
+REGRAS ESPECIAIS:
+- Procedimentos TRA/ART independentemente de vinculo a eSF/eAP.
+
+LIMITACOES:
+- Necessidade de registro qualificado.
+- Envio tardio da informacao.
+
+PERIODICIDADE: Mensal (atualizacao); Mensal (monitoramento); Quadrimestral (avaliacao)
+
+GRANULARIDADE: INE | ANO REFERENCIA: 2024
+
+CLASSIFICACAO: Indicador de resultado | Indicador de eficiencia
+
+OBSERVACOES: Dia de extracao: SIAPS - 20o dia util.
+
+CADERNO DE CALCULO - COMO CALCULAR A NOTA FINAL:
+1. Calcule o resultado do indicador usando a formula acima
+2. Classifique o resultado na tabela de classificacao (Otimo=1,0 / Bom=0,75 / Suficiente=0,50 / Regular=0,25)
+3. Multiplique o score pelo peso: peso x score = contribuicao do indicador
+4. Some as contribuicoes de todos os indicadores do segmento
+5. Divida pela soma dos pesos do segmento e multiplique por 10
+6. Nota Final do Segmento = S(peso_i x score_i) / S(peso_i) x 10
+7. Classificacao final: Otimo >8,5 | Bom 7,0-8,5 | Suficiente 5,0-6,9 | Regular <5,0
+
+VALORES FINANCEIROS POR TIPO DE EQUIPE:
+- eSB_I_Comum: Otimo=R$ 2.449,00 | Bom=R$ 1.836,75 | Suficiente=R$ 1.224,50 | Regular=R$ 612,25
+- eSB_II_Comum: Otimo=R$ 3.267,00 | Bom=R$ 2.450,25 | Suficiente=R$ 1.633,50 | Regular=R$ 816,75
+
+## C1 - C1 - Mais Acesso a Atencao Primaria a Saude (APS)
+INDICADOR C1 - Mais Acesso a Atencao Primaria a Saude (APS)
+
+SEGMENTO: Cuidado Integral | PESO: 1 | NOTA MAXIMA POR SEGMENTO: 10,0 pontos
+
+OBJETIVO: Verificar o percentual de acesso de demanda programada em relacao ao total de demandas (espontanea e programada) na APS.
+
+EVENTOS:
+1) Atendimentos por consulta programada/continuada
+2) Atendimentos por consulta espontanea
+
+FORMULA COMPLETA:
+- Numerador: N total de atendimentos por demanda programada (consulta agendada programada; cuidado continuado; consulta agendada)
+- Denominador: N total de atendimentos por todos os tipos de demandas (espontaneas e programadas)
+- Formula: (Atendimentos programados / Total de atendimentos) x 100
+- Unidade: Percentual (%)
+- Polaridade: Faixa otima (>50% e <=70%) - AVISO: Este indicador possui FAIXA OTIMA! Nao se trata de polaridade maior-melhor ou menor-melhor. Valores fora da faixa otima recebem pontuacao inferior, tanto para valores muito baixos quanto para valores muito altos.
+
+TABELA DE CLASSIFICACAO DO INDICADOR (conceito -> faixa -> score):
+- Otimo: > 50% e <= 70% -> Score: 1,0
+- Bom: > 30% e <= 50% -> Score: 0,75
+- Suficiente: > 10% e <= 30% -> Score: 0,50
+- Regular: <= 10% ou > 70% -> Score: 0,25
+
+CBOs HABILITADOS: 2251-42 (Medico da ESF), 2251-70 (Medico Generalista), 2251-30 (Medico de Familia e Comunidade), 2235-65 (Enfermeiro da ESF), 2235-05 (Enfermeiro)
+
+CODIGOS SIGTAP:
+- Numerador: (nenhum)
+- Denominador: (nenhum)
+
+FONTES DE DADOS: SIAPS, SCNES
+
+TIPO DE EQUIPE: eSF (Tipo 70, 40h) e eAP (Tipo 76, 20h e 30h)
+
+MODELO DE INFORMACAO: MIAI
+
+CID-10/CIAP-2: Nao se aplica
+
+REGRAS ESPECIAIS:
+- Demanda programada: consulta agendada programada; cuidado continuado; consulta agendada.
+- Demanda espontanea: escuta inicial/orientacao; consulta no dia; atendimento de urgencia.
+- Equipes tipo 70 e 76 (Portaria GM/MS no 3.493/2024).
+
+LIMITACOES:
+- Necessidade de registro qualificado.
+- Envio tardio da informacao.
+
+PERIODICIDADE: Mensal (atualizacao); Mensal (monitoramento); Quadrimestral (avaliacao)
+
+GRANULARIDADE: INE | ANO REFERENCIA: 2024
+
+CLASSIFICACAO: Indicador de processo | Indicador de efetividade
+
+OBSERVACOES: Baixa oferta programatica = centrada na demanda espontanea. Quase exclusivamente programatica = nao aberta a demanda espontanea.
+
+CADERNO DE CALCULO - COMO CALCULAR A NOTA FINAL:
+1. Calcule o resultado do indicador usando a formula acima
+2. Classifique o resultado na tabela de classificacao (Otimo=1,0 / Bom=0,75 / Suficiente=0,50 / Regular=0,25)
+3. Multiplique o score pelo peso: peso x score = contribuicao do indicador
+4. Some as contribuicoes de todos os indicadores do segmento
+5. Divida pela soma dos pesos do segmento e multiplique por 10
+6. Nota Final do Segmento = S(peso_i x score_i) / S(peso_i) x 10
+7. Classificacao final: Otimo >8,5 | Bom 7,0-8,5 | Suficiente 5,0-6,9 | Regular <5,0
+
+VALORES FINANCEIROS POR TIPO DE EQUIPE:
+- eSF_40h: Otimo=R$ 8.000,00 | Bom=R$ 6.000,00 | Suficiente=R$ 4.000,00 | Regular=R$ 2.000,00
+- eAP_30h: Otimo=R$ 4.000,00 | Bom=R$ 3.000,00 | Suficiente=R$ 2.000,00 | Regular=R$ 1.000,00
+- eAP_20h: Otimo=R$ 3.000,00 | Bom=R$ 2.250,00 | Suficiente=R$ 1.500,00 | Regular=R$ 750,00
+
+## C2 - C2 - Cuidado no desenvolvimento infantil na APS
+INDICADOR C2 - Cuidado no desenvolvimento infantil na APS
+
+SEGMENTO: Cuidado Integral | PESO: 3 | NOTA MAXIMA POR SEGMENTO: 10,0 pontos
+
+OBJETIVO: Avaliar o acesso e acompanhamento efetivo das criancas com ate 2 anos em relacao aos episodios de cuidados necessarios, com incentivo a captacao precoce e acompanhamento coordenado e continuo.
+
+EVENTOS:
+1) Consulta por profissional medica(o) ou enfermeira(o)
+2) Registro de peso e altura para avaliacao antropometrica
+3) Visita domiciliar de ACS/TACS
+4) Vacinacao completa conforme calendario
+
+FORMULA COMPLETA:
+- Numerador: Somatorio das boas praticas pontuadas para cada crianca com ate 2 anos
+- Denominador: N total de criancas com ate 2 anos vinculadas a equipe no periodo
+- Formula: (Somatorio das boas praticas / N total de criancas <=2 anos vinculadas) x 100
+- Unidade: Percentual (%)
+- Polaridade: Maior-melhor
+
+TABELA DE CLASSIFICACAO DO INDICADOR (conceito -> faixa -> score):
+- Otimo: > 75% e <= 100% -> Score: 1,0
+- Bom: > 50% e <= 75% -> Score: 0,75
+- Suficiente: > 25% e <= 50% -> Score: 0,50
+- Regular: <= 25% -> Score: 0,25
+
+BOAS PRATICAS (total max 100 pontos):
+(A) 1a consulta presencial por medica(o) ou enfermeira(o) ate o 30o dia de vida - 20 pontos | Condicao: Ate o 30o dia de vida
+(B) Pelo menos 9 consultas presenciais ou remotas por medica(o) ou enfermeira(o) ate 2 anos - 20 pontos | Condicao: Ate 2 anos de vida
+(C) Pelo menos 9 registros simultaneos de peso e altura ate 2 anos - 20 pontos | Condicao: Ate 2 anos, registros no mesmo dia
+(D) Pelo menos 2 visitas domiciliares por ACS/TACS (1a ate 30 dias, 2a ate 6 meses) - 20 pontos | Condicao: 1a ate 30 dias, 2a ate 6 meses. Nao se aplica eAP tipo 76 *** IMPORTANTE: Esta boa pratica NAO se aplica para equipes eAP tipo 76! ***
+(E) Vacinas: difteria, tetano, coqueluche, hepatite B, Hib, poliomielite, sarampo, caxumba, rubeola, pneumococica - todas as doses - 20 pontos | Condicao: Todas doses recomendadas. Codigos: 09,17,29,39,42,43,46,47,58,22,24,56,26,59,106,107
+
+CBOs HABILITADOS: 2232 (Cirurgioes-Dentistas), 2235 (Enfermeiros), 2251 (Medicos), 3222 (Tecnicos/Auxiliares de Enfermagem), 5151-05 (ACS), 3222-55 (TACS)
+
+CODIGOS SIGTAP:
+- Numerador: 01.01.04.002-4 - Avaliacao antropometrica; 01.01.04.008-3 - Medicao de peso; 01.01.04.007-5 - Medicao de altura; 03.01.01.026-9 - Avaliacao do crescimento; 03.01.01.027-7 - Avaliacao do desenvolvimento; 03.01.01.025-0 - Teleconsulta
+- Denominador: (nenhum)
+
+FONTES DE DADOS: SIAPS, SCNES, RNDS
+
+TIPO DE EQUIPE: eSF (Tipo 70) e eAP (Tipo 76)
+
+MODELO DE INFORMACAO: MIAI, MIP, MIVDT, MIV, RIA
+
+CID-10/CIAP-2: Nao se aplica
+
+REGRAS ESPECIAIS:
+- Boa pratica (D) NAO se aplica para eAP tipo 76.
+- Interrupcao: mudanca de equipe (Portaria SAPS/MS no 161/2024), obito no CADSUS.
+- Esquema vacinal: pentavalente (3 doses), VIP (3 doses), SCR/SCRV (2 doses apos 12 meses), VPC10 (2 doses).
+
+LIMITACOES:
+- Necessidade de registro qualificado.
+- Lapso temporal na identificacao de obitos no CadSUS.
+
+PERIODICIDADE: Mensal (atualizacao); Mensal (monitoramento); Quadrimestral (avaliacao)
+
+GRANULARIDADE: INE | ANO REFERENCIA: 2024
+
+CLASSIFICACAO: Indicador de resultado | Indicador de efetividade
+
+OBSERVACOES: Pontuacao maxima: 100 pontos por crianca.
+
+CADERNO DE CALCULO - COMO CALCULAR A NOTA FINAL:
+1. Calcule o resultado do indicador usando a formula acima
+2. Classifique o resultado na tabela de classificacao (Otimo=1,0 / Bom=0,75 / Suficiente=0,50 / Regular=0,25)
+3. Multiplique o score pelo peso: peso x score = contribuicao do indicador
+4. Some as contribuicoes de todos os indicadores do segmento
+5. Divida pela soma dos pesos do segmento e multiplique por 10
+6. Nota Final do Segmento = S(peso_i x score_i) / S(peso_i) x 10
+7. Classificacao final: Otimo >8,5 | Bom 7,0-8,5 | Suficiente 5,0-6,9 | Regular <5,0
+
+VALORES FINANCEIROS POR TIPO DE EQUIPE:
+- eSF_40h: Otimo=R$ 8.000,00 | Bom=R$ 6.000,00 | Suficiente=R$ 4.000,00 | Regular=R$ 2.000,00
+- eAP_30h: Otimo=R$ 4.000,00 | Bom=R$ 3.000,00 | Suficiente=R$ 2.000,00 | Regular=R$ 1.000,00
+- eAP_20h: Otimo=R$ 3.000,00 | Bom=R$ 2.250,00 | Suficiente=R$ 1.500,00 | Regular=R$ 750,00
+
+## C3 - C3 - Cuidado na Gestacao e Puerperio na APS
+INDICADOR C3 - Cuidado na Gestacao e Puerperio na APS
+
+SEGMENTO: Cuidado Integral | PESO: 3 | NOTA MAXIMA POR SEGMENTO: 10,0 pontos
+
+OBJETIVO: Avaliar o acesso e monitoramento efetivo durante a gestacao e puerperio, com incentivo a captacao precoce e acompanhamento coordenado e continuo.
+
+EVENTOS:
+1) Consulta por profissional medica(o) ou enfermeira(o)
+2) Registro de afericao de pressao arterial
+3) Testes rapidos ou exames avaliados
+4) Registro de peso e altura
+5) Visita domiciliar de ACS/TACS
+6) Vacinacao dTPa
+7) Consulta odontologica
+
+FORMULA COMPLETA:
+- Numerador: Somatorio das boas praticas pontuadas para cada gestante/puerpera
+- Denominador: N total de gestantes e puerperas vinculadas a equipe
+- Formula: (Somatorio das boas praticas / N total de gestantes/puerperas vinculadas) x 100
+- Unidade: Percentual (%)
+- Polaridade: Maior-melhor
+
+TABELA DE CLASSIFICACAO DO INDICADOR (conceito -> faixa -> score):
+- Otimo: > 75% e <= 100% -> Score: 1,0
+- Bom: > 50% e <= 75% -> Score: 0,75
+- Suficiente: > 25% e <= 50% -> Score: 0,50
+- Regular: <= 25% -> Score: 0,25
+
+BOAS PRATICAS (total max 100 pontos):
+(A) 1a consulta ate a 12a semana de gestacao - 10 pontos | Condicao: Ate 12a semana
+(B) 7+ consultas durante a gestacao - 9 pontos | Condicao: Durante toda gestacao
+(C) 7+ registros de PA durante a gestacao - 9 pontos | Condicao: Durante toda gestacao
+(D) 7+ registros de peso e altura durante a gestacao - 9 pontos | Condicao: Mesmo dia, durante gestacao
+(E) 3+ visitas domiciliares por ACS/TACS apos 1a consulta pre-natal - 9 pontos | Condicao: Apos 1a consulta. Nao se aplica eAP tipo 76 *** IMPORTANTE: Esta boa pratica NAO se aplica para equipes eAP tipo 76! ***
+(F) Vacina dTpa a partir da 20a semana (1 dose por gestacao) - 9 pontos | Condicao: A partir 20a semana. Codigo vacina: 57
+(G) Testes rapidos sifilis/HIV/hepatites B e C no 1o trimestre - 9 pontos | Condicao: 1o trimestre
+(H) Testes sifilis/HIV no 3o trimestre - 9 pontos | Condicao: 3o trimestre
+(I) 1+ consulta no puerperio (ate 42 dias pos-parto) - 9 pontos | Condicao: Puerperio (ate 42 dias)
+(J) 1+ visita domiciliar por ACS/TACS no puerperio - 9 pontos | Condicao: Puerperio. Nao se aplica eAP tipo 76 *** IMPORTANTE: Esta boa pratica NAO se aplica para equipes eAP tipo 76! ***
+(K) 1+ atividade em saude bucal durante a gestacao - 9 pontos | Condicao: Durante toda gestacao
+
+CBOs HABILITADOS: 2232 (Cirurgioes-Dentistas), 2235 (Enfermeiros), 2251 (Medicos), 3222 (Tecnicos/Aux. Enfermagem), 5151-05 (ACS), 3222-55 (TACS)
+
+CODIGOS SIGTAP:
+- Numerador: 03.01.01.011-0 - Consulta pre-natal; 03.01.01.012-9 - Consulta puerperal; 03.01.10.003-9 - Afericao PA; 02.14.01.004-0 a 02.14.01.030-9 (Testes rapidos HIV/sifilis/hepatites)
+- Denominador: (nenhum)
+
+FONTES DE DADOS: SIAPS, SCNES, RNDS
+
+TIPO DE EQUIPE: eSF (Tipo 70) e eAP (Tipo 76)
+
+MODELO DE INFORMACAO: MIAI, MIP, MIVDT, RIA
+
+CID-10/CIAP-2: CIAP-2: W78, W79, W81, W84, W85 | CID-10: O11-O16, O20, Z34
+
+REGRAS ESPECIAIS:
+- Boas praticas (E) e (J) NAO se aplicam para eAP tipo 76.
+- 1 dose dTpa por gestacao a partir da 20a semana.
+- Testes do 1o trimestre: sifilis, HIV, hepatites B e C.
+- Testes do 3o trimestre: sifilis e HIV.
+
+LIMITACOES:
+- Necessidade de registro qualificado.
+- Lapso temporal na identificacao de obitos.
+
+PERIODICIDADE: Mensal (atualizacao); Mensal (monitoramento); Quadrimestral (avaliacao)
+
+GRANULARIDADE: INE | ANO REFERENCIA: 2024
+
+CLASSIFICACAO: Indicador de resultado | Indicador de efetividade
+
+OBSERVACOES: Pontuacao maxima: 100 pontos por gestante.
+
+CADERNO DE CALCULO - COMO CALCULAR A NOTA FINAL:
+1. Calcule o resultado do indicador usando a formula acima
+2. Classifique o resultado na tabela de classificacao (Otimo=1,0 / Bom=0,75 / Suficiente=0,50 / Regular=0,25)
+3. Multiplique o score pelo peso: peso x score = contribuicao do indicador
+4. Some as contribuicoes de todos os indicadores do segmento
+5. Divida pela soma dos pesos do segmento e multiplique por 10
+6. Nota Final do Segmento = S(peso_i x score_i) / S(peso_i) x 10
+7. Classificacao final: Otimo >8,5 | Bom 7,0-8,5 | Suficiente 5,0-6,9 | Regular <5,0
+
+VALORES FINANCEIROS POR TIPO DE EQUIPE:
+- eSF_40h: Otimo=R$ 8.000,00 | Bom=R$ 6.000,00 | Suficiente=R$ 4.000,00 | Regular=R$ 2.000,00
+- eAP_30h: Otimo=R$ 4.000,00 | Bom=R$ 3.000,00 | Suficiente=R$ 2.000,00 | Regular=R$ 1.000,00
+- eAP_20h: Otimo=R$ 3.000,00 | Bom=R$ 2.250,00 | Suficiente=R$ 1.500,00 | Regular=R$ 750,00
+
+## C4 - C4 - Cuidado da pessoa com diabetes na APS
+INDICADOR C4 - Cuidado da pessoa com diabetes na APS
+
+SEGMENTO: Cuidado Integral | PESO: 2 | NOTA MAXIMA POR SEGMENTO: 10,0 pontos
+
+OBJETIVO: Avaliar o acesso e monitoramento efetivo do cuidado integral a saude das pessoas com diabetes.
+
+EVENTOS:
+1) Consulta por profissional medica(o) ou enfermeira(o)
+2) Registro de afericao de pressao arterial
+3) Registro de peso e altura
+4) Visita domiciliar de ACS/TACS
+5) Registro de hemoglobina glicada
+6) Registro de avaliacao dos pes
+
+FORMULA COMPLETA:
+- Numerador: Somatorio das boas praticas pontuadas para cada pessoa com diabetes
+- Denominador: N total de pessoas com diabetes vinculadas a equipe
+- Formula: (Somatorio das boas praticas / N total de pessoas com diabetes vinculadas) x 100
+- Unidade: Percentual (%)
+- Polaridade: Maior-melhor
+
+TABELA DE CLASSIFICACAO DO INDICADOR (conceito -> faixa -> score):
+- Otimo: > 75% e <= 100% -> Score: 1,0
+- Bom: > 50% e <= 75% -> Score: 0,75
+- Suficiente: > 25% e <= 50% -> Score: 0,50
+- Regular: <= 25% -> Score: 0,25
+
+BOAS PRATICAS (total max 100 pontos):
+(A) 1+ consulta nos ultimos 6 meses - 20 pontos | Condicao: Ultimos 6 meses
+(B) 1+ registro de PA nos ultimos 6 meses - 15 pontos | Condicao: Ultimos 6 meses
+(C) 1+ registro de peso e altura nos ultimos 12 meses - 15 pontos | Condicao: Ultimos 12 meses
+(D) 2+ visitas domiciliares por ACS/TACS nos ultimos 12 meses - 20 pontos | Condicao: Ultimos 12 meses. Nao se aplica eAP tipo 76 *** IMPORTANTE: Esta boa pratica NAO se aplica para equipes eAP tipo 76! ***
+(E) 1+ registro de hemoglobina glicada nos ultimos 12 meses - 15 pontos | Condicao: Ultimos 12 meses
+(F) 1+ avaliacao dos pes nos ultimos 12 meses - 15 pontos | Condicao: Ultimos 12 meses
+
+CBOs HABILITADOS: 2235 (Enfermeiros), 2251 (Medicos), 3222 (Tecnicos/Aux. Enfermagem), 5151-05 (ACS), 3222-55 (TACS)
+
+CODIGOS SIGTAP:
+- Numerador: 03.01.10.003-9 - Afericao PA; 01.01.04.002-4 - Avaliacao antropometrica; 03.01.01.006-4 - Consulta medica; 03.01.01.003-0 - Consulta enfermagem
+- Denominador: (nenhum)
+
+FONTES DE DADOS: SIAPS, SCNES
+
+TIPO DE EQUIPE: eSF (Tipo 70) e eAP (Tipo 76)
+
+MODELO DE INFORMACAO: MIAI, MIP, MIVDT, MIV
+
+CID-10/CIAP-2: CID-10: T89, T90, E10-E14 | CIAP-2: T89, T90
+
+REGRAS ESPECIAIS:
+- Boa pratica (D) NAO se aplica para eAP tipo 76.
+- Pessoas com CID-10: E10-E14 (diabetes).
+
+LIMITACOES:
+- Necessidade de registro qualificado.
+- Lapso temporal na identificacao de obitos.
+
+PERIODICIDADE: Mensal (atualizacao); Mensal (monitoramento); Quadrimestral (avaliacao)
+
+GRANULARIDADE: INE | ANO REFERENCIA: 2024
+
+CLASSIFICACAO: Indicador de resultado | Indicador de efetividade
+
+OBSERVACOES: Pontuacao maxima: 100 pontos por pessoa.
+
+CADERNO DE CALCULO - COMO CALCULAR A NOTA FINAL:
+1. Calcule o resultado do indicador usando a formula acima
+2. Classifique o resultado na tabela de classificacao (Otimo=1,0 / Bom=0,75 / Suficiente=0,50 / Regular=0,25)
+3. Multiplique o score pelo peso: peso x score = contribuicao do indicador
+4. Some as contribuicoes de todos os indicadores do segmento
+5. Divida pela soma dos pesos do segmento e multiplique por 10
+6. Nota Final do Segmento = S(peso_i x score_i) / S(peso_i) x 10
+7. Classificacao final: Otimo >8,5 | Bom 7,0-8,5 | Suficiente 5,0-6,9 | Regular <5,0
+
+VALORES FINANCEIROS POR TIPO DE EQUIPE:
+- eSF_40h: Otimo=R$ 8.000,00 | Bom=R$ 6.000,00 | Suficiente=R$ 4.000,00 | Regular=R$ 2.000,00
+- eAP_30h: Otimo=R$ 4.000,00 | Bom=R$ 3.000,00 | Suficiente=R$ 2.000,00 | Regular=R$ 1.000,00
+- eAP_20h: Otimo=R$ 3.000,00 | Bom=R$ 2.250,00 | Suficiente=R$ 1.500,00 | Regular=R$ 750,00
+
+## C5 - C5 - Cuidado da pessoa com hipertensao na APS
+INDICADOR C5 - Cuidado da pessoa com hipertensao na APS
+
+SEGMENTO: Cuidado Integral | PESO: 2 | NOTA MAXIMA POR SEGMENTO: 10,0 pontos
+
+OBJETIVO: Avaliar o acesso e monitoramento efetivo do cuidado integral a saude das pessoas com hipertensao.
+
+EVENTOS:
+1) Consulta por profissional medica(o) ou enfermeira(o)
+2) Registro de afericao de pressao arterial
+3) Registro de peso e altura
+4) Visita domiciliar de ACS/TACS
+
+FORMULA COMPLETA:
+- Numerador: Somatorio das boas praticas pontuadas para cada pessoa com hipertensao
+- Denominador: N total de pessoas com hipertensao vinculadas a equipe
+- Formula: (Somatorio das boas praticas / N total de pessoas com hipertensao vinculadas) x 100
+- Unidade: Percentual (%)
+- Polaridade: Maior-melhor
+
+TABELA DE CLASSIFICACAO DO INDICADOR (conceito -> faixa -> score):
+- Otimo: > 75% e <= 100% -> Score: 1,0
+- Bom: > 50% e <= 75% -> Score: 0,75
+- Suficiente: > 25% e <= 50% -> Score: 0,50
+- Regular: <= 25% -> Score: 0,25
+
+BOAS PRATICAS (total max 100 pontos):
+(A) 1+ consulta nos ultimos 6 meses - 25 pontos | Condicao: Ultimos 6 meses
+(B) 1+ registro de PA nos ultimos 6 meses - 25 pontos | Condicao: Ultimos 6 meses
+(C) 1+ registro de peso e altura nos ultimos 12 meses - 25 pontos | Condicao: Ultimos 12 meses
+(D) 2+ visitas domiciliares por ACS/TACS nos ultimos 12 meses - 25 pontos | Condicao: Ultimos 12 meses. Nao se aplica eAP tipo 76 *** IMPORTANTE: Esta boa pratica NAO se aplica para equipes eAP tipo 76! ***
+
+CBOs HABILITADOS: 2235 (Enfermeiros), 2251 (Medicos), 3222 (Tecnicos/Aux. Enfermagem), 5151-05 (ACS), 3222-55 (TACS)
+
+CODIGOS SIGTAP:
+- Numerador: 03.01.10.003-9 - Afericao PA; 01.01.04.002-4 - Avaliacao antropometrica
+- Denominador: (nenhum)
+
+FONTES DE DADOS: SIAPS, SCNES
+
+TIPO DE EQUIPE: eSF (Tipo 70) e eAP (Tipo 76)
+
+MODELO DE INFORMACAO: MIAI, MIP, MIVDT, MIV
+
+CID-10/CIAP-2: CID-10: K86, K87, I10-I15, O10-O11 | CIAP-2: K86, K87
+
+REGRAS ESPECIAIS:
+- Boa pratica (D) NAO se aplica para eAP tipo 76.
+- Pessoas com CID-10: I10-I15 (hipertensao).
+
+LIMITACOES:
+- Necessidade de registro qualificado.
+- Lapso temporal na identificacao de obitos.
+
+PERIODICIDADE: Mensal (atualizacao); Mensal (monitoramento); Quadrimestral (avaliacao)
+
+GRANULARIDADE: INE | ANO REFERENCIA: 2024
+
+CLASSIFICACAO: Indicador de resultado | Indicador de efetividade
+
+OBSERVACOES: Pontuacao maxima: 100 pontos por pessoa.
+
+CADERNO DE CALCULO - COMO CALCULAR A NOTA FINAL:
+1. Calcule o resultado do indicador usando a formula acima
+2. Classifique o resultado na tabela de classificacao (Otimo=1,0 / Bom=0,75 / Suficiente=0,50 / Regular=0,25)
+3. Multiplique o score pelo peso: peso x score = contribuicao do indicador
+4. Some as contribuicoes de todos os indicadores do segmento
+5. Divida pela soma dos pesos do segmento e multiplique por 10
+6. Nota Final do Segmento = S(peso_i x score_i) / S(peso_i) x 10
+7. Classificacao final: Otimo >8,5 | Bom 7,0-8,5 | Suficiente 5,0-6,9 | Regular <5,0
+
+VALORES FINANCEIROS POR TIPO DE EQUIPE:
+- eSF_40h: Otimo=R$ 8.000,00 | Bom=R$ 6.000,00 | Suficiente=R$ 4.000,00 | Regular=R$ 2.000,00
+- eAP_30h: Otimo=R$ 4.000,00 | Bom=R$ 3.000,00 | Suficiente=R$ 2.000,00 | Regular=R$ 1.000,00
+- eAP_20h: Otimo=R$ 3.000,00 | Bom=R$ 2.250,00 | Suficiente=R$ 1.500,00 | Regular=R$ 750,00
+
+## C6 - C6 - Cuidado da pessoa idosa na APS
+INDICADOR C6 - Cuidado da pessoa idosa na APS
+
+SEGMENTO: Cuidado Integral | PESO: 2 | NOTA MAXIMA POR SEGMENTO: 10,0 pontos
+
+OBJETIVO: Avaliar o acesso e monitoramento efetivo do cuidado integral a saude das pessoas idosas (>=60 anos).
+
+EVENTOS:
+1) Consulta por profissional medica(o) ou enfermeira(o)
+2) Registro de peso e altura
+3) Visita domiciliar de ACS/TACS
+4) Vacinacao de influenza
+
+FORMULA COMPLETA:
+- Numerador: Somatorio das boas praticas pontuadas para cada pessoa idosa (>=60 anos)
+- Denominador: N total de pessoas idosas vinculadas a equipe
+- Formula: (Somatorio das boas praticas / N total de pessoas idosas vinculadas) x 100
+- Unidade: Percentual (%)
+- Polaridade: Maior-melhor
+
+TABELA DE CLASSIFICACAO DO INDICADOR (conceito -> faixa -> score):
+- Otimo: > 75% e <= 100% -> Score: 1,0
+- Bom: > 50% e <= 75% -> Score: 0,75
+- Suficiente: > 25% e <= 50% -> Score: 0,50
+- Regular: <= 25% -> Score: 0,25
+
+BOAS PRATICAS (total max 100 pontos):
+(A) 1+ consulta nos ultimos 12 meses - 25 pontos | Condicao: Ultimos 12 meses
+(B) 1+ registro de peso e altura nos ultimos 12 meses - 25 pontos | Condicao: Ultimos 12 meses
+(C) 2+ visitas domiciliares por ACS/TACS nos ultimos 12 meses - 25 pontos | Condicao: Ultimos 12 meses. Nao se aplica eAP tipo 76 *** IMPORTANTE: Esta boa pratica NAO se aplica para equipes eAP tipo 76! ***
+(D) 1 dose vacina influenza nos ultimos 12 meses - 25 pontos | Condicao: Ultimos 12 meses. Codigos: 33 (trivalente), 77 (tetravalente)
+
+CBOs HABILITADOS: 2235 (Enfermeiros), 2251 (Medicos), 3222 (Tecnicos/Aux. Enfermagem), 5151-05 (ACS), 3222-55 (TACS)
+
+CODIGOS SIGTAP:
+- Numerador: 01.01.04.002-4 - Avaliacao antropometrica; 03.01.01.006-4 - Consulta medica
+- Denominador: (nenhum)
+
+FONTES DE DADOS: SIAPS, SCNES, RNDS
+
+TIPO DE EQUIPE: eSF (Tipo 70) e eAP (Tipo 76)
+
+MODELO DE INFORMACAO: MIAI, MIP, MIVDT, MIV, RIA
+
+CID-10/CIAP-2: Nao se aplica
+
+REGRAS ESPECIAIS:
+- Boa pratica (C) NAO se aplica para eAP tipo 76.
+- Pessoa idosa = >=60 anos.
+- Vacinas influenza: codigo 33 (trivalente) e 77 (tetravalente).
+
+LIMITACOES:
+- Necessidade de registro qualificado.
+- Lapso temporal na identificacao de obitos.
+
+PERIODICIDADE: Mensal (atualizacao); Mensal (monitoramento); Quadrimestral (avaliacao)
+
+GRANULARIDADE: INE | ANO REFERENCIA: 2024
+
+CLASSIFICACAO: Indicador de resultado | Indicador de efetividade
+
+OBSERVACOES: Pontuacao maxima: 100 pontos por pessoa.
+
+CADERNO DE CALCULO - COMO CALCULAR A NOTA FINAL:
+1. Calcule o resultado do indicador usando a formula acima
+2. Classifique o resultado na tabela de classificacao (Otimo=1,0 / Bom=0,75 / Suficiente=0,50 / Regular=0,25)
+3. Multiplique o score pelo peso: peso x score = contribuicao do indicador
+4. Some as contribuicoes de todos os indicadores do segmento
+5. Divida pela soma dos pesos do segmento e multiplique por 10
+6. Nota Final do Segmento = S(peso_i x score_i) / S(peso_i) x 10
+7. Classificacao final: Otimo >8,5 | Bom 7,0-8,5 | Suficiente 5,0-6,9 | Regular <5,0
+
+VALORES FINANCEIROS POR TIPO DE EQUIPE:
+- eSF_40h: Otimo=R$ 8.000,00 | Bom=R$ 6.000,00 | Suficiente=R$ 4.000,00 | Regular=R$ 2.000,00
+- eAP_30h: Otimo=R$ 4.000,00 | Bom=R$ 3.000,00 | Suficiente=R$ 2.000,00 | Regular=R$ 1.000,00
+- eAP_20h: Otimo=R$ 3.000,00 | Bom=R$ 2.250,00 | Suficiente=R$ 1.500,00 | Regular=R$ 750,00
+
+## C7 - C7 - Cuidado da mulher na prevencao do cancer na APS
+INDICADOR C7 - Cuidado da mulher na prevencao do cancer na APS
+
+SEGMENTO: Cuidado Integral | PESO: 2 | NOTA MAXIMA POR SEGMENTO: 10,0 pontos
+
+OBJETIVO: Avaliar o acesso e monitoramento efetivo das mulheres e homens transgenero em relacao aos cuidados preventivos de cancer.
+
+EVENTOS:
+1) Atendimento saude sexual e reprodutiva
+2) Vacinacao contra HPV
+3) Exame rastreamento cancer colo do utero
+4) Exame rastreamento cancer de mama
+
+FORMULA COMPLETA:
+- Numerador: Somatorio das boas praticas pontuadas
+- Denominador: N total de pessoas elegiveis vinculadas a equipe
+- Formula: (Somatorio das boas praticas / N total de pessoas elegiveis) x 100
+- Unidade: Percentual (%)
+- Polaridade: Maior-melhor
+
+TABELA DE CLASSIFICACAO DO INDICADOR (conceito -> faixa -> score):
+- Otimo: > 75% e <= 100% -> Score: 1,0
+- Bom: > 50% e <= 75% -> Score: 0,75
+- Suficiente: > 25% e <= 50% -> Score: 0,50
+- Regular: <= 25% -> Score: 0,25
+
+BOAS PRATICAS (total max 100 pontos):
+(A) Exame rastreamento cancer colo utero em mulheres/homens trans 25-64 anos nos ultimos 36 meses - 20 pontos | Condicao: Mulheres/homens trans 25-64 anos, ultimos 36 meses
+(B) Vacina HPV para criancas/adolescentes sexo feminino 9-14 anos - 30 pontos | Condicao: Sexo feminino 9-14 anos. Codigos: 67 (quadrivalente), 93 (nonavalente)
+(C) Atendimento saude sexual e reprodutiva para mulheres/homens trans 14-69 anos nos ultimos 12 meses - 30 pontos | Condicao: Mulheres/homens trans 14-69 anos, ultimos 12 meses
+(D) Exame rastreamento cancer mama em mulheres/homens trans 50-69 anos nos ultimos 24 meses - 20 pontos | Condicao: Mulheres/homens trans 50-69 anos, ultimos 24 meses
+
+CBOs HABILITADOS: 2235 (Enfermeiros), 2251 (Medicos), 3222 (Tecnicos/Aux. Enfermagem), 5151-05 (ACS)
+
+CODIGOS SIGTAP:
+- Numerador: (nenhum)
+- Denominador: (nenhum)
+
+FONTES DE DADOS: SIAPS, SCNES, RNDS
+
+TIPO DE EQUIPE: eSF (Tipo 70) e eAP (Tipo 76)
+
+MODELO DE INFORMACAO: MIAI, MIP, MIV, RIA
+
+CID-10/CIAP-2: CID-10: C53-C55 | CIAP-2: X74, X75, X76
+
+REGRAS ESPECIAIS:
+- Inclui HOMENS TRANSGENERO nas boas praticas (A), (C) e (D).
+- Vacina HPV: codigo 67 (quadrivalente), 93 (nonavalente).
+
+LIMITACOES:
+- Necessidade de registro qualificado.
+- Lapso temporal na identificacao de obitos.
+
+PERIODICIDADE: Mensal (atualizacao); Mensal (monitoramento); Quadrimestral (avaliacao)
+
+GRANULARIDADE: INE | ANO REFERENCIA: 2024
+
+CLASSIFICACAO: Indicador de resultado | Indicador de efetividade
+
+OBSERVACOES: Pontuacao maxima: 100 pontos por pessoa.
+
+CADERNO DE CALCULO - COMO CALCULAR A NOTA FINAL:
+1. Calcule o resultado do indicador usando a formula acima
+2. Classifique o resultado na tabela de classificacao (Otimo=1,0 / Bom=0,75 / Suficiente=0,50 / Regular=0,25)
+3. Multiplique o score pelo peso: peso x score = contribuicao do indicador
+4. Some as contribuicoes de todos os indicadores do segmento
+5. Divida pela soma dos pesos do segmento e multiplique por 10
+6. Nota Final do Segmento = S(peso_i x score_i) / S(peso_i) x 10
+7. Classificacao final: Otimo >8,5 | Bom 7,0-8,5 | Suficiente 5,0-6,9 | Regular <5,0
+
+VALORES FINANCEIROS POR TIPO DE EQUIPE:
+- eSF_40h: Otimo=R$ 8.000,00 | Bom=R$ 6.000,00 | Suficiente=R$ 4.000,00 | Regular=R$ 2.000,00
+- eAP_30h: Otimo=R$ 4.000,00 | Bom=R$ 3.000,00 | Suficiente=R$ 2.000,00 | Regular=R$ 1.000,00
+- eAP_20h: Otimo=R$ 3.000,00 | Bom=R$ 2.250,00 | Suficiente=R$ 1.500,00 | Regular=R$ 750,00
+
+## M1 - M1 - Media de atendimentos por pessoa pela eMulti na APS
+INDICADOR M1 - Media de atendimentos por pessoa pela eMulti na APS
+
+SEGMENTO: eMulti | PESO: 5 | NOTA MAXIMA POR SEGMENTO: 10,0 pontos
+
+OBJETIVO: Mensurar a media de atendimentos por pessoa realizados pela eMulti na APS.
+
+EVENTOS:
+1) Atendimentos individuais e coletivos realizados pela eMulti
+
+FORMULA COMPLETA:
+- Numerador: Numero de atendimentos individuais e coletivos realizados pela eMulti
+- Denominador: Numero de pessoas atendidas pela eMulti
+- Formula: (N de atendimentos realizados / N de pessoas atendidas)
+- Unidade: Media (nao percentual!)
+- Polaridade: Maior-melhor
+
+TABELA DE CLASSIFICACAO DO INDICADOR (conceito -> faixa -> score):
+- Otimo: > 3 -> Score: 1,0
+- Bom: > 2 e <= 3 -> Score: 0,75
+- Suficiente: > 1 e <= 2 -> Score: 0,50
+- Regular: <= 1 -> Score: 0,25
+
+CBOs HABILITADOS: 5153-05 (Agente de Combate as Endemias), 2234-05 (Farmaceutico), 2236-05 (Fisioterapeuta), 2238-10 (Fonoaudiologo), 2233-05 (Nutricionista), 2237-10 (Nutricionista ESF), 2241-40 (Profissional Educacao Fisica), 2239-05 (Terapeuta Ocupacional)
+
+CODIGOS SIGTAP:
+- Numerador: (nenhum)
+- Denominador: (nenhum)
+
+FONTES DE DADOS: SIAPS, CNES
+
+TIPO DE EQUIPE: eMulti (Tipo 72)
+
+MODELO DE INFORMACAO: MIAI, MIAC
+
+CID-10/CIAP-2: Nao se aplica
+
+REGRAS ESPECIAIS:
+- Tipo de equipe: 72 (eMulti).
+- Inclui atendimentos individuais e coletivos.
+
+LIMITACOES:
+- Necessidade de registro qualificado.
+- Lapso temporal na identificacao de obitos.
+
+PERIODICIDADE: Mensal (atualizacao); Mensal (monitoramento); Quadrimestral (avaliacao)
+
+GRANULARIDADE: INE | ANO REFERENCIA: 2024
+
+CLASSIFICACAO: Indicador de resultado | Indicador de eficiencia
+
+OBSERVACOES: Unidade e MEDIA, nao percentual.
+
+CADERNO DE CALCULO - COMO CALCULAR A NOTA FINAL:
+1. Calcule o resultado do indicador usando a formula acima
+2. Classifique o resultado na tabela de classificacao (Otimo=1,0 / Bom=0,75 / Suficiente=0,50 / Regular=0,25)
+3. Multiplique o score pelo peso: peso x score = contribuicao do indicador
+4. Some as contribuicoes de todos os indicadores do segmento
+5. Divida pela soma dos pesos do segmento e multiplique por 10
+6. Nota Final do Segmento = S(peso_i x score_i) / S(peso_i) x 10
+7. Classificacao final: Otimo >8,5 | Bom 7,0-8,5 | Suficiente 5,0-6,9 | Regular <5,0
+
+VALORES FINANCEIROS POR TIPO DE EQUIPE:
+- eMulti_Ampliada: Otimo=R$ 9.000,00 | Bom=R$ 6.750,00 | Suficiente=R$ 4.500,00 | Regular=R$ 2.250,00
+- eMulti_Complementar: Otimo=R$ 6.000,00 | Bom=R$ 4.500,00 | Suficiente=R$ 3.000,00 | Regular=R$ 1.500,00
+- eMulti_Estrategica: Otimo=R$ 3.000,00 | Bom=R$ 2.250,00 | Suficiente=R$ 1.500,00 | Regular=R$ 750,00
+
+## M2 - M2 - Acoes interprofissionais realizadas pela eMulti na APS
+INDICADOR M2 - Acoes interprofissionais realizadas pela eMulti na APS
+
+SEGMENTO: eMulti | PESO: 5 | NOTA MAXIMA POR SEGMENTO: 10,0 pontos
+
+OBJETIVO: Monitorar a proporcao de acoes de cuidado centrado na pessoa realizadas pela eMulti de forma compartilhada entre profissionais.
+
+EVENTOS:
+1) Atendimentos individuais compartilhados
+2) Atividades coletivas compartilhadas
+3) Discussao de caso / Projeto terapeutico singular
+4) Compartilhamento de cuidado do PEC
+
+FORMULA COMPLETA:
+- Numerador: Numero de acoes compartilhadas realizadas pela eMulti
+- Denominador: Numero de acoes realizadas pela eMulti
+- Formula: (N de acoes compartilhadas / N total de acoes) x 100
+- Unidade: Percentual (%)
+- Polaridade: Neutra - AVISO: Este indicador possui polaridade NEUTRA. Nao necessariamente maior e melhor. O objetivo e alcancar um equilibrio adequado, nao maximizar o valor.
+
+TABELA DE CLASSIFICACAO DO INDICADOR (conceito -> faixa -> score):
+- Otimo: > 5% -> Score: 1,0
+- Bom: > 2,5% e <= 5% -> Score: 0,75
+- Suficiente: > 1% e <= 2,5% -> Score: 0,50
+- Regular: <= 1% -> Score: 0,25
+
+CBOs HABILITADOS: 5153-05 (Agente de Combate as Endemias), 2234-05 (Farmaceutico), 2236-05 (Fisioterapeuta), 2238-10 (Fonoaudiologo), 2233-05 (Nutricionista), 2237-10 (Nutricionista ESF), 2241-40 (Profissional Educacao Fisica), 2239-05 (Terapeuta Ocupacional)
+
+CODIGOS SIGTAP:
+- Numerador: (nenhum)
+- Denominador: (nenhum)
+
+FONTES DE DADOS: SIAPS, CNES
+
+TIPO DE EQUIPE: eMulti (Tipo 72)
+
+MODELO DE INFORMACAO: MIAI, MIAC
+
+CID-10/CIAP-2: Nao se aplica
+
+REGRAS ESPECIAIS:
+- Acoes compartilhadas = cuidado centrado na pessoa com participacao de mais de um profissional.
+- Tipo de equipe: 72 (eMulti).
+
+LIMITACOES:
+- Necessidade de registro qualificado.
+- Lapso temporal na identificacao de obitos.
+
+PERIODICIDADE: Mensal (atualizacao); Mensal (monitoramento); Quadrimestral (avaliacao)
+
+GRANULARIDADE: INE | ANO REFERENCIA: 2024
+
+CLASSIFICACAO: Indicador de resultado | Indicador de execucao
+
+OBSERVACOES: Polaridade: Neutra - nao necessariamente maior e melhor.
+
+CADERNO DE CALCULO - COMO CALCULAR A NOTA FINAL:
+1. Calcule o resultado do indicador usando a formula acima
+2. Classifique o resultado na tabela de classificacao (Otimo=1,0 / Bom=0,75 / Suficiente=0,50 / Regular=0,25)
+3. Multiplique o score pelo peso: peso x score = contribuicao do indicador
+4. Some as contribuicoes de todos os indicadores do segmento
+5. Divida pela soma dos pesos do segmento e multiplique por 10
+6. Nota Final do Segmento = S(peso_i x score_i) / S(peso_i) x 10
+7. Classificacao final: Otimo >8,5 | Bom 7,0-8,5 | Suficiente 5,0-6,9 | Regular <5,0
+
+VALORES FINANCEIROS POR TIPO DE EQUIPE:
+- eMulti_Ampliada: Otimo=R$ 9.000,00 | Bom=R$ 6.750,00 | Suficiente=R$ 4.500,00 | Regular=R$ 2.250,00
+- eMulti_Complementar: Otimo=R$ 6.000,00 | Bom=R$ 4.500,00 | Suficiente=R$ 3.000,00 | Regular=R$ 1.500,00
+- eMulti_Estrategica: Otimo=R$ 3.000,00 | Bom=R$ 2.250,00 | Suficiente=R$ 1.500,00 | Regular=R$ 750,00   CADERNO DE CALCULO - C1 Mais Acesso
+
+PESO: 1 | Segmento: Cuidado Integral | Max. por segmento: 10,0 pontos
+
+FORMULA DO INDICADOR:
+(Atendimentos programados / Total de atendimentos) x 100
+
+ATENCAO: Polaridade NAO e maior-melhor! Equilibrio e o ideal!
+
+TABELA DE CLASSIFICACAO DO INDICADOR:
+Otimo -> > 50% e <= 70% -> Conceito: Otimo -> Score: 1,0
+Bom -> > 30% e <= 50% -> Conceito: Bom -> Score: 0,75
+Suficiente -> > 10% e <= 30% -> Conceito: Suficiente -> Score: 0,50
+Regular -> <= 10% ou > 70% -> Conceito: Regular -> Score: 0,25
+
+CALCULO DA NOTA FINAL DO SEGMENTO:
+Nota Final = S(peso_i x score_i) / S(peso_i) x 10
+
+Exemplo: Se C1 = Otimo (1,0) com peso 1:
+  Contribuicao = 1 x 1,0 = 1,0
+
+CLASSIFICACAO FINAL DO SEGMENTO:
+Otimo -> Nota > 8,5
+Bom -> Nota 7,0 a 8,5
+Suficiente -> Nota 5,0 a 6,9
+Regular -> Nota < 5,0
+C2
+C2 - Cuidado no desenvolvimento infantil na APS
+
+CADERNO DE CALCULO - C2 Desenvolvimento Infantil
+
+PESO: 3 | Segmento: Cuidado Integral | Max. por segmento: 10,0 pontos
+
+FORMULA DO INDICADOR:
+(Somatorio das boas praticas / N total de criancas <=2 anos vinculadas) x 100
+
+BOAS PRATICAS (max. 100 pontos/crianca):
+(A) 1a consulta ate 30o dia de vida - 20 pontos
+(B) 9+ consultas ate 2 anos - 20 pontos
+(C) 9+ registros de peso E altura ate 2 anos - 20 pontos
+(D) 2+ visitas domiciliares ACS/TACS - 20 pontos (NAO se aplica eAP tipo 76)
+(E) Vacinacao completa - 20 pontos
+
+TABELA DE CLASSIFICACAO DO INDICADOR:
+Otimo -> > 75% e <= 100% -> Conceito: Otimo -> Score: 1,0
+Bom -> > 50% e <= 75% -> Conceito: Bom -> Score: 0,75
+Suficiente -> > 25% e <= 50% -> Conceito: Suficiente -> Score: 0,50
+Regular -> <= 25% -> Conceito: Regular -> Score: 0,25
+
+CALCULO DA NOTA FINAL DO SEGMENTO:
+Nota Final = S(peso_i x score_i) / S(peso_i) x 10
+
+Exemplo: Se C2 = Otimo (1,0) com peso 3:
+  Contribuicao = 3 x 1,0 = 3,0
+
+CLASSIFICACAO FINAL DO SEGMENTO:
+Otimo -> Nota > 8,5
+Bom -> Nota 7,0 a 8,5
+Suficiente -> Nota 5,0 a 6,9
+Regular -> Nota < 5,0
+C3
+C3 - Cuidado na Gestacao e Puerperio na APS
+
+CADERNO DE CALCULO - C3 Gestacao e Puerperio
+
+PESO: 3 | Segmento: Cuidado Integral | Max. por segmento: 10,0 pontos
+
+FORMULA DO INDICADOR:
+(Somatorio das boas praticas / N total de gestantes/puerperas vinculadas) x 100
+
+BOAS PRATICAS (max. 100 pontos/gestante):
+(A) 1a consulta ate 12a semana - 10 pontos
+(B) 7+ consultas na gestacao - 9 pontos
+(C) 7+ registros de PA na gestacao - 9 pontos
+(D) 7+ registros peso/altura na gestacao - 9 pontos
+(E) 3+ visitas domiciliares ACS/TACS - 9 pontos (NAO se aplica eAP tipo 76)
+(F) Vacina dTpa a partir 20a semana (cod. 57) - 9 pontos
+(G) Testes sifilis+HIV+HepB+C no 1o trimestre - 9 pontos
+(H) Testes sifilis+HIV no 3o trimestre - 9 pontos
+(I) 1+ consulta no puerperio (ate 42 dias) - 9 pontos
+(J) 1+ visita domiciliar no puerperio - 9 pontos (NAO se aplica eAP tipo 76)
+(K) 1+ atividade saude bucal na gestacao - 9 pontos
+
+TABELA DE CLASSIFICACAO DO INDICADOR:
+Otimo -> > 75% e <= 100% -> Conceito: Otimo -> Score: 1,0
+Bom -> > 50% e <= 75% -> Conceito: Bom -> Score: 0,75
+Suficiente -> > 25% e <= 50% -> Conceito: Suficiente -> Score: 0,50
+Regular -> <= 25% -> Conceito: Regular -> Score: 0,25
+
+CALCULO DA NOTA FINAL DO SEGMENTO:
+Nota Final = S(peso_i x score_i) / S(peso_i) x 10
+
+Exemplo: Se C3 = Otimo (1,0) com peso 3:
+  Contribuicao = 3 x 1,0 = 3,0
+
+CLASSIFICACAO FINAL DO SEGMENTO:
+Otimo -> Nota > 8,5
+Bom -> Nota 7,0 a 8,5
+Suficiente -> Nota 5,0 a 6,9
+Regular -> Nota < 5,0
+C4
+C4 - Cuidado da pessoa com diabetes na APS
+
+CADERNO DE CALCULO - C4 Diabetes
+
+PESO: 2 | Segmento: Cuidado Integral | Max. por segmento: 10,0 pontos
+
+FORMULA DO INDICADOR:
+(Somatorio das boas praticas / N total de pessoas com diabetes vinculadas) x 100
+
+BOAS PRATICAS (max. 100 pontos/pessoa):
+(A) 1+ consulta (ultimos 6 meses) - 20 pontos
+(B) 1+ registro de PA (ultimos 6 meses) - 15 pontos
+(C) 1+ registro peso/altura (ultimos 12 meses) - 15 pontos
+(D) 2+ visitas domiciliares ACS/TACS (12 meses) - 20 pontos (NAO se aplica eAP tipo 76)
+(E) 1+ hemoglobina glicada (ultimos 12 meses) - 15 pontos
+(F) 1+ avaliacao dos pes (ultimos 12 meses) - 15 pontos
+
+TABELA DE CLASSIFICACAO DO INDICADOR:
+Otimo -> > 75% e <= 100% -> Conceito: Otimo -> Score: 1,0
+Bom -> > 50% e <= 75% -> Conceito: Bom -> Score: 0,75
+Suficiente -> > 25% e <= 50% -> Conceito: Suficiente -> Score: 0,50
+Regular -> <= 25% -> Conceito: Regular -> Score: 0,25
+
+CALCULO DA NOTA FINAL DO SEGMENTO:
+Nota Final = S(peso_i x score_i) / S(peso_i) x 10
+
+Exemplo: Se C4 = Otimo (1,0) com peso 2:
+  Contribuicao = 2 x 1,0 = 2,0
+
+CLASSIFICACAO FINAL DO SEGMENTO:
+Otimo -> Nota > 8,5
+Bom -> Nota 7,0 a 8,5
+Suficiente -> Nota 5,0 a 6,9
+Regular -> Nota < 5,0
+C5
+C5 - Cuidado da pessoa com hipertensao na APS
+
+CADERNO DE CALCULO - C5 Hipertensao
+
+PESO: 2 | Segmento: Cuidado Integral | Max. por segmento: 10,0 pontos
+
+FORMULA DO INDICADOR:
+(Somatorio das boas praticas / N total de pessoas com hipertensao vinculadas) x 100
+
+BOAS PRATICAS (max. 100 pontos/pessoa):
+(A) 1+ consulta (ultimos 6 meses) - 25 pontos
+(B) 1+ registro de PA (ultimos 6 meses) - 25 pontos
+(C) 1+ registro peso/altura (ultimos 12 meses) - 25 pontos
+(D) 2+ visitas domiciliares ACS/TACS (12 meses) - 25 pontos (NAO se aplica eAP tipo 76)
+
+TABELA DE CLASSIFICACAO DO INDICADOR:
+Otimo -> > 75% e <= 100% -> Conceito: Otimo -> Score: 1,0
+Bom -> > 50% e <= 75% -> Conceito: Bom -> Score: 0,75
+Suficiente -> > 25% e <= 50% -> Conceito: Suficiente -> Score: 0,50
+Regular -> <= 25% -> Conceito: Regular -> Score: 0,25
+
+CALCULO DA NOTA FINAL DO SEGMENTO:
+Nota Final = S(peso_i x score_i) / S(peso_i) x 10
+
+Exemplo: Se C5 = Otimo (1,0) com peso 2:
+  Contribuicao = 2 x 1,0 = 2,0
+
+CLASSIFICACAO FINAL DO SEGMENTO:
+Otimo -> Nota > 8,5
+Bom -> Nota 7,0 a 8,5
+Suficiente -> Nota 5,0 a 6,9
+Regular -> Nota < 5,0
+C6
+C6 - Cuidado da pessoa idosa na APS
+
+CADERNO DE CALCULO - C6 Pessoa Idosa
+
+PESO: 2 | Segmento: Cuidado Integral | Max. por segmento: 10,0 pontos
+
+FORMULA DO INDICADOR:
+(Somatorio das boas praticas / N total de pessoas idosas vinculadas) x 100
+
+BOAS PRATICAS (max. 100 pontos/pessoa):
+(A) 1+ consulta (ultimos 12 meses) - 25 pontos
+(B) 1+ registro peso/altura (ultimos 12 meses) - 25 pontos
+(C) 2+ visitas domiciliares ACS/TACS (12 meses) - 25 pontos (NAO se aplica eAP tipo 76)
+(D) 1 dose vacina influenza (ultimos 12 meses) - 25 pontos
+
+TABELA DE CLASSIFICACAO DO INDICADOR:
+Otimo -> > 75% e <= 100% -> Conceito: Otimo -> Score: 1,0
+Bom -> > 50% e <= 75% -> Conceito: Bom -> Score: 0,75
+Suficiente -> > 25% e <= 50% -> Conceito: Suficiente -> Score: 0,50
+Regular -> <= 25% -> Conceito: Regular -> Score: 0,25
+
+CALCULO DA NOTA FINAL DO SEGMENTO:
+Nota Final = S(peso_i x score_i) / S(peso_i) x 10
+
+Exemplo: Se C6 = Otimo (1,0) com peso 2:
+  Contribuicao = 2 x 1,0 = 2,0
+
+CLASSIFICACAO FINAL DO SEGMENTO:
+Otimo -> Nota > 8,5
+Bom -> Nota 7,0 a 8,5
+Suficiente -> Nota 5,0 a 6,9
+Regular -> Nota < 5,0
+C7
+C7 - Cuidado da mulher na prevencao do cancer na APS
+
+CADERNO DE CALCULO - C7 Prevencao do Cancer
+
+PESO: 2 | Segmento: Cuidado Integral | Max. por segmento: 10,0 pontos
+
+FORMULA DO INDICADOR:
+(Somatorio das boas praticas / N total de pessoas elegiveis) x 100
+
+BOAS PRATICAS (max. 100 pontos/pessoa):
+(A) Rastreamento cancer colo utero - 20 pontos
+(B) Vacina HPV - 30 pontos
+(C) Atendimento saude sexual/reprodutiva - 30 pontos
+(D) Rastreamento cancer mama - 20 pontos
+
+TABELA DE CLASSIFICACAO DO INDICADOR:
+Otimo -> > 75% e <= 100% -> Conceito: Otimo -> Score: 1,0
+Bom -> > 50% e <= 75% -> Conceito: Bom -> Score: 0,75
+Suficiente -> > 25% e <= 50% -> Conceito: Suficiente -> Score: 0,50
+Regular -> <= 25% -> Conceito: Regular -> Score: 0,25
+
+CALCULO DA NOTA FINAL DO SEGMENTO:
+Nota Final = S(peso_i x score_i) / S(peso_i) x 10
+
+Exemplo: Se C7 = Otimo (1,0) com peso 2:
+  Contribuicao = 2 x 1,0 = 2,0
+
+CLASSIFICACAO FINAL DO SEGMENTO:
+Otimo -> Nota > 8,5
+Bom -> Nota 7,0 a 8,5
+Suficiente -> Nota 5,0 a 6,9
+Regular -> Nota < 5,0 
+
+
+
+
+
+
+
+
+ 

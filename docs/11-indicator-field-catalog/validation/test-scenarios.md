@@ -1,0 +1,22 @@
+# Test Scenarios
+
+- denominador zero
+- numerador zero
+- numerador maior que zero
+- fora da janela
+- equipe ausente
+- unidade ausente
+- CBO invalido
+- procedimento ausente
+- medicao ausente
+- DW stale
+- LEDI degraded
+- schema missing table
+- schema missing column
+- payload sem PII
+- RBAC sem sessao
+- RBAC sem permissao
+- RBAC com permissao
+- auditoria nominal
+- endpoint legado respondendo durante migracao
+- endpoint canonico Saude Brasil 360 como destino final

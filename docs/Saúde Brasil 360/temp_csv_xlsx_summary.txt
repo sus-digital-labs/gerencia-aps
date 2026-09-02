@@ -1,0 +1,45 @@
+Base: c:\xampp821\htdocs\qualisus\Saúde Brasil 360\CSV
+CSV: 19 | XLSX: 56 | Erros: 0
+
+CSV files:
+- relatorio-cvat-visao-competencia.csv | delim=';' | colunas_header=1 | header0='Ministério da Saúde MS'
+- relatorio-cvat-visao-equipe.csv | delim=';' | colunas_header=1 | header0='Ministério da Saúde MS'
+- relatorio-cvat-visao-variavel.csv | delim=';' | colunas_header=1 | header0='Ministério da Saúde MS'
+- relatorio-visao-competencia (1).csv | delim=';' | colunas_header=1 | header0='Ministério da Saúde MS'
+- relatorio-visao-competencia (10).csv | delim=';' | colunas_header=1 | header0='Ministério da Saúde MS'
+- relatorio-visao-competencia (11).csv | delim=';' | colunas_header=1 | header0='Ministério da Saúde MS'
+- relatorio-visao-competencia (12).csv | delim=';' | colunas_header=1 | header0='Ministério da Saúde MS'
+- relatorio-visao-competencia (13).csv | delim=';' | colunas_header=1 | header0='Ministério da Saúde MS'
+- relatorio-visao-competencia (14).csv | delim=';' | colunas_header=1 | header0='Ministério da Saúde MS'
+- relatorio-visao-competencia (15).csv | delim=';' | colunas_header=1 | header0='Ministério da Saúde MS'
+- relatorio-visao-competencia (2).csv | delim=';' | colunas_header=1 | header0='Ministério da Saúde MS'
+- relatorio-visao-competencia (3).csv | delim=';' | colunas_header=1 | header0='Ministério da Saúde MS'
+- relatorio-visao-competencia (4).csv | delim=';' | colunas_header=1 | header0='Ministério da Saúde MS'
+- relatorio-visao-competencia (5).csv | delim=';' | colunas_header=1 | header0='Ministério da Saúde MS'
+- relatorio-visao-competencia (6).csv | delim=';' | colunas_header=1 | header0='Ministério da Saúde MS'
+- relatorio-visao-competencia (7).csv | delim=';' | colunas_header=1 | header0='Ministério da Saúde MS'
+- relatorio-visao-competencia (8).csv | delim=';' | colunas_header=1 | header0='Ministério da Saúde MS'
+- relatorio-visao-competencia (9).csv | delim=';' | colunas_header=1 | header0='Ministério da Saúde MS'
+- relatorio-visao-competencia.csv | delim=';' | colunas_header=1 | header0='Ministério da Saúde MS'
+
+Indicadores detectados (XLSX):
+- (n?o detectado automaticamente)
+
+Padr?es nominais detectados:
+- (nenhum padr?o detectado)
+
+Campos-chave encontrados em headers (contagem por planilha):
+- CPF: 56
+- CNS: 56
+- NASCIMENTO: 56
+- SEXO: 56
+- CNES: 56
+- INE: 56
+- NM: 48
+- DN: 48
+- A: 48
+- B: 48
+- C: 48
+- D: 48
+- E: 32
+- F: 16
