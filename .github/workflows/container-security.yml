@@ -12,7 +12,7 @@ jobs:
   container:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Build release image
         run: docker build --pull --tag sus-analytics-web:ci .
