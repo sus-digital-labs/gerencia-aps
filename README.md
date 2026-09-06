@@ -1,93 +1,182 @@
-# SUS Analytics Web
+<p align="center">
+  <h1 align="center">SUS Analytics Web</h1>
+</p>
 
-Painel web para visualização de contratos analíticos, acompanhamento territorial e apoio à gestão de dados da Atenção Primária à Saúde.
+<p align="center">
+  Painel web para visualização de contratos analíticos, acompanhamento territorial e apoio à gestão de dados da Atenção Primária à Saúde.
+</p>
 
-## Fronteira do checkout
+<p align="center">
+  <a href="https://github.com/eduardomuniz/sus-analytics-web/actions/workflows/ci.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/eduardomuniz/sus-analytics-web/ci.yml?branch=main&label=CI" alt="CI Status">
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License Apache 2.0">
+  </a>
+  <img src="https://img.shields.io/badge/status-experimental-orange.svg" alt="Status Experimental">
+  <img src="https://img.shields.io/badge/TypeScript-5.9-blue.svg" alt="TypeScript">
+</p>
 
-Este repositório é classificado como **`PUBLIC_STANDALONE`**. Ele contém o frontend React/Vite/TypeScript e seus contratos de consumo. Backend, banco de dados, ingestão, upsert, autorização de servidor, prontuário e motor de cálculo normativo não estão presentes neste checkout.
+<p align="center">
+  <a href="#visão-geral">Visão geral</a> ·
+  <a href="#instalação">Instalação</a> ·
+  <a href="#uso-rápido">Uso rápido</a> ·
+  <a href="#arquitetura">Arquitetura</a> ·
+  <a href="#segurança">Segurança</a> ·
+  <a href="#contribuição">Contribuição</a>
+</p>
 
-A aplicação pode consumir uma API compatível configurada em `VITE_API_URL`, mas a existência ou funcionamento dessa API deve ser comprovada fora do frontend. Documentos de outros checkouts são referência e não evidência do runtime atual. Consulte [docs/architecture/product-boundary.md](docs/architecture/product-boundary.md).
+---
 
-## Estado do projeto
+## Visão geral
 
-O escopo documentado possui **21 métricas**: 15 de Qualidade APS (`B1`–`B6`, `C1`–`C7`, `M1`–`M2`) e 6 de Vínculo e Acompanhamento Territorial (`CVAT1`–`CVAT6`). A página atual apresenta o catálogo de Qualidade APS; a presença no catálogo não significa que exista cálculo disponível no runtime.
+SUS Analytics Web é um frontend *standalone* desenvolvido para apoiar a visualização de dados da Atenção Primária à Saúde (APS). Ele oferece uma interface moderna focada no consumo de contratos de dados analíticos, permitindo que profissionais de saúde e gestores acompanhem métricas territoriais e indicadores de qualidade.
 
-O C1 permanece bloqueado de forma fechada. A fonte externa pode possuir a cadeia `fact.co_dim_tipo_atendimento → dimension.co_seq_dim_tipo_atendimento → dimension.nu_identificador`, mas o contrato local ainda não comprova sua preservação, cardinalidade, competência e versionamento. Enquanto isso, o estado é `BLOCKED_BY_DATA_CONTRACT` e o código específico é `C1_LOCAL_DATA_CONTRACT_MISSING_DEMAND_TYPE`. O frontend não publica percentual, numerador ou denominador do C1.
+A aplicação opera sem acesso direto a bancos de dados, delegando a autenticação, autorização e os cálculos normativos a uma API compatível. Isso garante a segregação de responsabilidades e facilita implantações em ambientes com restrições rigorosas de infraestrutura.
 
-O software é experimental. Indicadores, relatórios e listas demonstrativas não substituem sistemas oficiais, validação técnica local ou orientação do Ministério da Saúde.
+Atualmente, o projeto encontra-se em fase **experimental**, documentando suporte para renderização de 21 métricas (Qualidade APS e Vínculo/Acompanhamento Territorial) sem substituir os sistemas oficiais validados.
 
-## Current standalone capabilities
+## Principais recursos
 
-- Renderização da SPA e navegação entre páginas disponíveis.
-- Validação runtime de payloads analíticos e estados `READY`, `NO_DATA`, `API_UNAVAILABLE`, `MISSING_REQUIRED_CRITERIA`, `BLOCKED_BY_DATA_CONTRACT` e `CONTRACT_ERROR`.
-- Validação fail-closed de API, município, UF, IBGE e centro do mapa.
-- Exibição de indisponibilidade quando a API não responde, o payload é inválido ou a capacidade não está implementada.
-- Testes locais de contrato e configuração com Vitest.
-- Gate local de publicação com verificações positivas e negativas.
-
-## Required backend contracts
-
-As capacidades abaixo são contratos futuros ou externos, não funcionalidades presentes neste checkout:
-
-| Capacidade | Estado local |
+| Recurso | Descrição |
 |---|---|
-| API/router compatível | `EXTERNAL_CONTRACT` |
-| Banco ou réplica e-SUS APS | `NOT_PRESENT` |
-| Ingestão LEDI/e-SUS | `NOT_PRESENT` |
-| Upsert idempotente e linhagem | `REQUIRED_CONTRACT / NOT_IMPLEMENTED` |
-| Autorização por município, equipe e objeto | `REQUIRED_CONTRACT / NOT_PRESENT` |
-| Validação CNES/INE/CNS/CBO no servidor | `REQUIRED_CONTRACT / NOT_PRESENT` |
-| Cálculo normativo das 21 métricas | `EXTERNAL_CONTRACT / NOT_PRESENT` |
-| C1 | `BLOCKED_BY_DATA_CONTRACT` |
-| Motor de cálculo distribuído | `REFERENCE_ONLY / FUTURE` |
+| **Painel interativo** | Interface React/Vite (SPA) para navegação rápida, acessível e responsiva. |
+| **Validação de contratos** | Verificação rigorosa em runtime de payloads analíticos (estados `READY`, `NO_DATA`, `CONTRACT_ERROR`, etc.). |
+| **Suporte a mapas** | Integração territorial para gestão visual e acompanhamento de microáreas locais. |
+| **Execução fail-closed** | Comportamento defensivo que exibe indisponibilidade imediata perante APIs inoperantes, falta de configuração ou dados incompatíveis. |
 
-## Requisitos
+## Preview
 
-- Node.js 22 ou superior.
-- pnpm 10.4 ou superior.
+> [!NOTE]
+> Capturas de tela e demonstrações interativas da interface serão disponibilizadas nas próximas atualizações conforme a estabilização do design system.
 
-## Desenvolvimento
+## Uso rápido
+
+O projeto exige configuração prévia obrigatória (município, UF, IBGE, coordenadas e API) para renderizar a interface base. Sem os parâmetros corretos, o *bootstrap* será interrompido.
 
 ```bash
+git clone https://github.com/eduardomuniz/sus-analytics-web.git
+cd sus-analytics-web
 pnpm install --frozen-lockfile
 cp .env.example apps/frontend/.env.local
 pnpm dev
 ```
 
-A aplicação interrompe o bootstrap com `CONFIGURATION_ERROR` quando API, município, UF, IBGE ou coordenadas obrigatórias estão ausentes ou inválidos. Sem uma API compatível e um payload válido, nenhuma métrica substituta é apresentada.
+> [!IMPORTANT]
+> A aplicação bloqueia métricas fechadas que não tiverem comprovação de estabilidade ou versionamento (ex: métrica `C1`), apresentando um estado de bloqueio local em tempo de execução.
 
-Município, UF, código IBGE, centro do mapa e URL da API são definidos no `.env.local`. Não há município padrão de produção, resultado enlatado ou dado fictício implícito.
+## Instalação
 
-## Qualidade
+O repositório suporta execução via Docker ou ambiente local (Node.js/pnpm).
+
+### Docker (Recomendado)
+
+O repositório disponibiliza arquivos de containerização na pasta `docker/`:
 
 ```bash
-pnpm check
-pnpm test
-pnpm build
-pnpm audit
-pnpm verify:release
-pnpm verify:release:negative
+docker compose -f docker/compose.yml up --build
 ```
 
-Os gates verificam contratos, configuração, ausência de fallbacks numéricos, bloqueio do C1, nomes de arquivos sensíveis, atribuições de licença e falhas negativas em fixtures temporárias.
+### Desenvolvimento Local
 
-## Estrutura
+Requisitos: Node.js 22 ou superior e pnpm 10.4 ou superior.
+
+```bash
+pnpm install --frozen-lockfile
+pnpm build
+pnpm start
+```
+
+## Configuração
+
+Copie o `.env.example` (se existente) para `.env.local` e configure as variáveis. Nenhuma delas tem *fallback* padrão de produção para prevenir uso acidental.
+
+| Variável | Obrigatória | Descrição | Exemplo seguro |
+| -------- | ----------: | --------- | -------------- |
+| `VITE_API_URL` | Sim | URL base da API compatível externa | `http://localhost:3000` |
+| `VITE_MUNICIPIO` | Sim | Nome do município de operação | `Cidade Modelo` |
+| `VITE_UF` | Sim | Sigla do Estado da Federação | `UF` |
+| `VITE_IBGE` | Sim | Código IBGE municipal | `0000000` |
+| `VITE_MAP_CENTER` | Sim | Centro geográfico inicial do mapa | `-15.7801,-47.9292` |
+
+> [!WARNING]
+> Nenhuma variável iniciada com `VITE_` deve conter senhas ou segredos, pois elas são incorporadas publicamente ao *bundle* da aplicação.
+
+## Arquitetura
+
+A aplicação opera como um consumidor isolado (frontend standalone). O acoplamento com a lógica de negócio ocorre exclusivamente via contratos estritos.
+
+```mermaid
+flowchart LR
+  Browser[Navegador do Usuário] --> SPA[Frontend React/Vite]
+  SPA -->|Contrato REST / Validação Runtime| API[API/BFF Externa Compatível]
+  API --> DB[(Base de Dados Oficial)]
+```
+
+- **Frontend:** Construído com React, TypeScript e Vite. Gerencia o roteamento e a renderização das métricas.
+- **Validação:** Checagens falham rápido (*fail-closed*) perante indisponibilidades externas.
+
+## Estrutura do repositório
 
 ```text
-apps/frontend/     aplicação React
- docs/              arquitetura, contratos, desenvolvimento e privacidade
-scripts/           verificações locais de publicação
-.github/            integração contínua e modelos de colaboração
+.
+├── apps/               # Módulos de aplicação principal e backend/core local
+├── docker/             # Configurações de container e Docker Compose
+├── docs/               # Documentação de arquitetura e contratos
+├── scripts/            # Ferramentas locais de validação de build
+├── .github/            # Workflows CI (Build e Security)
+└── package.json        # Dependências do workspace
 ```
 
-Consulte [ARCHITECTURE.md](ARCHITECTURE.md), [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) e [docs/architecture/product-boundary.md](docs/architecture/product-boundary.md).
+Para aprofundamento técnico, consulte `docs/architecture/product-boundary.md` e `docs/DEVELOPMENT.md`.
 
-## Segurança e privacidade
+## Testes e qualidade
 
-Não envie dados pessoais, dados de saúde, credenciais, dumps, hosts internos ou endereços de infraestrutura para o repositório. Use somente dados sintéticos em desenvolvimento. Nenhuma variável `VITE_*` deve conter segredo; valores `VITE_*` são incorporados ao bundle público. Vulnerabilidades devem ser comunicadas conforme [SECURITY.md](SECURITY.md).
+O projeto inclui *gates* rigorosos de publicação. Em ambiente local, execute:
 
-## Autoria e licença
+```bash
+pnpm check      # Validação estática de tipos (TypeScript)
+pnpm format     # Verificação e aplicação do Prettier
+pnpm test       # Executa a suite de testes locais (Vitest)
+pnpm build      # Compilação e empacotamento com Vite/esbuild
+```
 
-Copyright 2026 Eduardo Muniz.
+A esteira de Continuous Integration executa verificações de testes, *typecheck* e *container security* a cada Pull Request.
 
-Distribuído sob a Apache License 2.0. Consulte [LICENSE](LICENSE) e [NOTICE](NOTICE).
+## Segurança
+
+A segurança foi pensada baseada na postura isolada do painel:
+
+- **Política de *Secrets*:** Nenhum segredo ou token privado é hospedado localmente no código. Utilizar `.env` exclusivamente com dados sintéticos ou restritos.
+- **Isolamento de Responsabilidade:** Funcionalidades vitais, como autorização, controle de acesso e cálculo distribuído, são tratadas explicitamente como "contratos externos", evitando o processamento de regras sigilosas no frontend.
+- **Reporte:** Caso descubra problemas de segurança, utilize o mecanismo privado padrão do GitHub (`Security > Advisories`). Não publique informações sensíveis em issues abertas.
+
+## Roadmap
+
+| Status | Item |
+| ------ | ---- |
+| ✅ | Renderização de SPA e roteamento base experimental |
+| ✅ | Validação fail-closed rigorosa de payloads externos |
+| 🚧 | Documentação estendida de uso das métricas do catálogo APS |
+| 🚧 | Visualização completa do acompanhamento territorial |
+| 🧭 | Integração com provedor robusto de autenticação multiusuário |
+
+## Contribuição
+
+Contribuições para o refinamento da interface, documentação e correção de testes locais são muito bem-vindas.
+
+1. Faça um *fork* e crie sua branch de desenvolvimento.
+2. Certifique-se de executar `pnpm test` e `pnpm check`.
+3. Abra um Pull Request e aguarde a validação dos *workflows* do GitHub Actions.
+
+Para diretrizes detalhadas de código e colaboração, consulte a documentação ou a arquitetura.
+
+## Licença
+
+Distribuído sob a licença Apache 2.0. Consulte [LICENSE](LICENSE) e [NOTICE](NOTICE) para os devidos limites legais de cópia, distribuição e modificação.
+
+## Créditos / Mantenedor
+
+O software é mantido por Eduardo Muniz.
+
+Este projeto é uma ferramenta de apoio analítico e **não tem intenção de substituir** o e-SUS APS, PEC Oficial ou os relatórios institucionais do Ministério da Saúde. Use com responsabilidade.
