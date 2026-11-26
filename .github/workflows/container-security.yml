@@ -39,7 +39,7 @@ jobs:
           trap cleanup EXIT
           printf '%s\n' 'health-probe@example.test' >"$fixture/email"
           openssl rand -hex 24 >"$fixture/password"
-          docker run --rm -i --network none --user "$(id -u):$(id -g)" --entrypoint node \
+          docker run --rm -i --network none --user "$(id -u):$(id -g)" \
             --mount "type=bind,source=$PWD/apps/backend/local/operator-auth.ts,target=/operator-auth.mts,readonly" \
             --mount "type=bind,source=$fixture,target=/fixture,readonly" sus-analytics-web:ci --input-type=module >"$fixture/verifier" <<'NODE'
           import { buildOperatorVerifier } from "/operator-auth.mts";
@@ -48,7 +48,7 @@ jobs:
           docker run --rm --detach --network none --name sus-analytics-health --user "$(id -u):$(id -g)" \
             --mount "type=bind,source=$fixture/verifier,target=/run/secrets/operator_login,readonly" sus-analytics-web:ci
           for _ in {1..15}; do
-            if docker exec sus-analytics-health node -e "fetch('http://127.0.0.1:3000/healthz').then(async r => { if (!r.ok || (await r.json()).status !== 'ok') process.exit(1) }).catch(() => process.exit(1))"; then
+            if docker exec sus-analytics-health /nodejs/bin/node -e "fetch('http://127.0.0.1:3000/healthz').then(async r => { if (!r.ok || (await r.json()).status !== 'ok') process.exit(1) }).catch(() => process.exit(1))"; then
               exit 0
             fi
             sleep 1

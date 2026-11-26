@@ -4,9 +4,9 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development tsx watch apps/backend/_core/index.ts",
+    "dev": "pnpm build && node --watch --no-warnings dist/pec-local.js",
     "build": "vite build --config docker/vite.pec-local.ts && esbuild apps/backend/local/index.ts --platform=node --target=node24 --bundle --format=esm --external:pg-native --banner:js=\"import { createRequire } from 'node:module'; const require = createRequire(import.meta.url);\" --outfile=dist/pec-local.js",
-    "start": "node dist/pec-local.js",
+    "start": "node --no-warnings dist/pec-local.js",
     "check": "tsc -p docker/tsconfig.pec-local.json",
     "format": "prettier --write .",
     "test": "vitest run",
