@@ -2,6 +2,7 @@ import { getLoginUrl } from "@/const";
 import { trpc } from "@/lib/trpc";
 import { TRPCClientError } from "@trpc/client";
 import { useCallback, useEffect, useMemo } from "react";
+import { IS_LOCAL_PEC } from "@/local/pec-mode";
 
 type UseAuthOptions = {
   redirectOnUnauthenticated?: boolean;
@@ -37,15 +38,15 @@ export function useAuth(options?: UseAuthOptions) {
       throw error;
     } finally {
       utils.auth.me.setData(undefined, null);
-      await utils.auth.me.invalidate();
+      if (IS_LOCAL_PEC) window.location.replace("/login");
+      else await utils.auth.me.invalidate();
     }
   }, [logoutMutation, utils]);
 
   const state = useMemo(() => {
-    localStorage.setItem(
-      "susanalytics-runtime-user-info",
-      JSON.stringify(meQuery.data)
-    );
+    if (!IS_LOCAL_PEC) {
+      localStorage.setItem("susanalytics-runtime-user-info", JSON.stringify(meQuery.data));
+    }
     return {
       user: meQuery.data ?? null,
       loading: meQuery.isLoading || logoutMutation.isPending,

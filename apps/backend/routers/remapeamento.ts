@@ -6,7 +6,7 @@ import {
   territorios, areas, acsPerfil, microareas, familias, cidadaos,
   redistribuicaoLogs, transferenciaSolicitacoes, transferenciaMensagens,
   configuracaoTerritorio
-} from "../../drizzle/schema";
+} from "../../../drizzle/schema";
 import { eq, and, isNull, sql, desc, asc } from "drizzle-orm";
 import { queryPEC } from "../pec-db";
 import { notifyOwner } from "../_core/notification";

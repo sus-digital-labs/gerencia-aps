@@ -2,7 +2,7 @@
 import { z } from "zod";
 import { router, protectedProcedure, publicProcedure } from "../_core/trpc";
 import { getDb } from "../db";
-import { microareas, domiciliosMicroarea, acsPerfilMicroarea, microareaHistorico } from "../../drizzle/schema";
+import { microareas, domiciliosMicroarea, acsPerfilMicroarea, microareaHistorico } from "../../../drizzle/schema";
 import { eq, count } from "drizzle-orm";
 import { queryPEC } from "../pec-db";
 

@@ -6,6 +6,7 @@ import { createRoot } from "react-dom/client";
 import superjson from "superjson";
 import App from "./App";
 import { getLoginUrl } from "./const";
+import { IS_LOCAL_PEC } from "./local/pec-mode";
 import "./index.css";
 
 const queryClient = new QueryClient();
@@ -25,7 +26,7 @@ queryClient.getQueryCache().subscribe(event => {
   if (event.type === "updated" && event.action.type === "error") {
     const error = event.query.state.error;
     redirectToLoginIfUnauthorized(error);
-    console.error("[API Query Error]", error);
+    if (!IS_LOCAL_PEC) console.error("[API Query Error]", error);
   }
 });
 
@@ -33,7 +34,7 @@ queryClient.getMutationCache().subscribe(event => {
   if (event.type === "updated" && event.action.type === "error") {
     const error = event.mutation.state.error;
     redirectToLoginIfUnauthorized(error);
-    console.error("[API Mutation Error]", error);
+    if (!IS_LOCAL_PEC) console.error("[API Mutation Error]", error);
   }
 });
 

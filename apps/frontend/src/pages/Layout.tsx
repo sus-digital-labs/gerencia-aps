@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Link, useLocation, Outlet } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { useAuth } from '@/_core/hooks/useAuth';
-import { trpc } from '@/lib/trpc';
 
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -16,15 +15,18 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { 
   LayoutDashboard, Target, Trophy, Shield, Users, Building2, 
-  Settings, LogOut, Menu, X, ChevronRight, Activity, MapPin, Bell, Heart, Bug
+  Settings, LogOut, Menu, X, ChevronRight, Activity, MapPin, Bell, Heart, Bug, TrendingUp
 } from 'lucide-react';
-import GlobalSearchBar from '../components/GlobalSearchBar';
 import { motion, AnimatePresence } from 'framer-motion';
+import { IS_LOCAL_PEC } from "@/local/pec-mode";
 
 // Mapa reverso: URL -> pageName para determinar a página ativa
-const urlToPageName = {
+const urlToPageName: Record<string, string> = {
   '/': 'Dashboard',
   '/dashboard': 'Dashboard',
+  '/vinculos': 'TerritorialLinks',
+  '/cvat': 'TerritorialLinks',
+  '/nominais': 'Nominais',
   '/acs': 'ACSManagement',
   '/acs/ranking': 'ACSRanking',
   '/acs/timeline': 'ACSTimeline',
@@ -34,8 +36,16 @@ const urlToPageName = {
   '/territorio/microareas': 'MicroareaMapping',
   '/territorio/remapeamento-inteligente': 'RemapeamentoInteligente',
   '/vigilancia/aedes': 'AedesVigilance',
+  '/vigilancia': 'Vigilance',
   '/vigilancia/cardiovascular': 'CardiovascularRisk',
   '/relatorios': 'Reports',
+  '/relatorios/producao': 'ProductionReports',
+  '/relatorios/bpa': 'BPAReports',
+  '/relatorios/ras': 'RASReports',
+  '/relatorios/imunizacao': 'ImmunizationReports',
+  '/relatorios/comparativo': 'ComparativeReports',
+  '/relatorios/incidencia': 'IncidenceReports',
+  '/relatorios/personalizados': 'CustomReports',
   '/relatorios/customizados': 'CustomReports',
   '/qualidade': 'DataQuality',
   '/gamificacao': 'Gamification',
@@ -46,8 +56,18 @@ const urlToPageName = {
   '/saude-mulher': 'WomensHealth',
 };
 
-const navigation = [
+type NavigationItem = {
+  name: string;
+  href: string;
+  icon: typeof LayoutDashboard;
+  description: string;
+  subItems?: { name: string; href: string }[];
+};
+
+const navigation: NavigationItem[] = [
   { name: 'Dashboard', href: 'Dashboard', icon: LayoutDashboard, description: 'Visão geral dos indicadores' },
+  ...(IS_LOCAL_PEC ? [{ name: 'Lista nominal', href: 'Nominais', icon: Users, description: 'Cadastro do PEC por equipe' }] : []),
+  ...(IS_LOCAL_PEC ? [{ name: 'Vínculos e acompanhamento', href: 'TerritorialLinks', icon: MapPin, description: 'Cadastro e acompanhamento no território' }] : []),
   { 
     name: 'Gestão ACS', 
     href: 'ACSManagement', 
@@ -56,6 +76,7 @@ const navigation = [
     subItems: [
       { name: 'Visitas e ACS', href: 'ACSManagement' },
       { name: 'Ranking ACS', href: 'ACSRanking' },
+      { name: 'Histórico de visitas', href: 'ACSTimeline' },
       { name: 'Tarefas Pendentes', href: 'PendingTasks' },
     ]
   },
@@ -73,7 +94,7 @@ const navigation = [
   },
   { 
     name: 'Vigilância', 
-    href: 'AedesVigilance', 
+    href: 'Vigilance',
     icon: Activity, 
     description: 'Saúde e riscos',
     subItems: [
@@ -81,7 +102,17 @@ const navigation = [
       { name: 'Risco Cardiovascular', href: 'CardiovascularRisk' },
     ]
   },
-  { name: 'Relatórios', href: 'Reports', icon: Target, description: 'Produção, BPA, RAS, Imunização' },
+  {
+    name: 'Relatórios', href: 'Reports', icon: Target, description: 'Consultas e exportação do PEC',
+    subItems: [
+      { name: 'Produção', href: 'ProductionReports' }, { name: 'BPA', href: 'BPAReports' },
+      { name: 'RAS', href: 'RASReports' }, { name: 'Imunização', href: 'ImmunizationReports' },
+      { name: 'Comparativo', href: 'ComparativeReports' }, { name: 'Incidência', href: 'IncidenceReports' },
+      { name: 'Personalizados', href: 'CustomReports' },
+    ],
+  },
+  { name: 'Saúde da Mulher', href: 'WomensHealth', icon: Heart, description: 'Práticas de cuidado no PEC' },
+  { name: 'Análises de saúde', href: 'HealthInsights', icon: TrendingUp, description: 'Indicadores e acompanhamento' },
   { name: 'Qualidade de Dados', href: 'DataQuality', icon: Shield, description: 'Gestão de cadastros' },
   { name: 'Gamificação', href: 'Gamification', icon: Trophy, description: 'Ranking e conquistas' },
   { name: 'Equipes', href: 'Teams', icon: Building2, description: 'Gestão de equipes' },
@@ -138,7 +169,7 @@ export default function Layout() {
             {!isCollapsed && (
               <div>
                 <h1 className="font-black text-gray-900">SUS Analytics</h1>
-                <p className="text-[10px] text-gray-500">Previne Brasil</p>
+                <p className="text-[10px] text-gray-500">{IS_LOCAL_PEC ? "Saúde Brasil 360" : "Previne Brasil"}</p>
               </div>
             )}
             <Button
@@ -153,10 +184,10 @@ export default function Layout() {
 
           {/* Navigation */}
           <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
-            {navigation.map((item: any) => {
+            {navigation.map(item => {
                 const active = isActive(item.href);
-                const hasSubItems = item.subItems && item.subItems.length > 0;
-                const isSubActive = hasSubItems && item.subItems.some(sub => isActive(sub.href));
+                const subItems = item.subItems ?? [];
+                const isSubActive = subItems.some(sub => isActive(sub.href));
 
                 return (
                   <div key={item.name}>
@@ -182,9 +213,9 @@ export default function Layout() {
                       )}
                     </Link>
                     {/* Sub Items */}
-                    {!isCollapsed && hasSubItems && (active || isSubActive) && (
+                    {!isCollapsed && subItems.length > 0 && (active || isSubActive) && (
                       <div className="ml-8 mt-1 space-y-1">
-                        {item.subItems.map((subItem: any) => (
+                        {subItems.map(subItem => (
                           <Link
                             key={subItem.href}
                             to={createPageUrl(subItem.href)}
@@ -246,7 +277,6 @@ export default function Layout() {
                     <Settings className="w-4 h-4" />
                     Configurações
                   </DropdownMenuItem>
-                  <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={handleLogout} className="gap-2 text-red-600 cursor-pointer">
                     <LogOut className="w-4 h-4" />
                     Sair
@@ -263,8 +293,8 @@ export default function Layout() {
         {/* Desktop header with search */}
         <header className="hidden lg:flex sticky top-0 z-30 bg-white border-b">
           <div className="flex items-center justify-end h-14 px-6 w-full gap-4">
-            <GlobalSearchBar />
-            {user && (
+            <Button variant="outline" size="sm" asChild><Link to="/nominais"><Users className="size-4" /> Consultar lista nominal</Link></Button>
+            {!IS_LOCAL_PEC && user && (
               <Button variant="ghost" size="icon">
                 <Bell className="w-5 h-5" />
               </Button>
@@ -285,7 +315,7 @@ export default function Layout() {
               <span className="font-bold text-gray-800">SUS Analytics</span>
             </div>
             <div className="flex items-center gap-2">
-              <GlobalSearchBar />
+              <Button variant="ghost" size="icon" asChild><Link to="/nominais" aria-label="Consultar lista nominal"><Users className="size-4" /></Link></Button>
               {user && (
                 <>
                   <Button variant="ghost" size="icon">

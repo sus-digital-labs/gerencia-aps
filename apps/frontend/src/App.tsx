@@ -1,132 +1,102 @@
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-
-// Layout
-// @ts-ignore
-import Layout from "./pages/Layout.jsx";
-
-// Pages
+import Layout from "./pages/Layout";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
+import { LocalLogin } from "./local/login";
+import { PecNominalPage } from "./local/nominal";
+import { PecIndicatorPage } from "./local/indicator";
+import { PecAcsPage } from "./local/acs";
+import { PecReportsPage } from "./local/reports";
+import { PecTerritorialPage } from "./local/territorial";
+import { PecTerritoryPage, PecQualityPage, PecVigilancePage, PecWomensHealthPage, PecGamificationPage,
+  PecSettingsPage, PecHealthInsightsPage } from "./local/modules";
+import { usePecScope } from "./local/pec";
 
-// Gestão ACS
-import ACSManagement from "./pages/ACSManagement";
-import ACSRanking from "./pages/ACSRanking";
-import ACSTimeline from "./pages/ACSTimeline";
-import PendingTasks from "./pages/PendingTasks";
-
-// Território
-// @ts-ignore
-import TerritoryMapping from "./pages/TerritoryMapping.jsx";
-// @ts-ignore
-import TerritoryRemapping from "./pages/TerritoryRemapping.jsx";
-// @ts-ignore
-import MicroareaMapping from "./pages/MicroareaMapping.jsx";
-// @ts-ignore
-import RemapeamentoInteligente from "./pages/RemapeamentoInteligente.jsx";
-
-// Vigilância
-import AedesVigilance from "./pages/AedesVigilance";
-import CardiovascularRisk from "./pages/CardiovascularRisk";
-import WomensHealth from "./pages/WomensHealth";
-
-// Relatórios
-import Reports from "./pages/Reports";
-import BPAReports from "./pages/BPAReports";
-import ProductionReports from "./pages/ProductionReports";
-import RASReports from "./pages/RASReports";
-import ImmunizationReports from "./pages/ImmunizationReports";
-import CustomReports from "./pages/CustomReports";
-
-// Outros
-import DataQuality from "./pages/DataQuality";
-import Gamification from "./pages/Gamification";
-import Teams from "./pages/Teams";
-import Settings from "./pages/Settings";
-import IndicatorDetail from "./pages/IndicatorDetail";
-import HealthInsights from "./pages/HealthInsights";
-
-function Router() {
+function Teams() {
+  const { directory, teams, month } = usePecScope();
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        {/* Dashboard */}
-        <Route index element={<Dashboard />} />
-        <Route path="dashboard" element={<Dashboard />} />
-        
-        {/* Gestão ACS */}
-        <Route path="acs" element={<ACSManagement />} />
-        <Route path="acs/ranking" element={<ACSRanking />} />
-        <Route path="acs/timeline" element={<ACSTimeline />} />
-        <Route path="acs/tarefas" element={<PendingTasks />} />
-        
-        {/* Território - rotas alinhadas com createPageUrl */}
-        <Route path="territorio" element={<TerritoryMapping />} />
-        <Route path="territorio/remapeamento" element={<TerritoryRemapping />} />
-        <Route path="territorio/microareas" element={<MicroareaMapping />} />
-        <Route path="territorio/remapeamento-inteligente" element={<RemapeamentoInteligente />} />
-        {/* Rotas alternativas para compatibilidade */}
-        <Route path="territory-mapping" element={<TerritoryMapping />} />
-        <Route path="territory-remapping" element={<TerritoryRemapping />} />
-        
-        {/* Vigilância */}
-        <Route path="vigilancia/aedes" element={<AedesVigilance />} />
-        <Route path="vigilancia/cardiovascular" element={<CardiovascularRisk />} />
-        <Route path="saude-mulher" element={<WomensHealth />} />
-        
-        {/* Relatórios */}
-        <Route path="relatorios" element={<Reports />} />
-        <Route path="relatorios/bpa" element={<BPAReports />} />
-        <Route path="relatorios/producao" element={<ProductionReports />} />
-        <Route path="relatorios/ras" element={<RASReports />} />
-        <Route path="relatorios/imunizacao" element={<ImmunizationReports />} />
-        <Route path="relatorios/customizados" element={<CustomReports />} />
-        {/* Rotas alternativas em inglês para compatibilidade */}
-        <Route path="reports" element={<Reports />} />
-        <Route path="reports/bpa" element={<BPAReports />} />
-        <Route path="reports/production" element={<ProductionReports />} />
-        <Route path="reports/ras" element={<RASReports />} />
-        <Route path="reports/immunization" element={<ImmunizationReports />} />
-        <Route path="reports/custom" element={<CustomReports />} />
-        
-        {/* Outros */}
-        <Route path="qualidade" element={<DataQuality />} />
-        <Route path="gamificacao" element={<Gamification />} />
-        <Route path="equipes" element={<Teams />} />
-        <Route path="configuracoes" element={<Settings />} />
-        <Route path="indicador/:code" element={<IndicatorDetail />} />
-        <Route path="insights" element={<HealthInsights />} />
-        {/* Rotas alternativas em inglês */}
-        <Route path="data-quality" element={<DataQuality />} />
-        <Route path="gamification" element={<Gamification />} />
-        <Route path="teams" element={<Teams />} />
-        <Route path="settings" element={<Settings />} />
-        <Route path="indicator/:code" element={<IndicatorDetail />} />
-        <Route path="health-insights" element={<HealthInsights />} />
-        
-        {/* 404 */}
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
+    <div className="mx-auto max-w-[1600px] px-6 py-6">
+      <Card>
+        <CardHeader><CardTitle>Equipes ativas no PEC</CardTitle></CardHeader>
+        <CardContent>
+          {directory.isPending && <p role="status">Consultando equipes do PEC…</p>}
+          {directory.isError && <p role="alert">{directory.error.message}</p>}
+          {directory.isSuccess && (teams.length ? (
+            <Table>
+              <TableHeader><TableRow>
+                <TableHead>Equipe</TableHead><TableHead>INE</TableHead><TableHead>Unidade</TableHead><TableHead>CNES</TableHead>
+              </TableRow></TableHeader>
+              <TableBody>{teams.map(team => (
+                <TableRow key={`${team.cnes}/${team.ine}`}>
+                    <TableCell><Link className="text-blue-700 underline" to={`/nominais?${new URLSearchParams({ cnes: team.cnes, ine: team.ine, competencia: month })}`}>{team.name}</Link></TableCell>
+                    <TableCell>{team.ine}</TableCell>
+                  <TableCell>{team.unitName}</TableCell><TableCell>{team.cnes}</TableCell>
+                </TableRow>
+              ))}</TableBody>
+            </Table>
+          ) : <p role="status">O PEC não retornou equipes ativas.</p>)}
+        </CardContent>
+      </Card>
+    </div>
   );
 }
 
-function App() {
+export default function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <BrowserRouter>
             <Toaster />
-            <Router />
+            <Routes>
+              <Route path="login" element={<LocalLogin />} />
+              <Route path="/" element={<Layout />}>
+                <Route index element={<Dashboard />} />
+                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="nominais" element={<PecNominalPage />} />
+                <Route path="indicador" element={<PecIndicatorPage />} />
+                <Route path="indicador/:code" element={<PecIndicatorPage />} />
+                <Route path="indicator/:code" element={<PecIndicatorPage />} />
+                <Route path="equipes" element={<Teams />} />
+                <Route path="teams" element={<Teams />} />
+                <Route path="vinculos" element={<PecTerritorialPage />} />
+                <Route path="cvat" element={<PecTerritorialPage />} />
+                <Route path="acs" element={<PecAcsPage />} />
+                <Route path="acs/ranking" element={<PecAcsPage />} />
+                <Route path="acs/timeline" element={<PecAcsPage />} />
+                <Route path="acs/tarefas" element={<PecAcsPage />} />
+                <Route path="relatorios/:report?" element={<PecReportsPage />} />
+                <Route path="reports/:report?" element={<PecReportsPage />} />
+                <Route path="territorio" element={<PecTerritoryPage />} />
+                <Route path="territorio/microareas" element={<PecTerritoryPage view="microareas" />} />
+                <Route path="territorio/remapeamento" element={<PecTerritoryPage view="remapping" />} />
+                <Route path="territorio/remapeamento-inteligente" element={<PecTerritoryPage view="smart-remapping" />} />
+                <Route path="territory-mapping" element={<PecTerritoryPage />} />
+                <Route path="territory-remapping" element={<PecTerritoryPage view="remapping" />} />
+                <Route path="vigilancia" element={<PecVigilancePage />} />
+                <Route path="vigilancia/aedes" element={<PecVigilancePage view="aedes" />} />
+                <Route path="vigilancia/cardiovascular" element={<PecVigilancePage view="cardiovascular" />} />
+                <Route path="saude-mulher" element={<PecWomensHealthPage />} />
+                <Route path="qualidade" element={<PecQualityPage />} />
+                <Route path="data-quality" element={<PecQualityPage />} />
+                <Route path="gamificacao" element={<PecGamificationPage />} />
+                <Route path="gamification" element={<PecGamificationPage />} />
+                <Route path="configuracoes" element={<PecSettingsPage />} />
+                <Route path="settings" element={<PecSettingsPage />} />
+                <Route path="insights" element={<PecHealthInsightsPage />} />
+                <Route path="health-insights" element={<PecHealthInsightsPage />} />
+                <Route path="*" element={<NotFound />} />
+              </Route>
+            </Routes>
           </BrowserRouter>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );
 }
-
-export default App;

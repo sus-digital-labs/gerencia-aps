@@ -32,7 +32,7 @@ interface Team {
   name: string;
 }
 
-interface Filters {
+export interface Filters {
   month?: number;
   year?: number;
   unitId?: string | null;
@@ -46,6 +46,9 @@ interface GlobalFiltersProps {
   units?: Unit[];
   teams?: Team[];
   onReset: () => void;
+  pecScope?: boolean;
+  maxCompetence?: string;
+  hidePeriod?: boolean;
 }
 
 export default function GlobalFilters({
@@ -53,7 +56,10 @@ export default function GlobalFilters({
   onFilterChange,
   units = [],
   teams = [],
-  onReset
+  onReset,
+  pecScope = false,
+  maxCompetence,
+  hidePeriod = false
 }: GlobalFiltersProps) {
   const handleChange = (key: keyof Filters, value: any) => {
     onFilterChange({ ...filters, [key]: value });
@@ -64,17 +70,17 @@ export default function GlobalFilters({
       <CardContent className="p-4">
         <div className="flex flex-wrap items-center gap-4">
           {/* Período */}
-          <div className="flex items-center gap-2">
+          {!hidePeriod && <><div className="flex items-center gap-2">
             <Calendar className="w-4 h-4 text-gray-400" />
             <Select
               value={String(filters.month || new Date().getMonth() + 1)}
               onValueChange={(v) => handleChange('month', parseInt(v))}
             >
-              <SelectTrigger className="w-36 bg-white">
+              <SelectTrigger aria-label="Mês" className="w-36 bg-white">
                 <SelectValue placeholder="Mês" />
               </SelectTrigger>
               <SelectContent>
-                {months.map(m => (
+                {months.filter(m => !maxCompetence || `${filters.year}-${String(m.value).padStart(2, "0")}` <= maxCompetence).map(m => (
                   <SelectItem key={m.value} value={String(m.value)}>{m.label}</SelectItem>
                 ))}
               </SelectContent>
@@ -83,18 +89,18 @@ export default function GlobalFilters({
               value={String(filters.year || currentYear)}
               onValueChange={(v) => handleChange('year', parseInt(v))}
             >
-              <SelectTrigger className="w-24 bg-white">
+              <SelectTrigger aria-label="Ano" className="w-24 bg-white">
                 <SelectValue placeholder="Ano" />
               </SelectTrigger>
               <SelectContent>
-                {years.map(y => (
+                {years.filter(y => !pecScope || y >= 2025).map(y => (
                   <SelectItem key={y} value={String(y)}>{y}</SelectItem>
                 ))}
               </SelectContent>
             </Select>
           </div>
 
-          <div className="h-8 w-px bg-gray-200" />
+          <div className="h-8 w-px bg-gray-200" /></>}
 
           {/* Unidade */}
           <div className="flex items-center gap-2">
@@ -103,11 +109,11 @@ export default function GlobalFilters({
               value={filters.unitId || 'all'}
               onValueChange={(v) => handleChange('unitId', v === 'all' ? null : v)}
             >
-              <SelectTrigger className="w-48 bg-white">
-                <SelectValue placeholder="Todas as Unidades" />
+              <SelectTrigger aria-label="Unidade" className="w-48 bg-white">
+                <SelectValue placeholder={pecScope ? "Unidade" : "Todas as Unidades"} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">Todas as Unidades</SelectItem>
+                {!pecScope && <SelectItem value="all">Todas as Unidades</SelectItem>}
                 {units.map(unit => (
                   <SelectItem key={unit.id} value={unit.id}>{unit.name}</SelectItem>
                 ))}
@@ -122,11 +128,11 @@ export default function GlobalFilters({
               value={filters.teamId || 'all'}
               onValueChange={(v) => handleChange('teamId', v === 'all' ? null : v)}
             >
-              <SelectTrigger className="w-48 bg-white">
-                <SelectValue placeholder="Todas as Equipes" />
+              <SelectTrigger aria-label="Equipe" className="w-48 bg-white">
+                <SelectValue placeholder={pecScope ? "Equipe" : "Todas as Equipes"} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">Todas as Equipes</SelectItem>
+                {!pecScope && <SelectItem value="all">Todas as Equipes</SelectItem>}
                 {teams.map(team => (
                   <SelectItem key={team.id} value={team.id}>{team.name}</SelectItem>
                 ))}
@@ -135,7 +141,7 @@ export default function GlobalFilters({
           </div>
 
           {/* Microárea */}
-          <div className="flex items-center gap-2">
+          {!pecScope && <div className="flex items-center gap-2">
             <MapPin className="w-4 h-4 text-gray-400" />
             <Select
               value={filters.microarea || 'all'}
@@ -151,7 +157,7 @@ export default function GlobalFilters({
                 ))}
               </SelectContent>
             </Select>
-          </div>
+          </div>}
 
           <div className="flex-1" />
 

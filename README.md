@@ -7,8 +7,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/eduardomuniz/sus-analytics-web/actions/workflows/ci.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/eduardomuniz/sus-analytics-web/ci.yml?branch=main&label=CI" alt="CI Status">
+  <a href="https://github.com/sus-digital-labs/gerencia-aps/actions/workflows/ci.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/sus-digital-labs/gerencia-aps/ci.yml?branch=main&label=CI" alt="CI Status">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License Apache 2.0">
@@ -30,91 +30,73 @@
 
 ## Visão geral
 
-SUS Analytics Web é um frontend *standalone* desenvolvido para apoiar a visualização de dados da Atenção Primária à Saúde (APS). Ele oferece uma interface moderna focada no consumo de contratos de dados analíticos, permitindo que profissionais de saúde e gestores acompanhem métricas territoriais e indicadores de qualidade.
-
-A aplicação opera sem acesso direto a bancos de dados, delegando a autenticação, autorização e os cálculos normativos a uma API compatível. Isso garante a segregação de responsabilidades e facilita implantações em ambientes com restrições rigorosas de infraestrutura.
-
-Atualmente, o projeto encontra-se em fase **experimental**, documentando suporte para renderização de 21 métricas (Qualidade APS e Vínculo/Acompanhamento Territorial) sem substituir os sistemas oficiais validados.
+O SUS Analytics Web acompanha a Atenção Primária à Saúde por unidade, equipe e competência. A aplicação consulta diretamente uma cópia autorizada do e-SUS PEC e apresenta os indicadores de Qualidade APS e Vínculo e Acompanhamento Territorial do Saúde Brasil 360.
 
 ## Principais recursos
 
 | Recurso | Descrição |
 |---|---|
-| **Painel interativo** | Interface React/Vite (SPA) para navegação rápida, acessível e responsiva. |
-| **Validação de contratos** | Verificação rigorosa em runtime de payloads analíticos (estados `READY`, `NO_DATA`, `CONTRACT_ERROR`, etc.). |
-| **Suporte a mapas** | Integração territorial para gestão visual e acompanhamento de microáreas locais. |
-| **Execução fail-closed** | Comportamento defensivo que exibe indisponibilidade imediata perante APIs inoperantes, falta de configuração ou dados incompatíveis. |
-
-## Preview
-
-> [!NOTE]
-> Capturas de tela e demonstrações interativas da interface serão disponibilizadas nas próximas atualizações conforme a estabilização do design system.
+| Indicadores e vínculos | Catálogo de 21 métricas, séries, contribuições nominais e importação de fontes do Siaps. |
+| Gestão ACS | Visitas por equipe e microárea, ranking, histórico nominal e tarefas de acompanhamento com estado local. |
+| Território e vigilância | Mapa agregado, microáreas, análise de cobertura e práticas registradas no PEC. |
+| Relatórios | Produção, BPA, RAS, imunização, comparativo, diagnósticos registrados e modelos personalizados, com CSV de conferência. |
 
 ## Uso rápido
 
-O projeto exige configuração prévia obrigatória (município, UF, IBGE, coordenadas e API) para renderizar a interface base. Sem os parâmetros corretos, o *bootstrap* será interrompido.
-
-```bash
-git clone https://github.com/eduardomuniz/sus-analytics-web.git
-cd sus-analytics-web
-pnpm install --frozen-lockfile
-cp .env.example apps/frontend/.env.local
-pnpm dev
-```
-
-> [!IMPORTANT]
-> A aplicação bloqueia métricas fechadas que não tiverem comprovação de estabilidade ou versionamento (ex: métrica `C1`), apresentando um estado de bloqueio local em tempo de execução.
+Use o perfil Docker com uma cópia local do PEC e um operador habilitado. O diretório de unidades e equipes, os filtros e as listas nominais vêm da conexão com o banco.
 
 ## Instalação
 
-O repositório suporta execução via Docker ou ambiente local (Node.js/pnpm).
+No ANTON-254, tanto a instalação local quanto os comandos de desenvolvimento rodam em Docker.
 
 ### Docker (Recomendado)
 
-O repositório disponibiliza arquivos de containerização na pasta `docker/`:
+No ANTON-254, com a cópia `pec-anton223-db` ativa na rede Docker privada `pec-anton223-local`, execute na raiz do repositório:
 
 ```bash
-docker compose -f docker/compose.yml up --build
+bash docker/up-local.sh
 ```
+
+A aplicação abre na [página de login local](http://127.0.0.1:18185/login). Use as credenciais padrão do superadmin. O launcher lê `shared_superadmin_user_email.txt` e `shared_admin_user_password.txt` em `/srv/projects/dm-hub/secrets/` e monta apenas um verificador criptográfico no container da aplicação. Para usar outra porta no host, defina `SUS_ANALYTICS_PORT` ao executar o launcher.
+
+O launcher usa a imagem local `node:24-bookworm-slim`, provisiona a credencial exclusiva do banco local, compila a interface original de `apps/frontend` dentro do Docker quando o código muda e espera a confirmação da origem em `/readyz`. O projeto Docker `sus-analytics-web-anton254` tem nome, volumes, configuração privada e rede de ingresso próprios. O serviço volta a subir após reinício do Docker.
+
+O painel consulta diretamente a cópia local do PEC para apurar o catálogo Saúde Brasil 360. Os cartões mostram resultados apurados, evidências parciais e fontes pendentes. A política metodológica e as fontes estão no [catálogo do Saúde Brasil 360](docs/13-saude-brasil-360/README.md).
+Os 21 códigos seguem o registro canônico, com recortes de equipe e competência. Para fornecer PBF/BPC, parâmetro populacional e avaliações do Meu SUS Digital, use o [contrato de complementos do CVAT](docs/13-saude-brasil-360/complementos-cvat-local.md).
+
+O cache em memória guarda agregados por equipe, unidade, competência e versão da regra durante cinco minutos. A lista nominal paginada consulta o cadastro atual ou as contribuições dos indicadores compatíveis diretamente no PEC. A interface exibe o nome e, quando aplicável, as contribuições do indicador. A aplicação roda sem logs e o manifesto publica o serviço em loopback.
+
+Para validar a árvore em isolamento, execute `bash docker/test-pec-local.sh` com as imagens indicadas no script e um volume com as dependências do perfil local. O procedimento usa um banco descartável.
 
 ### Desenvolvimento Local
 
-Requisitos: Node.js 22 ou superior e pnpm 10.4 ou superior.
+Execute os scripts abaixo em um container de desenvolvimento com Node.js 24 e a versão de pnpm fixada em `package.json`.
 
 ```bash
 pnpm install --frozen-lockfile
+pnpm check
+pnpm test
 pnpm build
-pnpm start
 ```
 
 ## Configuração
 
-Copie o `.env.example` (se existente) para `.env.local` e configure as variáveis. Nenhuma delas tem *fallback* padrão de produção para prevenir uso acidental.
+Para empacotar a distribuição pública, use `docker build -f docker/Dockerfile -t sus-analytics-web .`. O runtime recebe `SUS_PEC_HOST`, `SUS_PEC_DATABASE` e `SUS_PEC_USER` e lê a senha em `/run/secrets/pec_password`. O verificador do operador fica em `/run/secrets/operator_login`. Gere o verificador com `buildOperatorVerifier` de `apps/backend/local/operator-auth.ts` a partir de arquivos privados com o e-mail e a senha do operador, como faz o launcher.
 
-| Variável | Obrigatória | Descrição | Exemplo seguro |
-| -------- | ----------: | --------- | -------------- |
-| `VITE_API_URL` | Sim | URL base da API compatível externa | `http://localhost:3000` |
-| `VITE_MUNICIPIO` | Sim | Nome do município de operação | `Cidade Modelo` |
-| `VITE_UF` | Sim | Sigla do Estado da Federação | `UF` |
-| `VITE_IBGE` | Sim | Código IBGE municipal | `0000000` |
-| `VITE_MAP_CENTER` | Sim | Centro geográfico inicial do mapa | `-15.7801,-47.9292` |
-
-> [!WARNING]
-> Nenhuma variável iniciada com `VITE_` deve conter senhas ou segredos, pois elas são incorporadas publicamente ao *bundle* da aplicação.
+Publique a porta interna `3000` em loopback. Monte `/run/b360` para os complementos e relatórios municipais do Siaps e `/run/acs-state` para persistir situações de tarefas. Use uma conta PostgreSQL de leitura com permissão nas relações PEC consultadas pelo painel. `/healthz` confirma o processo e `/readyz` confirma o acesso à cópia local.
 
 ## Arquitetura
-
-A aplicação opera como um consumidor isolado (frontend standalone). O acoplamento com a lógica de negócio ocorre exclusivamente via contratos estritos.
 
 ```mermaid
 flowchart LR
   Browser[Navegador do Usuário] --> SPA[Frontend React/Vite]
-  SPA -->|Contrato REST / Validação Runtime| API[API/BFF Externa Compatível]
-  API --> DB[(Base de Dados Oficial)]
+  SPA -->|Sessão local e consultas| API[API do SUS Analytics]
+  API --> DB[(Cópia local do PEC)]
+  API -->|Agregados complementares| SIAPS[Arquivos do Siaps]
+  API -->|Situação de tarefas| ACS[Armazenamento local do ACS]
 ```
 
-- **Frontend:** Construído com React, TypeScript e Vite. Gerencia o roteamento e a renderização das métricas.
-- **Validação:** Checagens falham rápido (*fail-closed*) perante indisponibilidades externas.
+O navegador acessa somente a API autenticada. Consultas nominais são paginadas e excluídas do cache. A edição de situações de tarefas fica no armazenamento local da aplicação.
 
 ## Estrutura do repositório
 

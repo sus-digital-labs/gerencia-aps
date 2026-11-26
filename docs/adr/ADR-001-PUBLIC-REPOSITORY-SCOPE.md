@@ -2,7 +2,9 @@
 
 ## Decisão
 
-O repositório público contém somente o frontend, a configuração de build e a documentação necessária para colaboração. Implementações antigas sem caminho executável, arquivos operacionais e configurações específicas de ambientes privados ficam fora da distribuição.
+O repositório público contém o frontend, a API local que consulta o PEC, os testes com dados sintéticos, o empacotamento Docker e a documentação do perfil distribuído. O operador provisiona a conexão autorizada com o PEC no ambiente de execução.
+
+Credenciais, verificadores de login, estado de tarefas, exportações de operação, arquivos do Siaps e dados nominais são artefatos da instalação. Os valores necessários à configuração entram por variáveis de ambiente e arquivos montados no Docker.
 
 ## Motivos
 
@@ -13,4 +15,4 @@ O repositório público contém somente o frontend, a configuração de build e 
 
 ## Consequências
 
-O frontend exige uma API compatível para uso com dados reais. Modos de demonstração devem utilizar apenas dados sintéticos.
+O pacote local serve a interface e sua API na mesma origem. A API autentica o operador, executa consultas de leitura no PEC e mantém o estado administrativo do aplicativo em armazenamento separado. A suíte descartável usa dados sintéticos.

@@ -1,0 +1,68 @@
+name: sus-analytics-web-anton254
+
+services:
+  app:
+    image: node:24-bookworm-slim
+    pull_policy: never
+    init: true
+    user: "${SUS_ANALYTICS_UID:?}:${SUS_ANALYTICS_GID:?}"
+    restart: unless-stopped
+    labels:
+      com.dm.application: sus-analytics-web-anton254
+      com.dm.repository: dm-saude/sus-analytics-web
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    pids_limit: 128
+    mem_limit: 768m
+    working_dir: /app
+    environment:
+      NODE_ENV: production
+      SUS_PEC_HOST: pec-anton223-db
+      SUS_PEC_DATABASE: esus
+      SUS_PEC_USER: sus_analytics_web_anton254
+      SUS_PEC_APPLICATION_NAME: sus-analytics-web-anton254
+    command: [sh, -c, "exec node dist/pec-local.js >/dev/null 2>&1"]
+    ports:
+      - "127.0.0.1:${SUS_ANALYTICS_PORT:-18185}:3000"
+    volumes:
+      - runtime:/app:ro
+      - type: bind
+        source: ${SUS_ANALYTICS_STATE_DIR:?}/b360
+        target: /run/b360
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ${SUS_ANALYTICS_STATE_DIR:?}/acs
+        target: /run/acs-state
+        bind:
+          create_host_path: false
+    networks: [default, pec]
+    secrets: [pec_password, operator_login]
+    logging:
+      driver: local
+      options:
+        max-size: 20m
+        max-file: "5"
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/readyz').then(r => {if (!r.ok) process.exit(1)}).catch(() => process.exit(1))"]
+      interval: 10s
+      timeout: 6s
+      start_period: 25s
+      retries: 4
+
+secrets:
+  pec_password:
+    file: ${SUS_ANALYTICS_STATE_DIR:?}/pec-password
+  operator_login:
+    file: ${SUS_ANALYTICS_AUTH_FILE:?}
+
+volumes:
+  runtime:
+    external: true
+    name: ${SUS_ANALYTICS_APP_VOLUME:?}
+
+networks:
+  pec:
+    external: true
+    name: pec-anton223-local

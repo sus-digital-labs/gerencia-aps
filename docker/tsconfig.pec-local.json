@@ -1,0 +1,19 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2022",
+    "jsx": "react-jsx",
+    "paths": {
+      "@/lib/trpc": ["./apps/frontend/src/local/trpc.ts"],
+      "@/*": ["./apps/frontend/src/*"],
+      "@shared/*": ["./shared/*"]
+    }
+  },
+  "include": [
+    "../apps/backend/local/**/*.ts",
+    "../apps/frontend/src/main.tsx",
+    "../apps/frontend/src/local/**/*.ts",
+    "../apps/frontend/src/local/**/*.tsx",
+    "./vite.pec-local.ts"
+  ]
+}

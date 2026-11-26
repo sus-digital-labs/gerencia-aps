@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Build release image
-        run: docker build --pull --tag sus-analytics-web:ci .
+        run: docker build --pull --file docker/Dockerfile --tag sus-analytics-web:ci .
 
       - name: Scan high and critical vulnerabilities
         run: >-
@@ -29,10 +29,26 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          docker run --rm --detach --name sus-analytics-health sus-analytics-web:ci
-          trap 'docker stop sus-analytics-health >/dev/null 2>&1 || true' EXIT
+          umask 077
+          fixture=$(mktemp -d)
+          cleanup() {
+            docker stop sus-analytics-health >/dev/null 2>&1 || true
+            rm -f -- "$fixture/verifier" "$fixture/email" "$fixture/password"
+            rmdir -- "$fixture"
+          }
+          trap cleanup EXIT
+          printf '%s\n' 'health-probe@example.test' >"$fixture/email"
+          openssl rand -hex 24 >"$fixture/password"
+          docker run --rm -i --network none --user "$(id -u):$(id -g)" --entrypoint node \
+            --mount "type=bind,source=$PWD/apps/backend/local/operator-auth.ts,target=/operator-auth.mts,readonly" \
+            --mount "type=bind,source=$fixture,target=/fixture,readonly" sus-analytics-web:ci --input-type=module >"$fixture/verifier" <<'NODE'
+          import { buildOperatorVerifier } from "/operator-auth.mts";
+          process.stdout.write(JSON.stringify(await buildOperatorVerifier("/fixture/email", "/fixture/password")));
+          NODE
+          docker run --rm --detach --network none --name sus-analytics-health --user "$(id -u):$(id -g)" \
+            --mount "type=bind,source=$fixture/verifier,target=/run/secrets/operator_login,readonly" sus-analytics-web:ci
           for _ in {1..15}; do
-            if docker exec sus-analytics-health wget -q -O - http://127.0.0.1:8080/healthz | grep -qx ok; then
+            if docker exec sus-analytics-health node -e "fetch('http://127.0.0.1:3000/healthz').then(async r => { if (!r.ok || (await r.json()).status !== 'ok') process.exit(1) }).catch(() => process.exit(1))"; then
               exit 0
             fi
             sleep 1
